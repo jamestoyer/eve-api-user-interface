@@ -1,8 +1,0 @@
-﻿<UserControl x:Class="PhotoListItem"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="Auto" Height="Auto">
-    <StackPanel Margin="0,0,0,0">
-            <Image Name="imgPortrait" Source="http://img.eve.is/serv.asp?s=256"/>
-            <Label Name="lblText" HorizontalAlignment="Center">Character Name</Label>
-    </StackPanel>
-</UserControl>
