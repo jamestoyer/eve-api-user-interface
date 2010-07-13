@@ -1,0 +1,35 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+EVEC.Common.Controls
+</name>
+</assembly>
+<members>
+<member name="M:EVEC.Common.Controls.UserControl1.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:EVEC.Common.Controls.UserControl1">
+	<summary>
+UserControl1
+</summary>
+</member><member name="M:EVEC.Common.Controls.AccountViewItem.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:EVEC.Common.Controls.AccountViewItem">
+	<summary>
+AccountViewItem
+</summary>
+</member><member name="M:EVEC.Common.Controls.CharacterSheet.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:EVEC.Common.Controls.CharacterSheet">
+	<summary>
+CharacterSheet
+</summary>
+</member>
+</members>
+</doc>

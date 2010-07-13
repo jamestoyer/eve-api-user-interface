@@ -1,0 +1,40 @@
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\EVE Command.exe
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\EVE Command.pdb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\EVE Command.xml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\WPFToolkit.dll
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\ResolveAssemblyReference.cache
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\winSplashScreen.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\Application.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\winSplashScreen.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\Application.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\EVE Command_MarkupCompile.cache
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\EVE Command.g.resources
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\EVEC.Resources.resources
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\EVEC.vbproj.GenerateResource.Cache
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\EVE Command.exe
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\EVE Command.xml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\EVE Command.pdb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\EVEC.Common.Controls.dll
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\EVEC.Common.Controls.pdb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\EVEC.Common.Controls.xml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\Blacklight.WPFControls.dll
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\EVEC.Common.dll
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\EVEC.Common.pdb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\EVEC.Common.xml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\EVEC.Data.API.dll
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\EVEC.Data.dll
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\EVEC.Data.pdb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\EVEC.Data.xml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\EVEC.Data.API.pdb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\winMain.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\winMain.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\Blacklight.WPFControls.pdb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\WPFToolkit.pdb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\Accounts\winAccountsManager.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\Accounts\winModifyAccount.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\Accounts\winAccountsManager.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\Accounts\winModifyAccount.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\Images\IconNotFound.png
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\Resources\EveData.sdf
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\bin\Debug\Resources\Userdata.sdf
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC\obj\Debug\EVE Command_Content.g.vb

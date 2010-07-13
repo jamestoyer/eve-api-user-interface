@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Userdata" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="Characters">
+    <Type Name="Characters">
+      <Column Name="name" Member="Name" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="characterID" Member="CharacterID" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="corporationName" Member="CorporationName" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="corporationID" Member="CorporationID" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="cachedUntil" Member="CachedUntil" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="userID" Member="UserID" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="active" Member="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Chars_CharSheet_FK" Member="CharacterSheet" ThisKey="CharacterID" OtherKey="CharacterID" Type="CharacterSheet" Cardinality="One" DeleteRule="CASCADE" />
+      <Association Name="userID_FK" Member="UserInfo" ThisKey="UserID" OtherKey="UserID" Type="UserInfo" IsForeignKey="true" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="CharacterSheet">
+    <Type Name="CharacterSheet">
+      <Column Name="characterID" Member="CharacterID" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="race" Member="Race" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="bloodLine" Member="BloodLine" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="gender" Member="Gender" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="corporationName" Member="CorporationName" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="corporationID" Member="CorporationID" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="cloneName" Member="CloneName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="cloneSkillPoints" Member="CloneSkillPoints" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="balance" Member="Balance" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="intelligence" Member="Intelligence" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="memory" Member="Memory" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="charisma" Member="Charisma" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="perception" Member="Perception" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="willpower" Member="Willpower" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="cachedUntil" Member="CachedUntil" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="maName" Member="MaName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="maValue" Member="MaValue" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="iaName" Member="IaName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="iaValue" Member="IaValue" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="paName" Member="PaName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="paValue" Member="PaValue" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="caName" Member="CaName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="caValue" Member="CaValue" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="waName" Member="WaName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="waValue" Member="WaValue" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="Chars_CharSheet_FK" Member="Characters" ThisKey="CharacterID" OtherKey="CharacterID" Type="Characters" IsForeignKey="true" DeleteOnNull="true" />
+      <Association Name="csCert_CharSheet_FK" Member="CsCertificates" ThisKey="CharacterID" OtherKey="CharacterID" Type="CsCertificates" DeleteRule="CASCADE" />
+      <Association Name="csCR_CharSheet_FK" Member="CsCorpRoles" ThisKey="CharacterID" OtherKey="CharacterID" Type="CsCorpRoles" DeleteRule="CASCADE" />
+      <Association Name="csCRB_CharSheet_FK" Member="CsCorpRolesAtBase" ThisKey="CharacterID" OtherKey="CharacterID" Type="CsCorpRolesAtBase" DeleteRule="CASCADE" />
+      <Association Name="csCRH_CharSheet_FK" Member="CsCorpRolesAtHQ" ThisKey="CharacterID" OtherKey="CharacterID" Type="CsCorpRolesAtHQ" DeleteRule="CASCADE" />
+      <Association Name="csCRO_CharSheet_FK" Member="CsCorpRolesAtOther" ThisKey="CharacterID" OtherKey="CharacterID" Type="CsCorpRolesAtOther" DeleteRule="CASCADE" />
+      <Association Name="csCT_CharSheet_FK" Member="CsCorpTitles" ThisKey="CharacterID" OtherKey="CharacterID" Type="CsCorpTitles" DeleteRule="CASCADE" />
+      <Association Name="csSkills_CharSheet_FK" Member="CsSkills" ThisKey="CharacterID" OtherKey="CharacterID" Type="CsSkills" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="csCertificates" Member="CsCertificates">
+    <Type Name="CsCertificates">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="characterID" Member="CharacterID" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="certificateID" Member="CertificateID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="csCert_CharSheet_FK" Member="CharacterSheet" ThisKey="CharacterID" OtherKey="CharacterID" Type="CharacterSheet" IsForeignKey="true" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="csCorpRoles" Member="CsCorpRoles">
+    <Type Name="CsCorpRoles">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="characterID" Member="CharacterID" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="roleID" Member="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="roleName" Member="RoleName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="csCR_CharSheet_FK" Member="CharacterSheet" ThisKey="CharacterID" OtherKey="CharacterID" Type="CharacterSheet" IsForeignKey="true" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="csCorpRolesAtBase" Member="CsCorpRolesAtBase">
+    <Type Name="CsCorpRolesAtBase">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="characterID" Member="CharacterID" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="roleID" Member="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="roleName" Member="RoleName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="csCRB_CharSheet_FK" Member="CharacterSheet" ThisKey="CharacterID" OtherKey="CharacterID" Type="CharacterSheet" IsForeignKey="true" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="csCorpRolesAtHQ" Member="CsCorpRolesAtHQ">
+    <Type Name="CsCorpRolesAtHQ">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="characterID" Member="CharacterID" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="roleID" Member="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="roleName" Member="RoleName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="csCRH_CharSheet_FK" Member="CharacterSheet" ThisKey="CharacterID" OtherKey="CharacterID" Type="CharacterSheet" IsForeignKey="true" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="csCorpRolesAtOther" Member="CsCorpRolesAtOther">
+    <Type Name="CsCorpRolesAtOther">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="characterID" Member="CharacterID" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="roleID" Member="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="roleName" Member="RoleName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="csCRO_CharSheet_FK" Member="CharacterSheet" ThisKey="CharacterID" OtherKey="CharacterID" Type="CharacterSheet" IsForeignKey="true" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="csCorpTitles" Member="CsCorpTitles">
+    <Type Name="CsCorpTitles">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="characterID" Member="CharacterID" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="titleID" Member="TitleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="titleName" Member="TitleName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="csCT_CharSheet_FK" Member="CharacterSheet" ThisKey="CharacterID" OtherKey="CharacterID" Type="CharacterSheet" IsForeignKey="true" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="csSkills" Member="CsSkills">
+    <Type Name="CsSkills">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="characterID" Member="CharacterID" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="typeID" Member="TypeID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="skillpoints" Member="Skillpoints" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="level" Member="Level" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="unpublished" Member="Unpublished" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="csSkills_CharSheet_FK" Member="CharacterSheet" ThisKey="CharacterID" OtherKey="CharacterID" Type="CharacterSheet" IsForeignKey="true" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="UserInfo">
+    <Type Name="UserInfo">
+      <Column Name="userID" Member="UserID" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="apiKey" Member="ApiKey" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="fullKey" Member="FullKey" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="userID_FK" Member="Characters" ThisKey="UserID" OtherKey="UserID" Type="Characters" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+</Database>

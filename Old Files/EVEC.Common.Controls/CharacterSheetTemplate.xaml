@@ -1,0 +1,133 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:EVEC.Common="clr-namespace:EVEC.Common;assembly=EVEC.Common" xmlns:SM="clr-namespace:System.ComponentModel;assembly=WindowsBase">
+	<Style TargetType="{x:Type Label}" x:Key="CharacterInfoLabel">
+                <Setter Property="Foreground" Value="{DynamicResource GlossyBlack_Selected}"/>
+                <Setter Property="Padding" Value="5,0,5,0"/>
+	</Style>
+	<DataTemplate DataType="{x:Type EVEC.Common:CharacterSkill}" x:Key="CharacterSkillTemplate">
+		<Grid>
+	        <Grid.RowDefinitions>
+	            <RowDefinition/>
+	            <RowDefinition/>
+	        </Grid.RowDefinitions>
+	        <Grid.ColumnDefinitions>
+	            <ColumnDefinition Width="auto"/>
+	            <ColumnDefinition Width="*"/>
+	            <ColumnDefinition Width="auto"/>
+	            <ColumnDefinition Width="auto"/>
+	            <ColumnDefinition Width="auto"/>
+	        </Grid.ColumnDefinitions>
+            <Image Grid.RowSpan="2" Source="{Binding Path=SkillImage}"
+                   MaxWidth="32" MaxHeight="32"/>
+	        <Label Grid.Column="1" Content="{Binding Path=NameAndRankString}" Style="{DynamicResource CharacterInfoLabel}"/>
+	        <Label Grid.Column="1" Grid.Row="1" Content="{Binding Path=SkillPointsString}" FontWeight="Bold" Style="{DynamicResource CharacterInfoLabel}"/>
+	        <Label Grid.Column="2" HorizontalAlignment="Right" Content="{Binding Path=CurrentLevelString}" Style="{DynamicResource CharacterInfoLabel}"/>
+	    </Grid>
+    </DataTemplate>
+	<DataTemplate x:Key="CharacterSheet" DataType="{x:Type EVEC.Common:Character}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Expander Style="{DynamicResource GlassyBlackExpander}" IsExpanded="True" Header="Character Information">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Name" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <Label Content="Race" Grid.Row="1" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <Label Content="Gender" Grid.Row="2" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <Label Content="Bloodline" Grid.Row="3" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <Label Content="Corporation" Grid.Row="4" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <Label Content="Skillpoints" Grid.Row="5" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <Label Content="Clone" Grid.Row="6" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <Label Content="Wallet" Grid.Row="7" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <Label Content="Skill In Training" Grid.Row="8" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <Label Content="{Binding Path=CharacterSheet.name}" Grid.Column="1" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <Label Content="{Binding Path=CharacterSheet.race}" Grid.Row="1" Grid.Column="1" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <Label Content="{Binding Path=CharacterSheet.gender}" Grid.Row="2" Grid.Column="1" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <Label Content="{Binding Path=CharacterSheet.bloodLine}" Grid.Row="3" Grid.Column="1" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <Label Content="{Binding Path=CharacterSheet.corporationName}" Grid.Row="4" Grid.Column="1" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <Label Content="{Binding Path=SkillPoints}" Grid.Row="5" Grid.Column="1" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <Label Content="{Binding Path=CloneSkillPoints}" Grid.Row="6" Grid.Column="1" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <Label Content="{Binding Path=Balance}" Grid.Row="7" Grid.Column="1" Style="{DynamicResource CharacterInfoLabel}"/>
+                    <StackPanel Grid.Column="1" Grid.Row="8">
+                        <Label Content="Skill (sp/hour)" Style="{DynamicResource CharacterInfoLabel}"/>
+                        <Label Content="Time Remaining" Style="{DynamicResource CharacterInfoLabel}"/>
+                        <Label Content="End Time" Style="{DynamicResource CharacterInfoLabel}"/>
+                    </StackPanel>
+                </Grid>
+            </Expander>
+            <Expander Style="{DynamicResource GlassyBlackExpander}" IsExpanded="True" Header="Character Details" Grid.Row="1" VerticalAlignment="Stretch">
+                <Grid>
+                    <Grid.Resources>
+                        <CollectionViewSource Source="{Binding Path=Skills}" x:Key="CharacterSkillSource">
+                            <CollectionViewSource.GroupDescriptions>
+                                <PropertyGroupDescription PropertyName="SkillInfo.skillGroups.groupName"/>
+                            </CollectionViewSource.GroupDescriptions>
+                            <CollectionViewSource.SortDescriptions>
+                                <SM:SortDescription PropertyName="SkillInfo.skillGroups.groupName" Direction="Ascending"/>
+                                <SM:SortDescription PropertyName="SkillInfo.typeName" Direction="Ascending"/>
+                            </CollectionViewSource.SortDescriptions>
+                        </CollectionViewSource>
+                    </Grid.Resources>
+                    <ListBox IsSynchronizedWithCurrentItem="True" Style="{DynamicResource GlossyBlackListBox}" ItemContainerStyle="{DynamicResource GlossyBlackListBoxItem}" ItemsSource="{Binding Source={StaticResource CharacterSkillSource}}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" ItemTemplate="{DynamicResource CharacterSkillTemplate}" Margin="5" Padding="0" VerticalAlignment="Top">
+                        <ListBox.GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.HeaderTemplate>
+                                    <DataTemplate>
+                                        
+                                        <!--<Expander></Expander>-->
+                                    </DataTemplate>
+                                </GroupStyle.HeaderTemplate>
+                                <GroupStyle.ContainerStyle>
+                                    <Style TargetType="{x:Type GroupItem}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type GroupItem}">
+                                                    <Expander Style="{DynamicResource GlassyBlackExpander}"
+                                                              Header="{Binding}">
+                                                        <Expander.Content>
+                                                            <ItemsPresenter/>
+                                                        </Expander.Content>
+                                                    </Expander>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </GroupStyle.ContainerStyle>
+                            </GroupStyle>
+                        </ListBox.GroupStyle>
+                    </ListBox>
+                </Grid>
+            </Expander>
+        </Grid>
+    </DataTemplate>
+	<Style x:Key="testing" TargetType="{x:Type GroupItem}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type GroupItem}">
+					<StackPanel>
+						<ContentPresenter/>
+						<ItemsPresenter Margin="5,0,0,0"/>
+					</StackPanel>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

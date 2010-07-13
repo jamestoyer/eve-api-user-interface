@@ -1,0 +1,102 @@
+﻿<Window x:Class="StartupXaml"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:z="clr-namespace:EVEC1"
+        xmlns:s="clr-namespace:EVEC1"
+    Title="EvE Command" Height="600" Width="800" MinHeight="600" MinWidth="800">
+    <Window.Resources>
+        <Style x:Name="SpecialListItem" x:Key="SpecialListItem" TargetType="{x:Type ListBoxItem}">
+        	<Style.Resources>
+        		<Storyboard x:Key="OnSelected">
+					<DoubleAnimation Duration="0:0:0.2" Storyboard.TargetProperty="MaxWidth" To="160" />
+        			<DoubleAnimation Duration="0:0:0.1" Storyboard.TargetProperty="Opacity" To="1.0" />
+				</Storyboard>
+				<Storyboard x:Key="MouseEnter">
+        			<DoubleAnimation Duration="0:0:1" Storyboard.TargetProperty="MaxWidth" To="160" />
+        			<DoubleAnimation Duration="0:0:0.2" Storyboard.TargetProperty="Opacity" To="1.0" />
+        		</Storyboard>
+				<Storyboard x:Key="MouseLeave">
+        			<DoubleAnimation Duration="0:0:1" Storyboard.TargetProperty="MaxWidth" />
+        			<DoubleAnimation Duration="0:0:0.2" Storyboard.TargetProperty="Opacity" />
+        		</Storyboard>
+        	</Style.Resources>
+            <Setter Property="MaxWidth" Value="100" />
+            <Setter Property="MinWidth" Value="100" />
+            <Setter Property="Opacity" Value=".75" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0,0,0,0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Border SnapsToDevicePixels="true" x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="0,0,0,0" Background="{TemplateBinding Background}">
+                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Selector.IsSelected" Value="true">
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+        		<EventTrigger RoutedEvent="Selector.Selected">
+        			<StopStoryboard BeginStoryboardName="MouseEnter_BeginStoryboard1"/>
+        			<BeginStoryboard Storyboard="{StaticResource OnSelected}" x:Name="OnSelected_BeginStoryboard"/>
+        		</EventTrigger>
+        		<EventTrigger RoutedEvent="Selector.Unselected">
+        			<StopStoryboard BeginStoryboardName="OnSelected_BeginStoryboard"/>
+        			<BeginStoryboard Storyboard="{StaticResource MouseLeave}" x:Name="MouseLeave_BeginStoryboard"/>
+        		</EventTrigger>
+        		<MultiTrigger>
+        			<MultiTrigger.ExitActions>
+        				<BeginStoryboard Storyboard="{StaticResource MouseLeave}" x:Name="MouseLeave_BeginStoryboard2"/>
+        			</MultiTrigger.ExitActions>
+        			<MultiTrigger.EnterActions>
+        				<BeginStoryboard Storyboard="{StaticResource MouseEnter}" x:Name="MouseEnter_BeginStoryboard1"/>
+        			</MultiTrigger.EnterActions>
+        			<MultiTrigger.Conditions>
+        				<Condition Property="IsMouseOver" Value="True"/>
+        				<Condition Property="Selector.IsSelected" Value="False"/>
+        			</MultiTrigger.Conditions>
+        		</MultiTrigger>
+        	</Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170" MinWidth="170"/>
+            <ColumnDefinition Width="608*" MinWidth="24" />
+        </Grid.ColumnDefinitions>
+        <Menu Name="mnuMainMenu" Grid.ColumnSpan="2">
+            <MenuItem Header="_File">
+                <MenuItem Name="mnuExit" Header="E_xit" Click="mnuExit_Click" Icon="{DynamicResource imgExitIcon}" />
+            </MenuItem>
+            <MenuItem Header="_Edit"/>
+            <MenuItem Header="_Tools">
+                <MenuItem Name="mnuManageAccounts" Header="Manage Accounts" Click="mnuManageAccounts_Click"/>
+            </MenuItem>
+        </Menu>
+        <ToolBar Grid.Column="1" Grid.Row="1" Name="ToolBar1" />
+        <StatusBar Grid.Row="3" Grid.ColumnSpan="2" Name="StatusBar1"/>
+        <ListBox Style="{DynamicResource CharacterListBoxStyle}" 
+                 Name ="lstPhotoListBox"
+                 Grid.Row="1"
+                 Grid.RowSpan="2"
+                 Grid.Column="0"
+    		     ItemContainerStyle="{StaticResource SpecialListItem}" 
+                 SelectedIndex="0"
+                 BorderThickness="0">
+            
+         
+        </ListBox>
+        <s:CharacterDetails Grid.Column="1" Grid.Row="2"/>
+    </Grid>
+    
+</Window>

@@ -1,0 +1,40 @@
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\bin\x86\Debug\EVEC.Data.dll.config
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\bin\x86\Debug\EVEC.Data.dll
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\bin\x86\Debug\EVEC.Data.pdb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\bin\x86\Debug\EVEC.Data.xml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\obj\x86\Debug\EVEC.Data.frmLocateDatabase.resources
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\obj\x86\Debug\EVEC.Data.Resources.resources
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\obj\x86\Debug\EVEC.Data.vbproj.GenerateResource.Cache
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\obj\x86\Debug\EVEC.Data.dll
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\obj\x86\Debug\EVEC.Data.xml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\obj\x86\Debug\EVEC.Data.pdb
+D:\Documents\Eve Command\EVEC.Data\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Documents\Eve Command\EVEC.Data\obj\x86\Debug\EVEC.Data.frmLocateDatabase.resources
+D:\Documents\Eve Command\EVEC.Data\obj\x86\Debug\EVEC.Data.Resources.resources
+D:\Documents\Eve Command\EVEC.Data\obj\x86\Debug\EVEC.Data.vbproj.GenerateResource.Cache
+D:\Documents\Eve Command\EVEC.Data\obj\x86\Debug\EVEC.Data.dll
+D:\Documents\Eve Command\EVEC.Data\obj\x86\Debug\EVEC.Data.xml
+D:\Documents\Eve Command\EVEC.Data\obj\x86\Debug\EVEC.Data.pdb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\bin\x86\Debug\EVEC.Data.dll.config
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\bin\x86\Debug\EVEC.Data.dll
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\bin\x86\Debug\EVEC.Data.pdb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\bin\x86\Debug\EVEC.Data.xml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\obj\x86\Debug\EVEC.Data.frmLocateDatabase.resources
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\obj\x86\Debug\EVEC.Data.Resources.resources
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\obj\x86\Debug\EVEC.Data.vbproj.GenerateResource.Cache
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\obj\x86\Debug\EVEC.Data.dll
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\obj\x86\Debug\EVEC.Data.xml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\obj\x86\Debug\EVEC.Data.pdb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\Old Files\EVEC.Data\bin\x86\Debug\EVEC.Data.dll.config
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\Old Files\EVEC.Data\bin\x86\Debug\EVEC.Data.dll
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\Old Files\EVEC.Data\bin\x86\Debug\EVEC.Data.pdb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\Old Files\EVEC.Data\bin\x86\Debug\EVEC.Data.xml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\Old Files\EVEC.Data\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\Old Files\EVEC.Data\obj\x86\Debug\EVEC.Data.frmLocateDatabase.resources
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\Old Files\EVEC.Data\obj\x86\Debug\EVEC.Data.Resources.resources
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\Old Files\EVEC.Data\obj\x86\Debug\EVEC.Data.vbproj.GenerateResource.Cache
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\Old Files\EVEC.Data\obj\x86\Debug\EVEC.Data.dll
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\Old Files\EVEC.Data\obj\x86\Debug\EVEC.Data.xml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\Old Files\EVEC.Data\obj\x86\Debug\EVEC.Data.pdb

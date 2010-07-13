@@ -1,0 +1,111 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+EVECommand
+</name>
+</assembly>
+<members>
+<member name="M:EVEC.Application.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="M:EVEC.Application.Main">
+	<summary>
+Application Entry Point.
+</summary>
+</member><member name="T:EVEC.Application">
+	<summary>
+Application
+</summary>
+</member><member name="M:EVEC.winSplashScreen.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:EVEC.winSplashScreen">
+	<summary>
+winSplashScreen
+</summary>
+</member><member name="M:EVEC.winAccountsManager.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:EVEC.winAccountsManager">
+	<summary>
+winAccountsManager
+</summary>
+</member><member name="M:EVEC.winModifyAccount.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:EVEC.winModifyAccount">
+	<summary>
+winModifyAccount
+</summary>
+</member><member name="M:EVEC.winMain.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:EVEC.winMain">
+	<summary>
+winMain
+</summary>
+</member><member name="P:EVEC.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:EVEC.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:EVEC.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:EVEC.My.MyWpfExtension.Application">
+	<summary>
+ Returns the application object for the running application
+ </summary>
+</member><member name="P:EVEC.My.MyWpfExtension.Computer">
+	<summary>
+ Returns information about the host computer.
+ </summary>
+</member><member name="P:EVEC.My.MyWpfExtension.User">
+	<summary>
+ Returns information for the current user.  If you wish to run the application with the current 
+ Windows user credentials, call My.User.InitializeWithWindowsUser().
+ </summary>
+</member><member name="P:EVEC.My.MyWpfExtension.Log">
+	<summary>
+ Returns the application log. The listeners can be configured by the application's configuration file.
+ </summary>
+</member><member name="P:EVEC.My.MyWpfExtension.Windows">
+	<summary>
+ Returns the collection of Windows defined in the project.
+ </summary>
+</member><member name="T:EVEC.My.MyWpfExtension">
+	<summary>
+ Module used to define the properties that are available in the My Namespace for WPF
+ </summary>
+	<remarks></remarks>
+</member><member name="M:EVEC.winMain.LoadCharacters">
+	<summary>
+ Loads the wanted characters into the form
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="F:EVEC.winModifyAccount.blnCharactersRetrieved">
+	<summary>
+ Shows if the characters have been retrieved
+ </summary>
+	<remarks></remarks>
+</member><member name="M:EVEC.winModifyAccount.EvaluateErrors">
+	<summary>
+ Determins the error and takes the appropriate action
+ </summary>
+	<returns>If there is an error true is returned otherwise false</returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

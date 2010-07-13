@@ -1,0 +1,88 @@
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\bin\Debug\EVE Command.exe.config
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\bin\Debug\Resources\Userdata.sdf
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\bin\Debug\EVE Command.exe
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\bin\Debug\EVE Command.pdb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\bin\Debug\EVE Command.xml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\bin\Debug\EVEC.Data.dll
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\bin\Debug\EVEC.Data.pdb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\bin\Debug\EVEC.Data.xml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\ResolveAssemblyReference.cache
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\Application.g.vb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\EVE Command_Content.g.vb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\EVE Command_MarkupCompile.cache
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\EVE Command.g.resources
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\EVEC.Resources.resources
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\EVE Command.vbproj.GenerateResource.Cache
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\EVE Command.exe
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\EVE Command.xml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\EVE Command.pdb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\bin\Debug\EVEC.Data.API.dll
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\bin\Debug\EVEC.Data.API.pdb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\Controls\PhotoListItem.baml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\DraggableTabControl.baml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\Application.baml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\Controls\PhotoListItem.g.vb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\DraggableTabControl.g.vb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\StartupXaml.g.vb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\EVE Command_MarkupCompile.lref
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\StartupXaml.baml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\EVEC.EveAccounts.resources
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\GlobalStyles.baml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\Controls\CharacterDetails.baml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\Controls\CharacterDetails.g.vb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\GeneratedInternalTypeHelper.g.vb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\Controls\SkillsPanel.baml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\Controls\SkillsPanel.g.vb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\Images.baml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\Controls\AccountItem.g.vb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\Controls\CharacterListBox.g.vb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\wpfAccountsManager.g.vb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\Controls\AccountItem.baml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\Controls\CharacterListBox.baml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVE Command\obj\Debug\wpfAccountsManager.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\bin\Debug\Resources\EveData.sdf
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\bin\Debug\Resources\Userdata.sdf
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\bin\Debug\EVE Command1.exe.config
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\bin\Debug\EVE Command1.exe
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\bin\Debug\EVE Command1.pdb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\bin\Debug\EVE Command1.xml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\bin\Debug\EVEC.Data.API.dll
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\bin\Debug\EVEC.Data.dll
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\bin\Debug\EVEC.Data.pdb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\bin\Debug\EVEC.Data.xml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\bin\Debug\EVEC.Data.API.pdb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\ResolveAssemblyReference.cache
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\GlobalStyles.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\Images.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\Controls\AttributeViewer.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\Controls\CharSkill.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\Controls\PhotoListItem.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\DraggableTabControl.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\wpfAccountModifier.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\Application.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\Controls\AccountItem.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\Controls\AttributeViewer.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\Controls\CharacterDetails.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\Controls\CharacterListBox.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\Controls\CharSkill.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\Controls\PhotoListItem.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\DraggableTabControl.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\StartupXaml.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\wpfAccountModifier.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\wpfAccountsManager.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\Application.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\EVE Command1_Content.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\GeneratedInternalTypeHelper.g.vb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\EVE Command1_MarkupCompile.cache
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\EVE Command1_MarkupCompile.lref
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\Controls\AccountItem.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\Controls\CharacterDetails.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\Controls\CharacterListBox.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\StartupXaml.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\wpfAccountsManager.baml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\EVE Command1.g.resources
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\EVEC1.Resources.resources
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\EVE Command.vbproj.GenerateResource.Cache
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\EVE Command1.exe
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\EVE Command1.xml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVE Command\obj\Debug\EVE Command1.pdb

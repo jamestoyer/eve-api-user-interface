@@ -1,0 +1,795 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="UserdataModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.3.5" ProviderManifestToken="3.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="UserdataModelStoreContainer">
+          <EntitySet Name="Characters" EntityType="UserdataModel.Store.Characters" store:Type="Tables" />
+          <EntitySet Name="CharacterSheet" EntityType="UserdataModel.Store.CharacterSheet" store:Type="Tables" />
+          <EntitySet Name="csCertificates" EntityType="UserdataModel.Store.csCertificates" store:Type="Tables" />
+          <EntitySet Name="csCorpRoles" EntityType="UserdataModel.Store.csCorpRoles" store:Type="Tables" />
+          <EntitySet Name="csCorpRolesAtBase" EntityType="UserdataModel.Store.csCorpRolesAtBase" store:Type="Tables" />
+          <EntitySet Name="csCorpRolesAtHQ" EntityType="UserdataModel.Store.csCorpRolesAtHQ" store:Type="Tables" />
+          <EntitySet Name="csCorpRolesAtOther" EntityType="UserdataModel.Store.csCorpRolesAtOther" store:Type="Tables" />
+          <EntitySet Name="csCorpTitles" EntityType="UserdataModel.Store.csCorpTitles" store:Type="Tables" />
+          <EntitySet Name="csSkills" EntityType="UserdataModel.Store.csSkills" store:Type="Tables" />
+          <EntitySet Name="UserInfo" EntityType="UserdataModel.Store.UserInfo" store:Type="Tables" />
+          <AssociationSet Name="Chars_CharSheet_FK" Association="UserdataModel.Store.Chars_CharSheet_FK">
+            <End Role="Characters" EntitySet="Characters" />
+            <End Role="CharacterSheet" EntitySet="CharacterSheet" />
+          </AssociationSet>
+          <AssociationSet Name="csCert_CharSheet_FK" Association="UserdataModel.Store.csCert_CharSheet_FK">
+            <End Role="CharacterSheet" EntitySet="CharacterSheet" />
+            <End Role="csCertificates" EntitySet="csCertificates" />
+          </AssociationSet>
+          <AssociationSet Name="csCR_CharSheet_FK" Association="UserdataModel.Store.csCR_CharSheet_FK">
+            <End Role="CharacterSheet" EntitySet="CharacterSheet" />
+            <End Role="csCorpRoles" EntitySet="csCorpRoles" />
+          </AssociationSet>
+          <AssociationSet Name="csCRB_CharSheet_FK" Association="UserdataModel.Store.csCRB_CharSheet_FK">
+            <End Role="CharacterSheet" EntitySet="CharacterSheet" />
+            <End Role="csCorpRolesAtBase" EntitySet="csCorpRolesAtBase" />
+          </AssociationSet>
+          <AssociationSet Name="csCRH_CharSheet_FK" Association="UserdataModel.Store.csCRH_CharSheet_FK">
+            <End Role="CharacterSheet" EntitySet="CharacterSheet" />
+            <End Role="csCorpRolesAtHQ" EntitySet="csCorpRolesAtHQ" />
+          </AssociationSet>
+          <AssociationSet Name="csCRO_CharSheet_FK" Association="UserdataModel.Store.csCRO_CharSheet_FK">
+            <End Role="CharacterSheet" EntitySet="CharacterSheet" />
+            <End Role="csCorpRolesAtOther" EntitySet="csCorpRolesAtOther" />
+          </AssociationSet>
+          <AssociationSet Name="csCT_CharSheet_FK" Association="UserdataModel.Store.csCT_CharSheet_FK">
+            <End Role="CharacterSheet" EntitySet="CharacterSheet" />
+            <End Role="csCorpTitles" EntitySet="csCorpTitles" />
+          </AssociationSet>
+          <AssociationSet Name="csSkills_CharSheet_FK" Association="UserdataModel.Store.csSkills_CharSheet_FK">
+            <End Role="CharacterSheet" EntitySet="CharacterSheet" />
+            <End Role="csSkills" EntitySet="csSkills" />
+          </AssociationSet>
+          <AssociationSet Name="userID_FK" Association="UserdataModel.Store.userID_FK">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="Characters" EntitySet="Characters" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Characters">
+          <Key>
+            <PropertyRef Name="characterID" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="characterID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="corporationName" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="corporationID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="cachedUntil" Type="datetime" Nullable="false" />
+          <Property Name="userID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterSheet">
+          <Key>
+            <PropertyRef Name="characterID" />
+          </Key>
+          <Property Name="characterID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="race" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="bloodLine" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="gender" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="corporationName" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="corporationID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="cloneName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="cloneSkillPoints" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="balance" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="intelligence" Type="smallint" Nullable="false" />
+          <Property Name="memory" Type="smallint" Nullable="false" />
+          <Property Name="charisma" Type="smallint" Nullable="false" />
+          <Property Name="perception" Type="smallint" Nullable="false" />
+          <Property Name="willpower" Type="smallint" Nullable="false" />
+          <Property Name="cachedUntil" Type="datetime" Nullable="false" />
+          <Property Name="maName" Type="nvarchar" MaxLength="150" />
+          <Property Name="maValue" Type="smallint" />
+          <Property Name="iaName" Type="nvarchar" MaxLength="150" />
+          <Property Name="iaValue" Type="smallint" />
+          <Property Name="paName" Type="nvarchar" MaxLength="150" />
+          <Property Name="paValue" Type="smallint" />
+          <Property Name="caName" Type="nvarchar" MaxLength="150" />
+          <Property Name="caValue" Type="smallint" />
+          <Property Name="waName" Type="nvarchar" MaxLength="150" />
+          <Property Name="waValue" Type="smallint" />
+        </EntityType>
+        <EntityType Name="csCertificates">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="characterID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="certificateID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="csCorpRoles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="characterID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="roleID" Type="int" Nullable="false" />
+          <Property Name="roleName" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="csCorpRolesAtBase">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="characterID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="roleID" Type="int" Nullable="false" />
+          <Property Name="roleName" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="csCorpRolesAtHQ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="characterID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="roleID" Type="int" Nullable="false" />
+          <Property Name="roleName" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="csCorpRolesAtOther">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="characterID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="roleID" Type="int" Nullable="false" />
+          <Property Name="roleName" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="csCorpTitles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="characterID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="titleID" Type="int" Nullable="false" />
+          <Property Name="titleName" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="csSkills">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="characterID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="typeID" Type="bigint" Nullable="false" />
+          <Property Name="skillpoints" Type="bigint" Nullable="false" />
+          <Property Name="level" Type="smallint" Nullable="false" />
+          <Property Name="unpublished" Type="bit" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="apiKey" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="fullKey" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="Chars_CharSheet_FK">
+          <End Role="Characters" Type="UserdataModel.Store.Characters" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CharacterSheet" Type="UserdataModel.Store.CharacterSheet" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Characters">
+              <PropertyRef Name="characterID" />
+            </Principal>
+            <Dependent Role="CharacterSheet">
+              <PropertyRef Name="characterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="csCert_CharSheet_FK">
+          <End Role="CharacterSheet" Type="UserdataModel.Store.CharacterSheet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="csCertificates" Type="UserdataModel.Store.csCertificates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterSheet">
+              <PropertyRef Name="characterID" />
+            </Principal>
+            <Dependent Role="csCertificates">
+              <PropertyRef Name="characterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="csCR_CharSheet_FK">
+          <End Role="CharacterSheet" Type="UserdataModel.Store.CharacterSheet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="csCorpRoles" Type="UserdataModel.Store.csCorpRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterSheet">
+              <PropertyRef Name="characterID" />
+            </Principal>
+            <Dependent Role="csCorpRoles">
+              <PropertyRef Name="characterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="csCRB_CharSheet_FK">
+          <End Role="CharacterSheet" Type="UserdataModel.Store.CharacterSheet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="csCorpRolesAtBase" Type="UserdataModel.Store.csCorpRolesAtBase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterSheet">
+              <PropertyRef Name="characterID" />
+            </Principal>
+            <Dependent Role="csCorpRolesAtBase">
+              <PropertyRef Name="characterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="csCRH_CharSheet_FK">
+          <End Role="CharacterSheet" Type="UserdataModel.Store.CharacterSheet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="csCorpRolesAtHQ" Type="UserdataModel.Store.csCorpRolesAtHQ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterSheet">
+              <PropertyRef Name="characterID" />
+            </Principal>
+            <Dependent Role="csCorpRolesAtHQ">
+              <PropertyRef Name="characterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="csCRO_CharSheet_FK">
+          <End Role="CharacterSheet" Type="UserdataModel.Store.CharacterSheet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="csCorpRolesAtOther" Type="UserdataModel.Store.csCorpRolesAtOther" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterSheet">
+              <PropertyRef Name="characterID" />
+            </Principal>
+            <Dependent Role="csCorpRolesAtOther">
+              <PropertyRef Name="characterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="csCT_CharSheet_FK">
+          <End Role="CharacterSheet" Type="UserdataModel.Store.CharacterSheet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="csCorpTitles" Type="UserdataModel.Store.csCorpTitles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterSheet">
+              <PropertyRef Name="characterID" />
+            </Principal>
+            <Dependent Role="csCorpTitles">
+              <PropertyRef Name="characterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="csSkills_CharSheet_FK">
+          <End Role="CharacterSheet" Type="UserdataModel.Store.CharacterSheet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="csSkills" Type="UserdataModel.Store.csSkills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterSheet">
+              <PropertyRef Name="characterID" />
+            </Principal>
+            <Dependent Role="csSkills">
+              <PropertyRef Name="characterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="userID_FK">
+          <End Role="UserInfo" Type="UserdataModel.Store.UserInfo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Characters" Type="UserdataModel.Store.Characters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="userID" />
+            </Principal>
+            <Dependent Role="Characters">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UserdataModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="UserdataEntities">
+          <EntitySet Name="Characters" EntityType="UserdataModel.Characters" />
+          <EntitySet Name="CharacterSheet" EntityType="UserdataModel.CharacterSheet" />
+          <EntitySet Name="csCertificates" EntityType="UserdataModel.csCertificates" />
+          <EntitySet Name="csCorpRoles" EntityType="UserdataModel.csCorpRoles" />
+          <EntitySet Name="csCorpRolesAtBase" EntityType="UserdataModel.csCorpRolesAtBase" />
+          <EntitySet Name="csCorpRolesAtHQ" EntityType="UserdataModel.csCorpRolesAtHQ" />
+          <EntitySet Name="csCorpRolesAtOther" EntityType="UserdataModel.csCorpRolesAtOther" />
+          <EntitySet Name="csCorpTitles" EntityType="UserdataModel.csCorpTitles" />
+          <EntitySet Name="csSkills" EntityType="UserdataModel.csSkills" />
+          <EntitySet Name="UserInfo" EntityType="UserdataModel.UserInfo" />
+          <AssociationSet Name="Chars_CharSheet_FK" Association="UserdataModel.Chars_CharSheet_FK">
+            <End Role="Characters" EntitySet="Characters" />
+            <End Role="CharacterSheet" EntitySet="CharacterSheet" />
+          </AssociationSet>
+          <AssociationSet Name="userID_FK" Association="UserdataModel.userID_FK">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="Characters" EntitySet="Characters" />
+          </AssociationSet>
+          <AssociationSet Name="csCert_CharSheet_FK" Association="UserdataModel.csCert_CharSheet_FK">
+            <End Role="CharacterSheet" EntitySet="CharacterSheet" />
+            <End Role="csCertificates" EntitySet="csCertificates" />
+          </AssociationSet>
+          <AssociationSet Name="csCR_CharSheet_FK" Association="UserdataModel.csCR_CharSheet_FK">
+            <End Role="CharacterSheet" EntitySet="CharacterSheet" />
+            <End Role="csCorpRoles" EntitySet="csCorpRoles" />
+          </AssociationSet>
+          <AssociationSet Name="csCRB_CharSheet_FK" Association="UserdataModel.csCRB_CharSheet_FK">
+            <End Role="CharacterSheet" EntitySet="CharacterSheet" />
+            <End Role="csCorpRolesAtBase" EntitySet="csCorpRolesAtBase" />
+          </AssociationSet>
+          <AssociationSet Name="csCRH_CharSheet_FK" Association="UserdataModel.csCRH_CharSheet_FK">
+            <End Role="CharacterSheet" EntitySet="CharacterSheet" />
+            <End Role="csCorpRolesAtHQ" EntitySet="csCorpRolesAtHQ" />
+          </AssociationSet>
+          <AssociationSet Name="csCRO_CharSheet_FK" Association="UserdataModel.csCRO_CharSheet_FK">
+            <End Role="CharacterSheet" EntitySet="CharacterSheet" />
+            <End Role="csCorpRolesAtOther" EntitySet="csCorpRolesAtOther" />
+          </AssociationSet>
+          <AssociationSet Name="csCT_CharSheet_FK" Association="UserdataModel.csCT_CharSheet_FK">
+            <End Role="CharacterSheet" EntitySet="CharacterSheet" />
+            <End Role="csCorpTitles" EntitySet="csCorpTitles" />
+          </AssociationSet>
+          <AssociationSet Name="csSkills_CharSheet_FK" Association="UserdataModel.csSkills_CharSheet_FK">
+            <End Role="CharacterSheet" EntitySet="CharacterSheet" />
+            <End Role="csSkills" EntitySet="csSkills" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Characters">
+          <Key>
+            <PropertyRef Name="characterID" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="characterID" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="corporationName" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="corporationID" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="cachedUntil" Type="DateTime" Nullable="false" />
+          <Property Name="active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CharacterSheet" Relationship="UserdataModel.Chars_CharSheet_FK" FromRole="Characters" ToRole="CharacterSheet" />
+          <NavigationProperty Name="UserInfo" Relationship="UserdataModel.userID_FK" FromRole="Characters" ToRole="UserInfo" />
+        </EntityType>
+        <EntityType Name="CharacterSheet">
+          <Key>
+            <PropertyRef Name="characterID" />
+          </Key>
+          <Property Name="characterID" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="race" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="bloodLine" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="gender" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="corporationName" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="corporationID" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="cloneName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="cloneSkillPoints" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="balance" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="intelligence" Type="Int16" Nullable="false" />
+          <Property Name="memory" Type="Int16" Nullable="false" />
+          <Property Name="charisma" Type="Int16" Nullable="false" />
+          <Property Name="perception" Type="Int16" Nullable="false" />
+          <Property Name="willpower" Type="Int16" Nullable="false" />
+          <Property Name="cachedUntil" Type="DateTime" Nullable="false" />
+          <Property Name="maName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="maValue" Type="Int16" />
+          <Property Name="iaName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="iaValue" Type="Int16" />
+          <Property Name="paName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="paValue" Type="Int16" />
+          <Property Name="caName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="caValue" Type="Int16" />
+          <Property Name="waName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="waValue" Type="Int16" />
+          <NavigationProperty Name="Characters" Relationship="UserdataModel.Chars_CharSheet_FK" FromRole="CharacterSheet" ToRole="Characters" />
+          <NavigationProperty Name="csCertificates" Relationship="UserdataModel.csCert_CharSheet_FK" FromRole="CharacterSheet" ToRole="csCertificates" />
+          <NavigationProperty Name="csCorpRoles" Relationship="UserdataModel.csCR_CharSheet_FK" FromRole="CharacterSheet" ToRole="csCorpRoles" />
+          <NavigationProperty Name="csCorpRolesAtBase" Relationship="UserdataModel.csCRB_CharSheet_FK" FromRole="CharacterSheet" ToRole="csCorpRolesAtBase" />
+          <NavigationProperty Name="csCorpRolesAtHQ" Relationship="UserdataModel.csCRH_CharSheet_FK" FromRole="CharacterSheet" ToRole="csCorpRolesAtHQ" />
+          <NavigationProperty Name="csCorpRolesAtOther" Relationship="UserdataModel.csCRO_CharSheet_FK" FromRole="CharacterSheet" ToRole="csCorpRolesAtOther" />
+          <NavigationProperty Name="csCorpTitles" Relationship="UserdataModel.csCT_CharSheet_FK" FromRole="CharacterSheet" ToRole="csCorpTitles" />
+          <NavigationProperty Name="csSkills" Relationship="UserdataModel.csSkills_CharSheet_FK" FromRole="CharacterSheet" ToRole="csSkills" />
+        </EntityType>
+        <EntityType Name="csCertificates">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="certificateID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CharacterSheet" Relationship="UserdataModel.csCert_CharSheet_FK" FromRole="csCertificates" ToRole="CharacterSheet" />
+        </EntityType>
+        <EntityType Name="csCorpRoles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="roleID" Type="Int32" Nullable="false" />
+          <Property Name="roleName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="CharacterSheet" Relationship="UserdataModel.csCR_CharSheet_FK" FromRole="csCorpRoles" ToRole="CharacterSheet" />
+        </EntityType>
+        <EntityType Name="csCorpRolesAtBase">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="roleID" Type="Int32" Nullable="false" />
+          <Property Name="roleName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="CharacterSheet" Relationship="UserdataModel.csCRB_CharSheet_FK" FromRole="csCorpRolesAtBase" ToRole="CharacterSheet" />
+        </EntityType>
+        <EntityType Name="csCorpRolesAtHQ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="roleID" Type="Int32" Nullable="false" />
+          <Property Name="roleName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="CharacterSheet" Relationship="UserdataModel.csCRH_CharSheet_FK" FromRole="csCorpRolesAtHQ" ToRole="CharacterSheet" />
+        </EntityType>
+        <EntityType Name="csCorpRolesAtOther">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="roleID" Type="Int32" Nullable="false" />
+          <Property Name="roleName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="CharacterSheet" Relationship="UserdataModel.csCRO_CharSheet_FK" FromRole="csCorpRolesAtOther" ToRole="CharacterSheet" />
+        </EntityType>
+        <EntityType Name="csCorpTitles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="titleID" Type="Int32" Nullable="false" />
+          <Property Name="titleName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="CharacterSheet" Relationship="UserdataModel.csCT_CharSheet_FK" FromRole="csCorpTitles" ToRole="CharacterSheet" />
+        </EntityType>
+        <EntityType Name="csSkills">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="typeID" Type="Int64" Nullable="false" />
+          <Property Name="skillpoints" Type="Int64" Nullable="false" />
+          <Property Name="level" Type="Int16" Nullable="false" />
+          <Property Name="unpublished" Type="Boolean" />
+          <NavigationProperty Name="CharacterSheet" Relationship="UserdataModel.csSkills_CharSheet_FK" FromRole="csSkills" ToRole="CharacterSheet" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="apiKey" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="fullKey" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Characters" Relationship="UserdataModel.userID_FK" FromRole="UserInfo" ToRole="Characters" />
+        </EntityType>
+        <Association Name="Chars_CharSheet_FK">
+          <End Role="Characters" Type="UserdataModel.Characters" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CharacterSheet" Type="UserdataModel.CharacterSheet" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Characters">
+              <PropertyRef Name="characterID" />
+            </Principal>
+            <Dependent Role="CharacterSheet">
+              <PropertyRef Name="characterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="userID_FK">
+          <End Role="UserInfo" Type="UserdataModel.UserInfo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Characters" Type="UserdataModel.Characters" Multiplicity="*" />
+        </Association>
+        <Association Name="csCert_CharSheet_FK">
+          <End Role="CharacterSheet" Type="UserdataModel.CharacterSheet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="csCertificates" Type="UserdataModel.csCertificates" Multiplicity="*" />
+        </Association>
+        <Association Name="csCR_CharSheet_FK">
+          <End Role="CharacterSheet" Type="UserdataModel.CharacterSheet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="csCorpRoles" Type="UserdataModel.csCorpRoles" Multiplicity="*" />
+        </Association>
+        <Association Name="csCRB_CharSheet_FK">
+          <End Role="CharacterSheet" Type="UserdataModel.CharacterSheet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="csCorpRolesAtBase" Type="UserdataModel.csCorpRolesAtBase" Multiplicity="*" />
+        </Association>
+        <Association Name="csCRH_CharSheet_FK">
+          <End Role="CharacterSheet" Type="UserdataModel.CharacterSheet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="csCorpRolesAtHQ" Type="UserdataModel.csCorpRolesAtHQ" Multiplicity="*" />
+        </Association>
+        <Association Name="csCRO_CharSheet_FK">
+          <End Role="CharacterSheet" Type="UserdataModel.CharacterSheet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="csCorpRolesAtOther" Type="UserdataModel.csCorpRolesAtOther" Multiplicity="*" />
+        </Association>
+        <Association Name="csCT_CharSheet_FK">
+          <End Role="CharacterSheet" Type="UserdataModel.CharacterSheet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="csCorpTitles" Type="UserdataModel.csCorpTitles" Multiplicity="*" />
+        </Association>
+        <Association Name="csSkills_CharSheet_FK">
+          <End Role="CharacterSheet" Type="UserdataModel.CharacterSheet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="csSkills" Type="UserdataModel.csSkills" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="UserdataModelStoreContainer" CdmEntityContainer="UserdataEntities">
+          <EntitySetMapping Name="Characters">
+            <EntityTypeMapping TypeName="IsTypeOf(UserdataModel.Characters)">
+              <MappingFragment StoreEntitySet="Characters">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="characterID" ColumnName="characterID" />
+                <ScalarProperty Name="corporationName" ColumnName="corporationName" />
+                <ScalarProperty Name="corporationID" ColumnName="corporationID" />
+                <ScalarProperty Name="cachedUntil" ColumnName="cachedUntil" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterSheet">
+            <EntityTypeMapping TypeName="IsTypeOf(UserdataModel.CharacterSheet)">
+              <MappingFragment StoreEntitySet="CharacterSheet">
+                <ScalarProperty Name="characterID" ColumnName="characterID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="race" ColumnName="race" />
+                <ScalarProperty Name="bloodLine" ColumnName="bloodLine" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="corporationName" ColumnName="corporationName" />
+                <ScalarProperty Name="corporationID" ColumnName="corporationID" />
+                <ScalarProperty Name="cloneName" ColumnName="cloneName" />
+                <ScalarProperty Name="cloneSkillPoints" ColumnName="cloneSkillPoints" />
+                <ScalarProperty Name="balance" ColumnName="balance" />
+                <ScalarProperty Name="intelligence" ColumnName="intelligence" />
+                <ScalarProperty Name="memory" ColumnName="memory" />
+                <ScalarProperty Name="charisma" ColumnName="charisma" />
+                <ScalarProperty Name="perception" ColumnName="perception" />
+                <ScalarProperty Name="willpower" ColumnName="willpower" />
+                <ScalarProperty Name="cachedUntil" ColumnName="cachedUntil" />
+                <ScalarProperty Name="maName" ColumnName="maName" />
+                <ScalarProperty Name="maValue" ColumnName="maValue" />
+                <ScalarProperty Name="iaName" ColumnName="iaName" />
+                <ScalarProperty Name="iaValue" ColumnName="iaValue" />
+                <ScalarProperty Name="paName" ColumnName="paName" />
+                <ScalarProperty Name="paValue" ColumnName="paValue" />
+                <ScalarProperty Name="caName" ColumnName="caName" />
+                <ScalarProperty Name="caValue" ColumnName="caValue" />
+                <ScalarProperty Name="waName" ColumnName="waName" />
+                <ScalarProperty Name="waValue" ColumnName="waValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="csCertificates">
+            <EntityTypeMapping TypeName="IsTypeOf(UserdataModel.csCertificates)">
+              <MappingFragment StoreEntitySet="csCertificates">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="certificateID" ColumnName="certificateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="csCorpRoles">
+            <EntityTypeMapping TypeName="IsTypeOf(UserdataModel.csCorpRoles)">
+              <MappingFragment StoreEntitySet="csCorpRoles">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="roleID" ColumnName="roleID" />
+                <ScalarProperty Name="roleName" ColumnName="roleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="csCorpRolesAtBase">
+            <EntityTypeMapping TypeName="IsTypeOf(UserdataModel.csCorpRolesAtBase)">
+              <MappingFragment StoreEntitySet="csCorpRolesAtBase">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="roleID" ColumnName="roleID" />
+                <ScalarProperty Name="roleName" ColumnName="roleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="csCorpRolesAtHQ">
+            <EntityTypeMapping TypeName="IsTypeOf(UserdataModel.csCorpRolesAtHQ)">
+              <MappingFragment StoreEntitySet="csCorpRolesAtHQ">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="roleID" ColumnName="roleID" />
+                <ScalarProperty Name="roleName" ColumnName="roleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="csCorpRolesAtOther">
+            <EntityTypeMapping TypeName="IsTypeOf(UserdataModel.csCorpRolesAtOther)">
+              <MappingFragment StoreEntitySet="csCorpRolesAtOther">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="roleID" ColumnName="roleID" />
+                <ScalarProperty Name="roleName" ColumnName="roleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="csCorpTitles">
+            <EntityTypeMapping TypeName="IsTypeOf(UserdataModel.csCorpTitles)">
+              <MappingFragment StoreEntitySet="csCorpTitles">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="titleID" ColumnName="titleID" />
+                <ScalarProperty Name="titleName" ColumnName="titleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="csSkills">
+            <EntityTypeMapping TypeName="IsTypeOf(UserdataModel.csSkills)">
+              <MappingFragment StoreEntitySet="csSkills">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+                <ScalarProperty Name="skillpoints" ColumnName="skillpoints" />
+                <ScalarProperty Name="level" ColumnName="level" />
+                <ScalarProperty Name="unpublished" ColumnName="unpublished" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInfo">
+            <EntityTypeMapping TypeName="IsTypeOf(UserdataModel.UserInfo)">
+              <MappingFragment StoreEntitySet="UserInfo">
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="apiKey" ColumnName="apiKey" />
+                <ScalarProperty Name="fullKey" ColumnName="fullKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Chars_CharSheet_FK" TypeName="UserdataModel.Chars_CharSheet_FK" StoreEntitySet="CharacterSheet">
+            <EndProperty Name="Characters">
+              <ScalarProperty Name="characterID" ColumnName="characterID" />
+            </EndProperty>
+            <EndProperty Name="CharacterSheet">
+              <ScalarProperty Name="characterID" ColumnName="characterID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="userID_FK" TypeName="UserdataModel.userID_FK" StoreEntitySet="Characters">
+            <EndProperty Name="UserInfo">
+              <ScalarProperty Name="userID" ColumnName="userID" />
+            </EndProperty>
+            <EndProperty Name="Characters">
+              <ScalarProperty Name="characterID" ColumnName="characterID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="csCert_CharSheet_FK" TypeName="UserdataModel.csCert_CharSheet_FK" StoreEntitySet="csCertificates">
+            <EndProperty Name="CharacterSheet">
+              <ScalarProperty Name="characterID" ColumnName="characterID" />
+            </EndProperty>
+            <EndProperty Name="csCertificates">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="csCR_CharSheet_FK" TypeName="UserdataModel.csCR_CharSheet_FK" StoreEntitySet="csCorpRoles">
+            <EndProperty Name="CharacterSheet">
+              <ScalarProperty Name="characterID" ColumnName="characterID" />
+            </EndProperty>
+            <EndProperty Name="csCorpRoles">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="csCRB_CharSheet_FK" TypeName="UserdataModel.csCRB_CharSheet_FK" StoreEntitySet="csCorpRolesAtBase">
+            <EndProperty Name="CharacterSheet">
+              <ScalarProperty Name="characterID" ColumnName="characterID" />
+            </EndProperty>
+            <EndProperty Name="csCorpRolesAtBase">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="csCRH_CharSheet_FK" TypeName="UserdataModel.csCRH_CharSheet_FK" StoreEntitySet="csCorpRolesAtHQ">
+            <EndProperty Name="CharacterSheet">
+              <ScalarProperty Name="characterID" ColumnName="characterID" />
+            </EndProperty>
+            <EndProperty Name="csCorpRolesAtHQ">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="csCRO_CharSheet_FK" TypeName="UserdataModel.csCRO_CharSheet_FK" StoreEntitySet="csCorpRolesAtOther">
+            <EndProperty Name="CharacterSheet">
+              <ScalarProperty Name="characterID" ColumnName="characterID" />
+            </EndProperty>
+            <EndProperty Name="csCorpRolesAtOther">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="csCT_CharSheet_FK" TypeName="UserdataModel.csCT_CharSheet_FK" StoreEntitySet="csCorpTitles">
+            <EndProperty Name="CharacterSheet">
+              <ScalarProperty Name="characterID" ColumnName="characterID" />
+            </EndProperty>
+            <EndProperty Name="csCorpTitles">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="csSkills_CharSheet_FK" TypeName="UserdataModel.csSkills_CharSheet_FK" StoreEntitySet="csSkills">
+            <EndProperty Name="CharacterSheet">
+              <ScalarProperty Name="characterID" ColumnName="characterID" />
+            </EndProperty>
+            <EndProperty Name="csSkills">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Userdata">
+        <EntityTypeShape EntityType="UserdataModel.Characters" Width="1.5" PointX="3" PointY="9" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="UserdataModel.CharacterSheet" Width="1.5" PointX="5.25" PointY="6.5" Height="7.5570279947916665" IsExpanded="true" />
+        <EntityTypeShape EntityType="UserdataModel.csCertificates" Width="1.5" PointX="7.5" PointY="1.625" Height="1.5956835937499998" IsExpanded="true" />
+        <EntityTypeShape EntityType="UserdataModel.csCorpRoles" Width="1.5" PointX="7.5" PointY="4" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="UserdataModel.csCorpRolesAtBase" Width="1.5" PointX="7.5" PointY="6.625" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="UserdataModel.csCorpRolesAtHQ" Width="1.5" PointX="7.5" PointY="9.125" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="UserdataModel.csCorpRolesAtOther" Width="1.5" PointX="7.5" PointY="11.625" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="UserdataModel.csCorpTitles" Width="1.5" PointX="7.5" PointY="14.125" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="UserdataModel.csSkills" Width="1.5" PointX="7.5" PointY="16.75" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="UserdataModel.UserInfo" Width="1.5" PointX="0.75" PointY="9.375" Height="1.7879850260416674" IsExpanded="true" />
+        <AssociationConnector Association="UserdataModel.Chars_CharSheet_FK" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="10.278595377604166" />
+          <ConnectorPoint PointX="5.25" PointY="10.278595377604166" /></AssociationConnector>
+        <AssociationConnector Association="UserdataModel.userID_FK" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="10.268992513020834" />
+          <ConnectorPoint PointX="3" PointY="10.268992513020834" /></AssociationConnector>
+        <AssociationConnector Association="UserdataModel.csCert_CharSheet_FK" ManuallyRouted="false">
+          <ConnectorPoint PointX="6" PointY="6.5" />
+          <ConnectorPoint PointX="6" PointY="2.422841796875" />
+          <ConnectorPoint PointX="7.5" PointY="2.422841796875" /></AssociationConnector>
+        <AssociationConnector Association="UserdataModel.csCR_CharSheet_FK" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.4062525" PointY="6.5" />
+          <ConnectorPoint PointX="6.4062525" PointY="4.8939925130208337" />
+          <ConnectorPoint PointX="7.5" PointY="4.8939925130208337" /></AssociationConnector>
+        <AssociationConnector Association="UserdataModel.csCRB_CharSheet_FK" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="7.5189925130208337" />
+          <ConnectorPoint PointX="7.5" PointY="7.5189925130208337" /></AssociationConnector>
+        <AssociationConnector Association="UserdataModel.csCRH_CharSheet_FK" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="10.018992513020834" />
+          <ConnectorPoint PointX="7.5" PointY="10.018992513020834" /></AssociationConnector>
+        <AssociationConnector Association="UserdataModel.csCRO_CharSheet_FK" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="12.518992513020834" />
+          <ConnectorPoint PointX="7.5" PointY="12.518992513020834" /></AssociationConnector>
+        <AssociationConnector Association="UserdataModel.csCT_CharSheet_FK" ManuallyRouted="false">
+          <ConnectorPoint PointX="6" PointY="14.057027994791667" />
+          <ConnectorPoint PointX="6" PointY="15.018992513020834" />
+          <ConnectorPoint PointX="6.3229191666666669" PointY="15.018992513020834" />
+          <ConnectorPoint PointX="6.4895858333333329" PointY="15.018992513020834" />
+          <ConnectorPoint PointX="7.5" PointY="15.018992513020834" /></AssociationConnector>
+        <AssociationConnector Association="UserdataModel.csSkills_CharSheet_FK" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.4062525" PointY="14.057027994791667" />
+          <ConnectorPoint PointX="6.4062525" PointY="17.8362939453125" />
+          <ConnectorPoint PointX="7.5" PointY="17.8362939453125" /></AssociationConnector></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

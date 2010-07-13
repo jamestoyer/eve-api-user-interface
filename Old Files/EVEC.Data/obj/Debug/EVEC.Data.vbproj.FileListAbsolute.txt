@@ -1,0 +1,22 @@
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\bin\Debug\EVEC.Data.dll
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\bin\Debug\EVEC.Data.pdb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\bin\Debug\EVEC.Data.xml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\obj\Debug\ResolveAssemblyReference.cache
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\obj\Debug\EVEC.Data.frmLocateDatabase.resources
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\obj\Debug\EVEC.Data.Resources.resources
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\obj\Debug\EVEC.Data.vbproj.GenerateResource.Cache
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\obj\Debug\EVEC.Data.dll
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\obj\Debug\EVEC.Data.xml
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\obj\Debug\EVEC.Data.pdb
+E:\Users Documents\Documents\Software Projects\Uncoded Projects\Eve Command\EVEC.Data\bin\Debug\EVEC.Data.dll.config
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\bin\Debug\EVEC.Data.dll.config
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\bin\Debug\EVEC.Data.dll
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\bin\Debug\EVEC.Data.pdb
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\bin\Debug\EVEC.Data.xml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\obj\Debug\ResolveAssemblyReference.cache
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\obj\Debug\EVEC.Data.frmLocateDatabase.resources
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\obj\Debug\EVEC.Data.Resources.resources
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\obj\Debug\EVEC.Data.vbproj.GenerateResource.Cache
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\obj\Debug\EVEC.Data.dll
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\obj\Debug\EVEC.Data.xml
+D:\Documents\Software Development\ToyerTechnologies\EVE Command\EVEC.Data\obj\Debug\EVEC.Data.pdb

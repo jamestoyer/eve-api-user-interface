@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UModel version="4">
+	<Model>
+		<Package uuid="00000001-7510-11d9-86f2-000476a22f44" name="Root">
+			<packagedElement>
+				<Package uuid="00000003-7510-11d9-86f2-000476a22f44" name="Component View" visibility="public"/>
+			</packagedElement>
+		</Package>
+	</Model>
+	<Diagrams>
+		<RootElement uuid="00000002-7510-11d9-86f2-000476a22f44"/>
+	</Diagrams>
+</UModel>
