@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="rssFeedsModelStoreContainer" CdmEntityContainer="rssFeedsEntities">
+    <EntitySetMapping Name="channels">
+      <EntityTypeMapping TypeName="rssFeedsModel.channel">
+        <MappingFragment StoreEntitySet="channel">
+          <ScalarProperty Name="versionId" ColumnName="versionId" />
+          <ScalarProperty Name="definerId" ColumnName="definerId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="lastUpdate" ColumnName="lastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="newsItems">
+      <EntityTypeMapping TypeName="rssFeedsModel.newsItem">
+        <MappingFragment StoreEntitySet="newsItem">
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="getDate" ColumnName="getDate" />
+          <ScalarProperty Name="channelId" ColumnName="channelId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="definers">
+      <EntityTypeMapping TypeName="rssFeedsModel.definer">
+        <MappingFragment StoreEntitySet="definer">
+          <ScalarProperty Name="names" ColumnName="names" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="versions">
+      <EntityTypeMapping TypeName="rssFeedsModel.version">
+        <MappingFragment StoreEntitySet="version">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

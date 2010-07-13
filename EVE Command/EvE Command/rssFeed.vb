@@ -103,4 +103,32 @@ Public Class rssFeed
 
     End Function
 
+    Public Shared Sub refreshFeeds()
+        Try
+            Dim channels As New rssFeedsEntities
+
+            For Each c In channels.channels
+                Dim currentNewsItems As New List(Of newsItem)
+
+                ' Get the news items for this feed
+                currentNewsItems = getNewsFeed(c.url, c.id)
+
+                ' Check for new news
+                Dim newsChannel As channel = c
+                Dim newNews = From n In currentNewsItems
+                              Where newsChannel.title <> n.title
+                              Select n
+
+                ' Insert new news into the database
+                For Each newsItem In newNews
+                    channels.newsItems.AddObject(newsItem)
+                Next
+
+                channels.SaveChanges()
+            Next
+        Catch ex As Exception
+            ' TODO: Make this informative
+            MessageBox.Show("oops and error!")
+        End Try
+    End Sub
 End Class

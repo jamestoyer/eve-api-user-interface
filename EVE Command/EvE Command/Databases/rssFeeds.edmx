@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="rssFeedsModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.3.5" ProviderManifestToken="3.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="rssFeedsModelStoreContainer">
+          <EntitySet Name="channel" EntityType="rssFeedsModel.Store.channel" store:Type="Tables" />
+          <EntitySet Name="definer" EntityType="rssFeedsModel.Store.definer" store:Type="Tables" />
+          <EntitySet Name="newsItem" EntityType="rssFeedsModel.Store.newsItem" store:Type="Tables" />
+          <EntitySet Name="version" EntityType="rssFeedsModel.Store.version" store:Type="Tables" />
+          <AssociationSet Name="fk_channel_newsItem" Association="rssFeedsModel.Store.fk_channel_newsItem">
+            <End Role="channel" EntitySet="channel" />
+            <End Role="newsItem" EntitySet="newsItem" />
+          </AssociationSet>
+          <AssociationSet Name="fk_definer_channel" Association="rssFeedsModel.Store.fk_definer_channel">
+            <End Role="definer" EntitySet="definer" />
+            <End Role="channel" EntitySet="channel" />
+          </AssociationSet>
+          <AssociationSet Name="fk_version_channel" Association="rssFeedsModel.Store.fk_version_channel">
+            <End Role="version" EntitySet="version" />
+            <End Role="channel" EntitySet="channel" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="channel">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="url" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="lastUpdate" Type="datetime" Nullable="false" />
+          <Property Name="definerId" Type="int" Nullable="false" />
+          <Property Name="versionId" Type="int" Nullable="false" />
+          <Property Name="test" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="definer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="names" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="newsItem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="content" Type="ntext" Nullable="false" />
+          <Property Name="getDate" Type="datetime" Nullable="false" />
+          <Property Name="channelId" Type="int" Nullable="false" />
+          <Property Name="link" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="version">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <Association Name="fk_channel_newsItem">
+          <End Role="channel" Type="rssFeedsModel.Store.channel" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="newsItem" Type="rssFeedsModel.Store.newsItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="channel">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="newsItem">
+              <PropertyRef Name="channelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_definer_channel">
+          <End Role="definer" Type="rssFeedsModel.Store.definer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="channel" Type="rssFeedsModel.Store.channel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="definer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="channel">
+              <PropertyRef Name="definerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_version_channel">
+          <End Role="version" Type="rssFeedsModel.Store.version" Multiplicity="1" />
+          <End Role="channel" Type="rssFeedsModel.Store.channel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="version">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="channel">
+              <PropertyRef Name="versionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="rssFeedsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="rssFeedsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="channels" EntityType="rssFeedsModel.channel" />
+          <EntitySet Name="newsItems" EntityType="rssFeedsModel.newsItem" />
+          <AssociationSet Name="fk_channel_newsItem" Association="rssFeedsModel.fk_channel_newsItem">
+            <End Role="channel" EntitySet="channels" />
+            <End Role="newsItem" EntitySet="newsItems" />
+          </AssociationSet>
+          <EntitySet Name="definers" EntityType="rssFeedsModel.definer" />
+          <EntitySet Name="versions" EntityType="rssFeedsModel.version" />
+          <AssociationSet Name="fk_definer_channel" Association="rssFeedsModel.fk_definer_channel">
+            <End Role="definer" EntitySet="definers" />
+            <End Role="channel" EntitySet="channels" />
+          </AssociationSet>
+          <AssociationSet Name="fk_version_channel" Association="rssFeedsModel.fk_version_channel">
+            <End Role="version" EntitySet="versions" />
+            <End Role="channel" EntitySet="channels" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="channel">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="url" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="lastUpdate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="newsItems" Relationship="rssFeedsModel.fk_channel_newsItem" FromRole="channel" ToRole="newsItem" />
+          <Property Type="Int32" Name="definerId" Nullable="false" />
+          <Property Type="Int32" Name="versionId" Nullable="false" />
+          <NavigationProperty Name="definer" Relationship="rssFeedsModel.fk_definer_channel" FromRole="channel" ToRole="definer" />
+          <NavigationProperty Name="version" Relationship="rssFeedsModel.fk_version_channel" FromRole="channel" ToRole="version" />
+          <Property Type="Guid" Name="test" Nullable="false" />
+        </EntityType>
+        <EntityType Name="newsItem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="content" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="getDate" Type="DateTime" Nullable="false" />
+          <Property Name="channelId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="channel" Relationship="rssFeedsModel.fk_channel_newsItem" FromRole="newsItem" ToRole="channel" />
+          <Property Type="String" Name="link" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="fk_channel_newsItem">
+          <End Role="channel" Type="rssFeedsModel.channel" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="newsItem" Type="rssFeedsModel.newsItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="channel">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="newsItem">
+              <PropertyRef Name="channelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="definer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="names" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="channels" Relationship="rssFeedsModel.fk_definer_channel" FromRole="definer" ToRole="channel" />
+        </EntityType>
+        <EntityType Name="version">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="channels" Relationship="rssFeedsModel.fk_version_channel" FromRole="version" ToRole="channel" />
+        </EntityType>
+        <Association Name="fk_definer_channel">
+          <End Type="rssFeedsModel.definer" Role="definer" Multiplicity="1" />
+          <End Type="rssFeedsModel.channel" Role="channel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="definer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="channel">
+              <PropertyRef Name="definerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_version_channel">
+          <End Type="rssFeedsModel.version" Role="version" Multiplicity="1" />
+          <End Type="rssFeedsModel.channel" Role="channel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="version">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="channel">
+              <PropertyRef Name="versionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="rssFeedsModelStoreContainer" CdmEntityContainer="rssFeedsEntities">
+          <EntitySetMapping Name="channels"><EntityTypeMapping TypeName="rssFeedsModel.channel"><MappingFragment StoreEntitySet="channel">
+            <ScalarProperty Name="test" ColumnName="test" />
+                <ScalarProperty Name="versionId" ColumnName="versionId" />
+                <ScalarProperty Name="definerId" ColumnName="definerId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="title" ColumnName="title" />
+            <ScalarProperty Name="url" ColumnName="url" />
+            <ScalarProperty Name="lastUpdate" ColumnName="lastUpdate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="newsItems"><EntityTypeMapping TypeName="rssFeedsModel.newsItem"><MappingFragment StoreEntitySet="newsItem">
+            <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="title" ColumnName="title" />
+            <ScalarProperty Name="content" ColumnName="content" />
+            <ScalarProperty Name="getDate" ColumnName="getDate" />
+            <ScalarProperty Name="channelId" ColumnName="channelId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="definers">
+            <EntityTypeMapping TypeName="rssFeedsModel.definer">
+              <MappingFragment StoreEntitySet="definer">
+                <ScalarProperty Name="names" ColumnName="names" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="versions">
+            <EntityTypeMapping TypeName="rssFeedsModel.version">
+              <MappingFragment StoreEntitySet="version">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="rssFeeds">
+        <EntityTypeShape EntityType="rssFeedsModel.channel" Width="1.5" PointX="3" PointY="1" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="rssFeedsModel.newsItem" Width="1.5" PointX="5.25" PointY="1.125" Height="2.3648893229166674" IsExpanded="true" />
+        <AssociationConnector Association="rssFeedsModel.fk_channel_newsItem" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.3074446614583337" />
+          <ConnectorPoint PointX="5.25" PointY="2.3074446614583337" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="rssFeedsModel.definer" Width="1.5" PointX="0.75" PointY="1.5" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="rssFeedsModel.version" Width="1.5" PointX="0.75" PointY="5.5" Height="1.5956835937499996" />
+        <AssociationConnector Association="rssFeedsModel.fk_definer_channel" >
+          <ConnectorPoint PointX="2.25" PointY="2.297841796875" />
+          <ConnectorPoint PointX="3" PointY="2.297841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="rssFeedsModel.fk_version_channel" >
+          <ConnectorPoint PointX="2.25" PointY="6.297841796875" />
+          <ConnectorPoint PointX="3.75" PointY="6.297841796875" />
+          <ConnectorPoint PointX="3.75" PointY="3.7494921874999996" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

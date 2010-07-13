@@ -1,0 +1,265 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+EvECommand
+</name>
+</assembly>
+<members>
+<member name="M:EvE_Command.Application.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="M:EvE_Command.Application.Main">
+	<summary>
+Application Entry Point.
+</summary>
+</member><member name="T:EvE_Command.Application">
+	<summary>
+Application
+</summary>
+</member><member name="M:EvE_Command.MainWindow.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:EvE_Command.MainWindow">
+	<summary>
+MainWindow
+</summary>
+</member><member name="P:EvE_Command.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:EvE_Command.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:EvE_Command.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:EvE_Command.rssFeedsEntities.#ctor">
+	<summary>
+ Initializes a new rssFeedsEntities object using the connection string found in the 'rssFeedsEntities' section of the application configuration file.
+ </summary>
+</member><member name="M:EvE_Command.rssFeedsEntities.#ctor(System.String)">
+	<summary>
+ Initialize a new rssFeedsEntities object.
+ </summary>
+</member><member name="M:EvE_Command.rssFeedsEntities.#ctor(System.Data.EntityClient.EntityConnection)">
+	<summary>
+ Initialize a new rssFeedsEntities object.
+ </summary>
+</member><member name="P:EvE_Command.rssFeedsEntities.channels">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.rssFeedsEntities.newsItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.rssFeedsEntities.definers">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.rssFeedsEntities.versions">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:EvE_Command.rssFeedsEntities.AddTochannels(EvE_Command.channel)">
+	<summary>
+ Deprecated Method for adding a new object to the channels EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:EvE_Command.rssFeedsEntities.AddTonewsItems(EvE_Command.newsItem)">
+	<summary>
+ Deprecated Method for adding a new object to the newsItems EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:EvE_Command.rssFeedsEntities.AddTodefiners(EvE_Command.definer)">
+	<summary>
+ Deprecated Method for adding a new object to the definers EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:EvE_Command.rssFeedsEntities.AddToversions(EvE_Command.version)">
+	<summary>
+ Deprecated Method for adding a new object to the versions EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="T:EvE_Command.rssFeedsEntities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:EvE_Command.channel.Createchannel(System.Int32,System.String,System.String,System.DateTime,System.Int32,System.Int32)">
+	<summary>
+ Create a new channel object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+	<param name="title">Initial value of the title property.</param>
+	<param name="url">Initial value of the url property.</param>
+	<param name="lastUpdate">Initial value of the lastUpdate property.</param>
+	<param name="definerId">Initial value of the definerId property.</param>
+	<param name="versionId">Initial value of the versionId property.</param>
+</member><member name="P:EvE_Command.channel.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.channel.title">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.channel.url">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.channel.lastUpdate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.channel.definerId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.channel.versionId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.channel.newsItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.channel.definer">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.channel.definerReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.channel.version">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.channel.versionReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:EvE_Command.channel">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:EvE_Command.definer.Createdefiner(System.Int32,System.String)">
+	<summary>
+ Create a new definer object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+	<param name="names">Initial value of the names property.</param>
+</member><member name="P:EvE_Command.definer.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.definer.names">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.definer.channels">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:EvE_Command.definer">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:EvE_Command.newsItem.CreatenewsItem(System.Int32,System.String,System.String,System.DateTime,System.Int32)">
+	<summary>
+ Create a new newsItem object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+	<param name="title">Initial value of the title property.</param>
+	<param name="content">Initial value of the content property.</param>
+	<param name="getDate">Initial value of the getDate property.</param>
+	<param name="channelId">Initial value of the channelId property.</param>
+</member><member name="P:EvE_Command.newsItem.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.newsItem.title">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.newsItem.content">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.newsItem.getDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.newsItem.channelId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.newsItem.link">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.newsItem.channel">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.newsItem.channelReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:EvE_Command.newsItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:EvE_Command.version.Createversion(System.Int32,System.String)">
+	<summary>
+ Create a new version object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+	<param name="name">Initial value of the name property.</param>
+</member><member name="P:EvE_Command.version.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.version.name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.version.channels">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:EvE_Command.version">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.My.MyWpfExtension.Application">
+	<summary>
+ Returns the application object for the running application
+ </summary>
+</member><member name="P:EvE_Command.My.MyWpfExtension.Computer">
+	<summary>
+ Returns information about the host computer.
+ </summary>
+</member><member name="P:EvE_Command.My.MyWpfExtension.User">
+	<summary>
+ Returns information for the current user.  If you wish to run the application with the current 
+ Windows user credentials, call My.User.InitializeWithWindowsUser().
+ </summary>
+</member><member name="P:EvE_Command.My.MyWpfExtension.Log">
+	<summary>
+ Returns the application log. The listeners can be configured by the application's configuration file.
+ </summary>
+</member><member name="P:EvE_Command.My.MyWpfExtension.Windows">
+	<summary>
+ Returns the collection of Windows defined in the project.
+ </summary>
+</member><member name="T:EvE_Command.My.MyWpfExtension">
+	<summary>
+ Module used to define the properties that are available in the My Namespace for WPF
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

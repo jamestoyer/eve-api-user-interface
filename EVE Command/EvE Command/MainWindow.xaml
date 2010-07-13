@@ -3,6 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Button Content='Button' Height='23' HorizontalAlignment='Left' Margin='196,145,0,0' Name='Button1' VerticalAlignment='Top' Width='75' />
+        <TextBox Height='48' HorizontalAlignment='Left' Margin='40,198,0,0' Name='url' VerticalAlignment='Top' Width='384' />
+        <Button Content='Update Feed' Height='23' HorizontalAlignment='Left' Margin='332,64,0,0' Name='Button2' VerticalAlignment='Top' Width='75' />
     </Grid>
 </Window>
