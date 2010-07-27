@@ -3,11 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EvE Command", "EvE Command\EvE Command.vbproj", "{02C6A2BC-1475-4258-AE85-F5E5A4E5B91C}"
 EndProject
-Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "EvE Command Installer", "EvE Command Installer\EvE Command Installer.isproj", "{11978FF8-D256-4439-8998-AC7C931DC7BF}"
-	ProjectSection(ProjectDependencies) = postProject
-		{02C6A2BC-1475-4258-AE85-F5E5A4E5B91C} = {02C6A2BC-1475-4258-AE85-F5E5A4E5B91C}
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -31,16 +26,6 @@ Global
 		{02C6A2BC-1475-4258-AE85-F5E5A4E5B91C}.Release|x86.Build.0 = Release|x86
 		{02C6A2BC-1475-4258-AE85-F5E5A4E5B91C}.SingleImage|x86.ActiveCfg = Release|x86
 		{02C6A2BC-1475-4258-AE85-F5E5A4E5B91C}.SingleImage|x86.Build.0 = Release|x86
-		{11978FF8-D256-4439-8998-AC7C931DC7BF}.CD_ROM|x86.ActiveCfg = CD_ROM
-		{11978FF8-D256-4439-8998-AC7C931DC7BF}.CD_ROM|x86.Build.0 = CD_ROM
-		{11978FF8-D256-4439-8998-AC7C931DC7BF}.Debug|x86.ActiveCfg = DVD-5
-		{11978FF8-D256-4439-8998-AC7C931DC7BF}.Debug|x86.Build.0 = DVD-5
-		{11978FF8-D256-4439-8998-AC7C931DC7BF}.DVD-5|x86.ActiveCfg = DVD-5
-		{11978FF8-D256-4439-8998-AC7C931DC7BF}.DVD-5|x86.Build.0 = DVD-5
-		{11978FF8-D256-4439-8998-AC7C931DC7BF}.Release|x86.ActiveCfg = SingleImage
-		{11978FF8-D256-4439-8998-AC7C931DC7BF}.Release|x86.Build.0 = SingleImage
-		{11978FF8-D256-4439-8998-AC7C931DC7BF}.SingleImage|x86.ActiveCfg = SingleImage
-		{11978FF8-D256-4439-8998-AC7C931DC7BF}.SingleImage|x86.Build.0 = SingleImage
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

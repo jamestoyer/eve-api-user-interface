@@ -51,7 +51,7 @@ MainWindow
 	<summary>
  Initialize a new rssFeedsEntities object.
  </summary>
-</member><member name="P:EvE_Command.rssFeedsEntities.channels">
+</member><member name="P:EvE_Command.rssFeedsEntities.feeds">
 	<summary>
  No Metadata Documentation available.
  </summary>
@@ -59,123 +59,62 @@ MainWindow
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.rssFeedsEntities.definers">
+</member><member name="M:EvE_Command.rssFeedsEntities.AddTofeeds(EvE_Command.feed)">
 	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="P:EvE_Command.rssFeedsEntities.versions">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="M:EvE_Command.rssFeedsEntities.AddTochannels(EvE_Command.channel)">
-	<summary>
- Deprecated Method for adding a new object to the channels EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ Deprecated Method for adding a new object to the feeds EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
  </summary>
 </member><member name="M:EvE_Command.rssFeedsEntities.AddTonewsItems(EvE_Command.newsItem)">
 	<summary>
  Deprecated Method for adding a new object to the newsItems EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
  </summary>
-</member><member name="M:EvE_Command.rssFeedsEntities.AddTodefiners(EvE_Command.definer)">
-	<summary>
- Deprecated Method for adding a new object to the definers EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
- </summary>
-</member><member name="M:EvE_Command.rssFeedsEntities.AddToversions(EvE_Command.version)">
-	<summary>
- Deprecated Method for adding a new object to the versions EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
- </summary>
 </member><member name="T:EvE_Command.rssFeedsEntities">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="M:EvE_Command.channel.Createchannel(System.Int32,System.String,System.String,System.DateTime,System.Int32,System.Int32)">
+</member><member name="M:EvE_Command.feed.Createfeed(System.Guid,System.String,System.DateTime)">
 	<summary>
- Create a new channel object.
+ Create a new feed object.
  </summary>
 	<param name="id">Initial value of the id property.</param>
-	<param name="title">Initial value of the title property.</param>
-	<param name="url">Initial value of the url property.</param>
-	<param name="lastUpdate">Initial value of the lastUpdate property.</param>
-	<param name="definerId">Initial value of the definerId property.</param>
-	<param name="versionId">Initial value of the versionId property.</param>
-</member><member name="P:EvE_Command.channel.id">
+	<param name="name">Initial value of the name property.</param>
+	<param name="lastUpdated">Initial value of the lastUpdated property.</param>
+</member><member name="P:EvE_Command.feed.id">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.channel.title">
+</member><member name="P:EvE_Command.feed.name">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.channel.url">
+</member><member name="P:EvE_Command.feed.link">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.channel.lastUpdate">
+</member><member name="P:EvE_Command.feed.description">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.channel.definerId">
+</member><member name="P:EvE_Command.feed.lastUpdated">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.channel.versionId">
+</member><member name="P:EvE_Command.feed.items">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.channel.newsItems">
+</member><member name="T:EvE_Command.feed">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.channel.definer">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="P:EvE_Command.channel.definerReference">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="P:EvE_Command.channel.version">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="P:EvE_Command.channel.versionReference">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="T:EvE_Command.channel">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="M:EvE_Command.definer.Createdefiner(System.Int32,System.String)">
-	<summary>
- Create a new definer object.
- </summary>
-	<param name="id">Initial value of the id property.</param>
-	<param name="names">Initial value of the names property.</param>
-</member><member name="P:EvE_Command.definer.id">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="P:EvE_Command.definer.names">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="P:EvE_Command.definer.channels">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="T:EvE_Command.definer">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="M:EvE_Command.newsItem.CreatenewsItem(System.Int32,System.String,System.String,System.DateTime,System.Int32)">
+</member><member name="M:EvE_Command.newsItem.CreatenewsItem(System.Guid,System.String,System.String,System.DateTime,System.Guid)">
 	<summary>
  Create a new newsItem object.
  </summary>
 	<param name="id">Initial value of the id property.</param>
 	<param name="title">Initial value of the title property.</param>
-	<param name="content">Initial value of the content property.</param>
-	<param name="getDate">Initial value of the getDate property.</param>
-	<param name="channelId">Initial value of the channelId property.</param>
+	<param name="link">Initial value of the link property.</param>
+	<param name="dateAcquired">Initial value of the dateAcquired property.</param>
+	<param name="feedId">Initial value of the feedId property.</param>
 </member><member name="P:EvE_Command.newsItem.id">
 	<summary>
  No Metadata Documentation available.
@@ -184,15 +123,7 @@ MainWindow
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.newsItem.content">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="P:EvE_Command.newsItem.getDate">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="P:EvE_Command.newsItem.channelId">
+</member><member name="P:EvE_Command.newsItem.description">
 	<summary>
  No Metadata Documentation available.
  </summary>
@@ -200,37 +131,31 @@ MainWindow
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.newsItem.channel">
+</member><member name="P:EvE_Command.newsItem.publishDate">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.newsItem.channelReference">
+</member><member name="P:EvE_Command.newsItem.author">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.newsItem.dateAcquired">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.newsItem.feedId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.newsItem.feed">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:EvE_Command.newsItem.feedReference">
 	<summary>
  No Metadata Documentation available.
  </summary>
 </member><member name="T:EvE_Command.newsItem">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="M:EvE_Command.version.Createversion(System.Int32,System.String)">
-	<summary>
- Create a new version object.
- </summary>
-	<param name="id">Initial value of the id property.</param>
-	<param name="name">Initial value of the name property.</param>
-</member><member name="P:EvE_Command.version.id">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="P:EvE_Command.version.name">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="P:EvE_Command.version.channels">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="T:EvE_Command.version">
 	<summary>
  No Metadata Documentation available.
  </summary>

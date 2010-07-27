@@ -16,11 +16,9 @@ Imports System.ComponentModel
 Imports System.Xml.Serialization
 Imports System.Runtime.Serialization
 
-<Assembly: EdmSchemaAttribute("52166632-34b7-4973-8755-0be6ba310eba")>
+<Assembly: EdmSchemaAttribute("242e7d60-bd4c-4f21-b80c-89c0c3b5f40a")>
 #Region "EDM Relationship Metadata"
-<Assembly: EdmRelationshipAttribute("rssFeedsModel", "fk_channel_newsItem", "channel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(channel), "newsItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(newsItem), True)>
-<Assembly: EdmRelationshipAttribute("rssFeedsModel", "fk_definer_channel", "definer", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(definer), "channel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(channel), True)>
-<Assembly: EdmRelationshipAttribute("rssFeedsModel", "fk_version_channel", "version", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(version), "channel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(channel), True)>
+<Assembly: EdmRelationshipAttribute("rssFeedsModel", "fk_feed_item", "feed", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(feed), "item", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(newsItem), True)>
 
 #End Region
 
@@ -75,16 +73,16 @@ Public Partial Class rssFeedsEntities
     ''' <summary>
     ''' No Metadata Documentation available.
     ''' </summary>
-    Public ReadOnly Property channels() As ObjectSet(Of channel)
+    Public ReadOnly Property feeds() As ObjectSet(Of feed)
         Get
-            If (_channels Is Nothing) Then
-                _channels = MyBase.CreateObjectSet(Of channel)("channels")
+            If (_feeds Is Nothing) Then
+                _feeds = MyBase.CreateObjectSet(Of feed)("feeds")
             End If
-            Return _channels
+            Return _feeds
         End Get
     End Property
 
-    Private _channels As ObjectSet(Of channel)
+    Private _feeds As ObjectSet(Of feed)
 
     ''' <summary>
     ''' No Metadata Documentation available.
@@ -100,42 +98,14 @@ Public Partial Class rssFeedsEntities
 
     Private _newsItems As ObjectSet(Of newsItem)
 
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    Public ReadOnly Property definers() As ObjectSet(Of definer)
-        Get
-            If (_definers Is Nothing) Then
-                _definers = MyBase.CreateObjectSet(Of definer)("definers")
-            End If
-            Return _definers
-        End Get
-    End Property
-
-    Private _definers As ObjectSet(Of definer)
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    Public ReadOnly Property versions() As ObjectSet(Of version)
-        Get
-            If (_versions Is Nothing) Then
-                _versions = MyBase.CreateObjectSet(Of version)("versions")
-            End If
-            Return _versions
-        End Get
-    End Property
-
-    Private _versions As ObjectSet(Of version)
-
     #End Region
     #Region "AddTo Methods"
 
     ''' <summary>
-    ''' Deprecated Method for adding a new object to the channels EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+    ''' Deprecated Method for adding a new object to the feeds EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
     ''' </summary>
-    Public Sub AddTochannels(ByVal channel As channel)
-        MyBase.AddObject("channels", channel)
+    Public Sub AddTofeeds(ByVal feed As feed)
+        MyBase.AddObject("feeds", feed)
     End Sub
 
     ''' <summary>
@@ -143,20 +113,6 @@ Public Partial Class rssFeedsEntities
     ''' </summary>
     Public Sub AddTonewsItems(ByVal newsItem As newsItem)
         MyBase.AddObject("newsItems", newsItem)
-    End Sub
-
-    ''' <summary>
-    ''' Deprecated Method for adding a new object to the definers EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
-    ''' </summary>
-    Public Sub AddTodefiners(ByVal definer As definer)
-        MyBase.AddObject("definers", definer)
-    End Sub
-
-    ''' <summary>
-    ''' Deprecated Method for adding a new object to the versions EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
-    ''' </summary>
-    Public Sub AddToversions(ByVal version As version)
-        MyBase.AddObject("versions", version)
     End Sub
 
     #End Region
@@ -168,642 +124,25 @@ End Class
 ''' <summary>
 ''' No Metadata Documentation available.
 ''' </summary>
-<EdmEntityTypeAttribute(NamespaceName:="rssFeedsModel", Name:="channel")>
+<EdmEntityTypeAttribute(NamespaceName:="rssFeedsModel", Name:="feed")>
 <Serializable()>
 <DataContractAttribute(IsReference:=True)>
-Public Partial Class channel
+Public Partial Class feed
     Inherits EntityObject
     #Region "Factory Method"
 
     ''' <summary>
-    ''' Create a new channel object.
-    ''' </summary>
-    ''' <param name="id">Initial value of the id property.</param>
-    ''' <param name="title">Initial value of the title property.</param>
-    ''' <param name="url">Initial value of the url property.</param>
-    ''' <param name="lastUpdate">Initial value of the lastUpdate property.</param>
-    ''' <param name="definerId">Initial value of the definerId property.</param>
-    ''' <param name="versionId">Initial value of the versionId property.</param>
-    ''' <param name="test">Initial value of the test property.</param>
-    Public Shared Function Createchannel(id As Global.System.Int32, title As Global.System.String, url As Global.System.String, lastUpdate As Global.System.DateTime, definerId As Global.System.Int32, versionId As Global.System.Int32, test As Global.System.Guid) As channel
-        Dim channel as channel = New channel
-        channel.id = id
-        channel.title = title
-        channel.url = url
-        channel.lastUpdate = lastUpdate
-        channel.definerId = definerId
-        channel.versionId = versionId
-        channel.test = test
-        Return channel
-    End Function
-
-    #End Region
-    #Region "Primitive Properties"
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=true, IsNullable:=false)>
-    <DataMemberAttribute()>
-    Public Property id() As Global.System.Int32
-        Get
-            Return _id
-        End Get
-        Set
-            If (_id <> Value) Then
-                OnidChanging(value)
-                ReportPropertyChanging("id")
-                _id = StructuralObject.SetValidValue(value)
-                ReportPropertyChanged("id")
-                OnidChanged()
-            End If
-        End Set
-    End Property
-
-    Private _id As Global.System.Int32
-    Private Partial Sub OnidChanging(value As Global.System.Int32)
-    End Sub
-
-    Private Partial Sub OnidChanged()
-    End Sub
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
-    <DataMemberAttribute()>
-    Public Property title() As Global.System.String
-        Get
-            Return _title
-        End Get
-        Set
-            OntitleChanging(value)
-            ReportPropertyChanging("title")
-            _title = StructuralObject.SetValidValue(value, false)
-            ReportPropertyChanged("title")
-            OntitleChanged()
-        End Set
-    End Property
-
-    Private _title As Global.System.String
-    Private Partial Sub OntitleChanging(value As Global.System.String)
-    End Sub
-
-    Private Partial Sub OntitleChanged()
-    End Sub
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
-    <DataMemberAttribute()>
-    Public Property url() As Global.System.String
-        Get
-            Return _url
-        End Get
-        Set
-            OnurlChanging(value)
-            ReportPropertyChanging("url")
-            _url = StructuralObject.SetValidValue(value, false)
-            ReportPropertyChanged("url")
-            OnurlChanged()
-        End Set
-    End Property
-
-    Private _url As Global.System.String
-    Private Partial Sub OnurlChanging(value As Global.System.String)
-    End Sub
-
-    Private Partial Sub OnurlChanged()
-    End Sub
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
-    <DataMemberAttribute()>
-    Public Property lastUpdate() As Global.System.DateTime
-        Get
-            Return _lastUpdate
-        End Get
-        Set
-            OnlastUpdateChanging(value)
-            ReportPropertyChanging("lastUpdate")
-            _lastUpdate = StructuralObject.SetValidValue(value)
-            ReportPropertyChanged("lastUpdate")
-            OnlastUpdateChanged()
-        End Set
-    End Property
-
-    Private _lastUpdate As Global.System.DateTime
-    Private Partial Sub OnlastUpdateChanging(value As Global.System.DateTime)
-    End Sub
-
-    Private Partial Sub OnlastUpdateChanged()
-    End Sub
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
-    <DataMemberAttribute()>
-    Public Property definerId() As Global.System.Int32
-        Get
-            Return _definerId
-        End Get
-        Set
-            OndefinerIdChanging(value)
-            ReportPropertyChanging("definerId")
-            _definerId = StructuralObject.SetValidValue(value)
-            ReportPropertyChanged("definerId")
-            OndefinerIdChanged()
-        End Set
-    End Property
-
-    Private _definerId As Global.System.Int32
-    Private Partial Sub OndefinerIdChanging(value As Global.System.Int32)
-    End Sub
-
-    Private Partial Sub OndefinerIdChanged()
-    End Sub
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
-    <DataMemberAttribute()>
-    Public Property versionId() As Global.System.Int32
-        Get
-            Return _versionId
-        End Get
-        Set
-            OnversionIdChanging(value)
-            ReportPropertyChanging("versionId")
-            _versionId = StructuralObject.SetValidValue(value)
-            ReportPropertyChanged("versionId")
-            OnversionIdChanged()
-        End Set
-    End Property
-
-    Private _versionId As Global.System.Int32
-    Private Partial Sub OnversionIdChanging(value As Global.System.Int32)
-    End Sub
-
-    Private Partial Sub OnversionIdChanged()
-    End Sub
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
-    <DataMemberAttribute()>
-    Public Property test() As Global.System.Guid
-        Get
-            Return _test
-        End Get
-        Set
-            OntestChanging(value)
-            ReportPropertyChanging("test")
-            _test = StructuralObject.SetValidValue(value)
-            ReportPropertyChanged("test")
-            OntestChanged()
-        End Set
-    End Property
-
-    Private _test As Global.System.Guid
-    Private Partial Sub OntestChanging(value As Global.System.Guid)
-    End Sub
-
-    Private Partial Sub OntestChanged()
-    End Sub
-
-    #End Region
-    #Region "Navigation Properties"
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <XmlIgnoreAttribute()>
-    <SoapIgnoreAttribute()>
-    <DataMemberAttribute()>
-    <EdmRelationshipNavigationPropertyAttribute("rssFeedsModel", "fk_channel_newsItem", "newsItem")>
-     Public Property newsItems() As EntityCollection(Of newsItem)
-        Get
-            Return CType(Me,IEntityWithRelationships).RelationshipManager.GetRelatedCollection(Of newsItem)("rssFeedsModel.fk_channel_newsItem", "newsItem")
-        End Get
-        Set
-            If (Not value Is Nothing)
-                CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedCollection(Of newsItem)("rssFeedsModel.fk_channel_newsItem", "newsItem", value)
-            End If
-        End Set
-    End Property
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <XmlIgnoreAttribute()>
-    <SoapIgnoreAttribute()>
-    <DataMemberAttribute()>
-    <EdmRelationshipNavigationPropertyAttribute("rssFeedsModel", "fk_definer_channel", "definer")>
-    Public Property definer() As definer
-        Get
-            Return CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of definer)("rssFeedsModel.fk_definer_channel", "definer").Value
-        End Get
-        Set
-            CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of definer)("rssFeedsModel.fk_definer_channel", "definer").Value = value
-        End Set
-    End Property
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <BrowsableAttribute(False)>
-    <DataMemberAttribute()>
-    Public Property definerReference() As EntityReference(Of definer)
-        Get
-            Return CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of definer)("rssFeedsModel.fk_definer_channel", "definer")
-        End Get
-        Set
-            If (Not value Is Nothing)
-                CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedReference(Of definer)("rssFeedsModel.fk_definer_channel", "definer", value)
-            End If
-        End Set
-    End Property
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <XmlIgnoreAttribute()>
-    <SoapIgnoreAttribute()>
-    <DataMemberAttribute()>
-    <EdmRelationshipNavigationPropertyAttribute("rssFeedsModel", "fk_version_channel", "version")>
-    Public Property version() As version
-        Get
-            Return CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of version)("rssFeedsModel.fk_version_channel", "version").Value
-        End Get
-        Set
-            CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of version)("rssFeedsModel.fk_version_channel", "version").Value = value
-        End Set
-    End Property
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <BrowsableAttribute(False)>
-    <DataMemberAttribute()>
-    Public Property versionReference() As EntityReference(Of version)
-        Get
-            Return CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of version)("rssFeedsModel.fk_version_channel", "version")
-        End Get
-        Set
-            If (Not value Is Nothing)
-                CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedReference(Of version)("rssFeedsModel.fk_version_channel", "version", value)
-            End If
-        End Set
-    End Property
-
-    #End Region
-End Class
-
-''' <summary>
-''' No Metadata Documentation available.
-''' </summary>
-<EdmEntityTypeAttribute(NamespaceName:="rssFeedsModel", Name:="definer")>
-<Serializable()>
-<DataContractAttribute(IsReference:=True)>
-Public Partial Class definer
-    Inherits EntityObject
-    #Region "Factory Method"
-
-    ''' <summary>
-    ''' Create a new definer object.
-    ''' </summary>
-    ''' <param name="id">Initial value of the id property.</param>
-    ''' <param name="names">Initial value of the names property.</param>
-    Public Shared Function Createdefiner(id As Global.System.Int32, names As Global.System.String) As definer
-        Dim definer as definer = New definer
-        definer.id = id
-        definer.names = names
-        Return definer
-    End Function
-
-    #End Region
-    #Region "Primitive Properties"
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=true, IsNullable:=false)>
-    <DataMemberAttribute()>
-    Public Property id() As Global.System.Int32
-        Get
-            Return _id
-        End Get
-        Set
-            If (_id <> Value) Then
-                OnidChanging(value)
-                ReportPropertyChanging("id")
-                _id = StructuralObject.SetValidValue(value)
-                ReportPropertyChanged("id")
-                OnidChanged()
-            End If
-        End Set
-    End Property
-
-    Private _id As Global.System.Int32
-    Private Partial Sub OnidChanging(value As Global.System.Int32)
-    End Sub
-
-    Private Partial Sub OnidChanged()
-    End Sub
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
-    <DataMemberAttribute()>
-    Public Property names() As Global.System.String
-        Get
-            Return _names
-        End Get
-        Set
-            OnnamesChanging(value)
-            ReportPropertyChanging("names")
-            _names = StructuralObject.SetValidValue(value, false)
-            ReportPropertyChanged("names")
-            OnnamesChanged()
-        End Set
-    End Property
-
-    Private _names As Global.System.String
-    Private Partial Sub OnnamesChanging(value As Global.System.String)
-    End Sub
-
-    Private Partial Sub OnnamesChanged()
-    End Sub
-
-    #End Region
-    #Region "Navigation Properties"
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <XmlIgnoreAttribute()>
-    <SoapIgnoreAttribute()>
-    <DataMemberAttribute()>
-    <EdmRelationshipNavigationPropertyAttribute("rssFeedsModel", "fk_definer_channel", "channel")>
-     Public Property channels() As EntityCollection(Of channel)
-        Get
-            Return CType(Me,IEntityWithRelationships).RelationshipManager.GetRelatedCollection(Of channel)("rssFeedsModel.fk_definer_channel", "channel")
-        End Get
-        Set
-            If (Not value Is Nothing)
-                CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedCollection(Of channel)("rssFeedsModel.fk_definer_channel", "channel", value)
-            End If
-        End Set
-    End Property
-
-    #End Region
-End Class
-
-''' <summary>
-''' No Metadata Documentation available.
-''' </summary>
-<EdmEntityTypeAttribute(NamespaceName:="rssFeedsModel", Name:="newsItem")>
-<Serializable()>
-<DataContractAttribute(IsReference:=True)>
-Public Partial Class newsItem
-    Inherits EntityObject
-    #Region "Factory Method"
-
-    ''' <summary>
-    ''' Create a new newsItem object.
-    ''' </summary>
-    ''' <param name="id">Initial value of the id property.</param>
-    ''' <param name="title">Initial value of the title property.</param>
-    ''' <param name="content">Initial value of the content property.</param>
-    ''' <param name="getDate">Initial value of the getDate property.</param>
-    ''' <param name="channelId">Initial value of the channelId property.</param>
-    Public Shared Function CreatenewsItem(id As Global.System.Int32, title As Global.System.String, content As Global.System.String, getDate As Global.System.DateTime, channelId As Global.System.Int32) As newsItem
-        Dim newsItem as newsItem = New newsItem
-        newsItem.id = id
-        newsItem.title = title
-        newsItem.content = content
-        newsItem.getDate = getDate
-        newsItem.channelId = channelId
-        Return newsItem
-    End Function
-
-    #End Region
-    #Region "Primitive Properties"
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=true, IsNullable:=false)>
-    <DataMemberAttribute()>
-    Public Property id() As Global.System.Int32
-        Get
-            Return _id
-        End Get
-        Set
-            If (_id <> Value) Then
-                OnidChanging(value)
-                ReportPropertyChanging("id")
-                _id = StructuralObject.SetValidValue(value)
-                ReportPropertyChanged("id")
-                OnidChanged()
-            End If
-        End Set
-    End Property
-
-    Private _id As Global.System.Int32
-    Private Partial Sub OnidChanging(value As Global.System.Int32)
-    End Sub
-
-    Private Partial Sub OnidChanged()
-    End Sub
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
-    <DataMemberAttribute()>
-    Public Property title() As Global.System.String
-        Get
-            Return _title
-        End Get
-        Set
-            OntitleChanging(value)
-            ReportPropertyChanging("title")
-            _title = StructuralObject.SetValidValue(value, false)
-            ReportPropertyChanged("title")
-            OntitleChanged()
-        End Set
-    End Property
-
-    Private _title As Global.System.String
-    Private Partial Sub OntitleChanging(value As Global.System.String)
-    End Sub
-
-    Private Partial Sub OntitleChanged()
-    End Sub
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
-    <DataMemberAttribute()>
-    Public Property content() As Global.System.String
-        Get
-            Return _content
-        End Get
-        Set
-            OncontentChanging(value)
-            ReportPropertyChanging("content")
-            _content = StructuralObject.SetValidValue(value, false)
-            ReportPropertyChanged("content")
-            OncontentChanged()
-        End Set
-    End Property
-
-    Private _content As Global.System.String
-    Private Partial Sub OncontentChanging(value As Global.System.String)
-    End Sub
-
-    Private Partial Sub OncontentChanged()
-    End Sub
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
-    <DataMemberAttribute()>
-    Public Property getDate() As Global.System.DateTime
-        Get
-            Return _getDate
-        End Get
-        Set
-            OngetDateChanging(value)
-            ReportPropertyChanging("getDate")
-            _getDate = StructuralObject.SetValidValue(value)
-            ReportPropertyChanged("getDate")
-            OngetDateChanged()
-        End Set
-    End Property
-
-    Private _getDate As Global.System.DateTime
-    Private Partial Sub OngetDateChanging(value As Global.System.DateTime)
-    End Sub
-
-    Private Partial Sub OngetDateChanged()
-    End Sub
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
-    <DataMemberAttribute()>
-    Public Property channelId() As Global.System.Int32
-        Get
-            Return _channelId
-        End Get
-        Set
-            OnchannelIdChanging(value)
-            ReportPropertyChanging("channelId")
-            _channelId = StructuralObject.SetValidValue(value)
-            ReportPropertyChanged("channelId")
-            OnchannelIdChanged()
-        End Set
-    End Property
-
-    Private _channelId As Global.System.Int32
-    Private Partial Sub OnchannelIdChanging(value As Global.System.Int32)
-    End Sub
-
-    Private Partial Sub OnchannelIdChanged()
-    End Sub
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=true)>
-    <DataMemberAttribute()>
-    Public Property link() As Global.System.String
-        Get
-            Return _link
-        End Get
-        Set
-            OnlinkChanging(value)
-            ReportPropertyChanging("link")
-            _link = StructuralObject.SetValidValue(value, true)
-            ReportPropertyChanged("link")
-            OnlinkChanged()
-        End Set
-    End Property
-
-    Private _link As Global.System.String
-    Private Partial Sub OnlinkChanging(value As Global.System.String)
-    End Sub
-
-    Private Partial Sub OnlinkChanged()
-    End Sub
-
-    #End Region
-    #Region "Navigation Properties"
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <XmlIgnoreAttribute()>
-    <SoapIgnoreAttribute()>
-    <DataMemberAttribute()>
-    <EdmRelationshipNavigationPropertyAttribute("rssFeedsModel", "fk_channel_newsItem", "channel")>
-    Public Property channel() As channel
-        Get
-            Return CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of channel)("rssFeedsModel.fk_channel_newsItem", "channel").Value
-        End Get
-        Set
-            CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of channel)("rssFeedsModel.fk_channel_newsItem", "channel").Value = value
-        End Set
-    End Property
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <BrowsableAttribute(False)>
-    <DataMemberAttribute()>
-    Public Property channelReference() As EntityReference(Of channel)
-        Get
-            Return CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of channel)("rssFeedsModel.fk_channel_newsItem", "channel")
-        End Get
-        Set
-            If (Not value Is Nothing)
-                CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedReference(Of channel)("rssFeedsModel.fk_channel_newsItem", "channel", value)
-            End If
-        End Set
-    End Property
-
-    #End Region
-End Class
-
-''' <summary>
-''' No Metadata Documentation available.
-''' </summary>
-<EdmEntityTypeAttribute(NamespaceName:="rssFeedsModel", Name:="version")>
-<Serializable()>
-<DataContractAttribute(IsReference:=True)>
-Public Partial Class version
-    Inherits EntityObject
-    #Region "Factory Method"
-
-    ''' <summary>
-    ''' Create a new version object.
+    ''' Create a new feed object.
     ''' </summary>
     ''' <param name="id">Initial value of the id property.</param>
     ''' <param name="name">Initial value of the name property.</param>
-    Public Shared Function Createversion(id As Global.System.Int32, name As Global.System.String) As version
-        Dim version as version = New version
-        version.id = id
-        version.name = name
-        Return version
+    ''' <param name="lastUpdated">Initial value of the lastUpdated property.</param>
+    Public Shared Function Createfeed(id As Global.System.Guid, name As Global.System.String, lastUpdated As Global.System.DateTime) As feed
+        Dim feed as feed = New feed
+        feed.id = id
+        feed.name = name
+        feed.lastUpdated = lastUpdated
+        Return feed
     End Function
 
     #End Region
@@ -814,7 +153,7 @@ Public Partial Class version
     ''' </summary>
     <EdmScalarPropertyAttribute(EntityKeyProperty:=true, IsNullable:=false)>
     <DataMemberAttribute()>
-    Public Property id() As Global.System.Int32
+    Public Property id() As Global.System.Guid
         Get
             Return _id
         End Get
@@ -829,8 +168,8 @@ Public Partial Class version
         End Set
     End Property
 
-    Private _id As Global.System.Int32
-    Private Partial Sub OnidChanging(value As Global.System.Int32)
+    Private _id As Global.System.Guid
+    Private Partial Sub OnidChanging(value As Global.System.Guid)
     End Sub
 
     Private Partial Sub OnidChanged()
@@ -861,6 +200,81 @@ Public Partial Class version
     Private Partial Sub OnnameChanged()
     End Sub
 
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=true)>
+    <DataMemberAttribute()>
+    Public Property link() As Global.System.String
+        Get
+            Return _link
+        End Get
+        Set
+            OnlinkChanging(value)
+            ReportPropertyChanging("link")
+            _link = StructuralObject.SetValidValue(value, true)
+            ReportPropertyChanged("link")
+            OnlinkChanged()
+        End Set
+    End Property
+
+    Private _link As Global.System.String
+    Private Partial Sub OnlinkChanging(value As Global.System.String)
+    End Sub
+
+    Private Partial Sub OnlinkChanged()
+    End Sub
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=true)>
+    <DataMemberAttribute()>
+    Public Property description() As Global.System.String
+        Get
+            Return _description
+        End Get
+        Set
+            OndescriptionChanging(value)
+            ReportPropertyChanging("description")
+            _description = StructuralObject.SetValidValue(value, true)
+            ReportPropertyChanged("description")
+            OndescriptionChanged()
+        End Set
+    End Property
+
+    Private _description As Global.System.String
+    Private Partial Sub OndescriptionChanging(value As Global.System.String)
+    End Sub
+
+    Private Partial Sub OndescriptionChanged()
+    End Sub
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
+    <DataMemberAttribute()>
+    Public Property lastUpdated() As Global.System.DateTime
+        Get
+            Return _lastUpdated
+        End Get
+        Set
+            OnlastUpdatedChanging(value)
+            ReportPropertyChanging("lastUpdated")
+            _lastUpdated = StructuralObject.SetValidValue(value)
+            ReportPropertyChanged("lastUpdated")
+            OnlastUpdatedChanged()
+        End Set
+    End Property
+
+    Private _lastUpdated As Global.System.DateTime
+    Private Partial Sub OnlastUpdatedChanging(value As Global.System.DateTime)
+    End Sub
+
+    Private Partial Sub OnlastUpdatedChanged()
+    End Sub
+
     #End Region
     #Region "Navigation Properties"
 
@@ -870,14 +284,284 @@ Public Partial Class version
     <XmlIgnoreAttribute()>
     <SoapIgnoreAttribute()>
     <DataMemberAttribute()>
-    <EdmRelationshipNavigationPropertyAttribute("rssFeedsModel", "fk_version_channel", "channel")>
-     Public Property channels() As EntityCollection(Of channel)
+    <EdmRelationshipNavigationPropertyAttribute("rssFeedsModel", "fk_feed_item", "item")>
+     Public Property items() As EntityCollection(Of newsItem)
         Get
-            Return CType(Me,IEntityWithRelationships).RelationshipManager.GetRelatedCollection(Of channel)("rssFeedsModel.fk_version_channel", "channel")
+            Return CType(Me,IEntityWithRelationships).RelationshipManager.GetRelatedCollection(Of newsItem)("rssFeedsModel.fk_feed_item", "item")
         End Get
         Set
             If (Not value Is Nothing)
-                CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedCollection(Of channel)("rssFeedsModel.fk_version_channel", "channel", value)
+                CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedCollection(Of newsItem)("rssFeedsModel.fk_feed_item", "item", value)
+            End If
+        End Set
+    End Property
+
+    #End Region
+End Class
+
+''' <summary>
+''' No Metadata Documentation available.
+''' </summary>
+<EdmEntityTypeAttribute(NamespaceName:="rssFeedsModel", Name:="newsItem")>
+<Serializable()>
+<DataContractAttribute(IsReference:=True)>
+Public Partial Class newsItem
+    Inherits EntityObject
+    #Region "Factory Method"
+
+    ''' <summary>
+    ''' Create a new newsItem object.
+    ''' </summary>
+    ''' <param name="id">Initial value of the id property.</param>
+    ''' <param name="title">Initial value of the title property.</param>
+    ''' <param name="link">Initial value of the link property.</param>
+    ''' <param name="dateAcquired">Initial value of the dateAcquired property.</param>
+    ''' <param name="feedId">Initial value of the feedId property.</param>
+    Public Shared Function CreatenewsItem(id As Global.System.Guid, title As Global.System.String, link As Global.System.String, dateAcquired As Global.System.DateTime, feedId As Global.System.Guid) As newsItem
+        Dim newsItem as newsItem = New newsItem
+        newsItem.id = id
+        newsItem.title = title
+        newsItem.link = link
+        newsItem.dateAcquired = dateAcquired
+        newsItem.feedId = feedId
+        Return newsItem
+    End Function
+
+    #End Region
+    #Region "Primitive Properties"
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=true, IsNullable:=false)>
+    <DataMemberAttribute()>
+    Public Property id() As Global.System.Guid
+        Get
+            Return _id
+        End Get
+        Set
+            If (_id <> Value) Then
+                OnidChanging(value)
+                ReportPropertyChanging("id")
+                _id = StructuralObject.SetValidValue(value)
+                ReportPropertyChanged("id")
+                OnidChanged()
+            End If
+        End Set
+    End Property
+
+    Private _id As Global.System.Guid
+    Private Partial Sub OnidChanging(value As Global.System.Guid)
+    End Sub
+
+    Private Partial Sub OnidChanged()
+    End Sub
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
+    <DataMemberAttribute()>
+    Public Property title() As Global.System.String
+        Get
+            Return _title
+        End Get
+        Set
+            OntitleChanging(value)
+            ReportPropertyChanging("title")
+            _title = StructuralObject.SetValidValue(value, false)
+            ReportPropertyChanged("title")
+            OntitleChanged()
+        End Set
+    End Property
+
+    Private _title As Global.System.String
+    Private Partial Sub OntitleChanging(value As Global.System.String)
+    End Sub
+
+    Private Partial Sub OntitleChanged()
+    End Sub
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=true)>
+    <DataMemberAttribute()>
+    Public Property description() As Global.System.String
+        Get
+            Return _description
+        End Get
+        Set
+            OndescriptionChanging(value)
+            ReportPropertyChanging("description")
+            _description = StructuralObject.SetValidValue(value, true)
+            ReportPropertyChanged("description")
+            OndescriptionChanged()
+        End Set
+    End Property
+
+    Private _description As Global.System.String
+    Private Partial Sub OndescriptionChanging(value As Global.System.String)
+    End Sub
+
+    Private Partial Sub OndescriptionChanged()
+    End Sub
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
+    <DataMemberAttribute()>
+    Public Property link() As Global.System.String
+        Get
+            Return _link
+        End Get
+        Set
+            OnlinkChanging(value)
+            ReportPropertyChanging("link")
+            _link = StructuralObject.SetValidValue(value, false)
+            ReportPropertyChanged("link")
+            OnlinkChanged()
+        End Set
+    End Property
+
+    Private _link As Global.System.String
+    Private Partial Sub OnlinkChanging(value As Global.System.String)
+    End Sub
+
+    Private Partial Sub OnlinkChanged()
+    End Sub
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=true)>
+    <DataMemberAttribute()>
+    Public Property publishDate() As Nullable(Of Global.System.DateTime)
+        Get
+            Return _publishDate
+        End Get
+        Set
+            OnpublishDateChanging(value)
+            ReportPropertyChanging("publishDate")
+            _publishDate = StructuralObject.SetValidValue(value)
+            ReportPropertyChanged("publishDate")
+            OnpublishDateChanged()
+        End Set
+    End Property
+
+    Private _publishDate As Nullable(Of Global.System.DateTime)
+    Private Partial Sub OnpublishDateChanging(value As Nullable(Of Global.System.DateTime))
+    End Sub
+
+    Private Partial Sub OnpublishDateChanged()
+    End Sub
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=true)>
+    <DataMemberAttribute()>
+    Public Property author() As Global.System.String
+        Get
+            Return _author
+        End Get
+        Set
+            OnauthorChanging(value)
+            ReportPropertyChanging("author")
+            _author = StructuralObject.SetValidValue(value, true)
+            ReportPropertyChanged("author")
+            OnauthorChanged()
+        End Set
+    End Property
+
+    Private _author As Global.System.String
+    Private Partial Sub OnauthorChanging(value As Global.System.String)
+    End Sub
+
+    Private Partial Sub OnauthorChanged()
+    End Sub
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
+    <DataMemberAttribute()>
+    Public Property dateAcquired() As Global.System.DateTime
+        Get
+            Return _dateAcquired
+        End Get
+        Set
+            OndateAcquiredChanging(value)
+            ReportPropertyChanging("dateAcquired")
+            _dateAcquired = StructuralObject.SetValidValue(value)
+            ReportPropertyChanged("dateAcquired")
+            OndateAcquiredChanged()
+        End Set
+    End Property
+
+    Private _dateAcquired As Global.System.DateTime
+    Private Partial Sub OndateAcquiredChanging(value As Global.System.DateTime)
+    End Sub
+
+    Private Partial Sub OndateAcquiredChanged()
+    End Sub
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
+    <DataMemberAttribute()>
+    Public Property feedId() As Global.System.Guid
+        Get
+            Return _feedId
+        End Get
+        Set
+            OnfeedIdChanging(value)
+            ReportPropertyChanging("feedId")
+            _feedId = StructuralObject.SetValidValue(value)
+            ReportPropertyChanged("feedId")
+            OnfeedIdChanged()
+        End Set
+    End Property
+
+    Private _feedId As Global.System.Guid
+    Private Partial Sub OnfeedIdChanging(value As Global.System.Guid)
+    End Sub
+
+    Private Partial Sub OnfeedIdChanged()
+    End Sub
+
+    #End Region
+    #Region "Navigation Properties"
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <XmlIgnoreAttribute()>
+    <SoapIgnoreAttribute()>
+    <DataMemberAttribute()>
+    <EdmRelationshipNavigationPropertyAttribute("rssFeedsModel", "fk_feed_item", "feed")>
+    Public Property feed() As feed
+        Get
+            Return CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of feed)("rssFeedsModel.fk_feed_item", "feed").Value
+        End Get
+        Set
+            CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of feed)("rssFeedsModel.fk_feed_item", "feed").Value = value
+        End Set
+    End Property
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <BrowsableAttribute(False)>
+    <DataMemberAttribute()>
+    Public Property feedReference() As EntityReference(Of feed)
+        Get
+            Return CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of feed)("rssFeedsModel.fk_feed_item", "feed")
+        End Get
+        Set
+            If (Not value Is Nothing)
+                CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedReference(Of feed)("rssFeedsModel.fk_feed_item", "feed", value)
             End If
         End Set
     End Property
