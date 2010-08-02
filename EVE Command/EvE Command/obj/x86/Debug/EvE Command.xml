@@ -6,107 +6,145 @@ EvECommand
 </name>
 </assembly>
 <members>
-<member name="M:EvE_Command.Application.InitializeComponent">
+<member name="M:eveC.Application.InitializeComponent">
 	<summary>
 InitializeComponent
 </summary>
-</member><member name="M:EvE_Command.Application.Main">
+</member><member name="M:eveC.Application.Main">
 	<summary>
 Application Entry Point.
 </summary>
-</member><member name="T:EvE_Command.Application">
+</member><member name="T:eveC.Application">
 	<summary>
 Application
 </summary>
-</member><member name="M:EvE_Command.MainWindow.InitializeComponent">
+</member><member name="M:eveC.MainWindow.InitializeComponent">
 	<summary>
 InitializeComponent
 </summary>
-</member><member name="T:EvE_Command.MainWindow">
+</member><member name="T:eveC.MainWindow">
 	<summary>
 MainWindow
 </summary>
-</member><member name="P:EvE_Command.My.Resources.Resources.ResourceManager">
+</member><member name="M:eveC.rssReader.rss1.getItems(System.Xml.Linq.XDocument,System.Guid)">
+	<summary>
+ Retrives the feed items and adds them to a more friendly list
+ </summary>
+	<param name="rssDoc">The XDocument containing the feed</param>
+	<param name="feedId">The Guid of the feed</param>
+	<returns>A List(Of newsItem) containt all the items</returns>
+	<remarks></remarks>
+</member><member name="T:eveC.rssReader.rss1">
+	<summary>
+ Module for processing and handling downloaded RSS v1 feeds
+ </summary>
+	<remarks></remarks>
+</member><member name="P:eveC.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>
-</member><member name="P:EvE_Command.My.Resources.Resources.Culture">
+</member><member name="P:eveC.My.Resources.Resources.Culture">
 	<summary>
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
-</member><member name="T:EvE_Command.My.Resources.Resources">
+</member><member name="T:eveC.My.Resources.Resources">
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
-</member><member name="M:EvE_Command.rssFeedsEntities.#ctor">
+</member><member name="M:eveC.rssReader.rssFeed.updateFeed(System.String,System.Guid)">
+	<summary>
+ Gets the latest version of an RSS feed from the feed source
+ </summary>
+	<param name="feedUrl">The URL of the feed</param>
+	<param name="feedId">The Guid of the feed assigned in the database</param>
+	<returns>A list of all the current items on the feed</returns>
+	<remarks></remarks>
+</member><member name="M:eveC.rssReader.rssFeed.refreshFeeds">
+	<summary>
+ Refreshes all the RSS feeds contained in the database and updates them 
+ </summary>
+	<remarks></remarks>
+</member><member name="M:eveC.rssReader.rssFeed.feedWebRequest(System.String)">
+	<summary>
+ Gets the feed from the URL source
+ </summary>
+	<param name="feedUrl">The location of the feed</param>
+	<returns>The feed as a XDocument</returns>
+	<remarks></remarks>
+</member><member name="T:eveC.rssReader.rssFeed">
+	<summary>
+ This module contains methods to get and store RSS feeds
+ </summary>
+	<remarks></remarks>
+</member><member name="M:eveC.rssFeedsEntities.#ctor">
 	<summary>
  Initializes a new rssFeedsEntities object using the connection string found in the 'rssFeedsEntities' section of the application configuration file.
  </summary>
-</member><member name="M:EvE_Command.rssFeedsEntities.#ctor(System.String)">
+</member><member name="M:eveC.rssFeedsEntities.#ctor(System.String)">
 	<summary>
  Initialize a new rssFeedsEntities object.
  </summary>
-</member><member name="M:EvE_Command.rssFeedsEntities.#ctor(System.Data.EntityClient.EntityConnection)">
+</member><member name="M:eveC.rssFeedsEntities.#ctor(System.Data.EntityClient.EntityConnection)">
 	<summary>
  Initialize a new rssFeedsEntities object.
  </summary>
-</member><member name="P:EvE_Command.rssFeedsEntities.feeds">
+</member><member name="P:eveC.rssFeedsEntities.feeds">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.rssFeedsEntities.newsItems">
+</member><member name="P:eveC.rssFeedsEntities.newsItems">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="M:EvE_Command.rssFeedsEntities.AddTofeeds(EvE_Command.feed)">
+</member><member name="M:eveC.rssFeedsEntities.AddTofeeds(eveC.feed)">
 	<summary>
  Deprecated Method for adding a new object to the feeds EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
  </summary>
-</member><member name="M:EvE_Command.rssFeedsEntities.AddTonewsItems(EvE_Command.newsItem)">
+</member><member name="M:eveC.rssFeedsEntities.AddTonewsItems(eveC.newsItem)">
 	<summary>
  Deprecated Method for adding a new object to the newsItems EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
  </summary>
-</member><member name="T:EvE_Command.rssFeedsEntities">
+</member><member name="T:eveC.rssFeedsEntities">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="M:EvE_Command.feed.Createfeed(System.Guid,System.String,System.DateTime)">
+</member><member name="M:eveC.feed.Createfeed(System.Guid,System.String,System.DateTime)">
 	<summary>
  Create a new feed object.
  </summary>
 	<param name="id">Initial value of the id property.</param>
 	<param name="name">Initial value of the name property.</param>
 	<param name="lastUpdated">Initial value of the lastUpdated property.</param>
-</member><member name="P:EvE_Command.feed.id">
+</member><member name="P:eveC.feed.id">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.feed.name">
+</member><member name="P:eveC.feed.name">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.feed.link">
+</member><member name="P:eveC.feed.link">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.feed.description">
+</member><member name="P:eveC.feed.description">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.feed.lastUpdated">
+</member><member name="P:eveC.feed.lastUpdated">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.feed.items">
+</member><member name="P:eveC.feed.items">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="T:EvE_Command.feed">
+</member><member name="T:eveC.feed">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="M:EvE_Command.newsItem.CreatenewsItem(System.Guid,System.String,System.String,System.DateTime,System.Guid)">
+</member><member name="M:eveC.newsItem.CreatenewsItem(System.Guid,System.String,System.String,System.DateTime,System.Guid)">
 	<summary>
  Create a new newsItem object.
  </summary>
@@ -115,72 +153,72 @@ MainWindow
 	<param name="link">Initial value of the link property.</param>
 	<param name="dateAcquired">Initial value of the dateAcquired property.</param>
 	<param name="feedId">Initial value of the feedId property.</param>
-</member><member name="P:EvE_Command.newsItem.id">
+</member><member name="P:eveC.newsItem.id">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.newsItem.title">
+</member><member name="P:eveC.newsItem.title">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.newsItem.description">
+</member><member name="P:eveC.newsItem.description">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.newsItem.link">
+</member><member name="P:eveC.newsItem.link">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.newsItem.publishDate">
+</member><member name="P:eveC.newsItem.publishDate">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.newsItem.author">
+</member><member name="P:eveC.newsItem.author">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.newsItem.dateAcquired">
+</member><member name="P:eveC.newsItem.dateAcquired">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.newsItem.feedId">
+</member><member name="P:eveC.newsItem.feedId">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.newsItem.feed">
+</member><member name="P:eveC.newsItem.feed">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.newsItem.feedReference">
+</member><member name="P:eveC.newsItem.feedReference">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="T:EvE_Command.newsItem">
+</member><member name="T:eveC.newsItem">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:EvE_Command.My.MyWpfExtension.Application">
+</member><member name="P:eveC.My.MyWpfExtension.Application">
 	<summary>
  Returns the application object for the running application
  </summary>
-</member><member name="P:EvE_Command.My.MyWpfExtension.Computer">
+</member><member name="P:eveC.My.MyWpfExtension.Computer">
 	<summary>
  Returns information about the host computer.
  </summary>
-</member><member name="P:EvE_Command.My.MyWpfExtension.User">
+</member><member name="P:eveC.My.MyWpfExtension.User">
 	<summary>
  Returns information for the current user.  If you wish to run the application with the current 
  Windows user credentials, call My.User.InitializeWithWindowsUser().
  </summary>
-</member><member name="P:EvE_Command.My.MyWpfExtension.Log">
+</member><member name="P:eveC.My.MyWpfExtension.Log">
 	<summary>
  Returns the application log. The listeners can be configured by the application's configuration file.
  </summary>
-</member><member name="P:EvE_Command.My.MyWpfExtension.Windows">
+</member><member name="P:eveC.My.MyWpfExtension.Windows">
 	<summary>
  Returns the collection of Windows defined in the project.
  </summary>
-</member><member name="T:EvE_Command.My.MyWpfExtension">
+</member><member name="T:eveC.My.MyWpfExtension">
 	<summary>
  Module used to define the properties that are available in the My Namespace for WPF
  </summary>

@@ -16,7 +16,7 @@ Imports System.ComponentModel
 Imports System.Xml.Serialization
 Imports System.Runtime.Serialization
 
-<Assembly: EdmSchemaAttribute("242e7d60-bd4c-4f21-b80c-89c0c3b5f40a")>
+<Assembly: EdmSchemaAttribute("ed3c3f7d-7f71-45b8-95e9-b94e2163bdfd")>
 #Region "EDM Relationship Metadata"
 <Assembly: EdmRelationshipAttribute("rssFeedsModel", "fk_feed_item", "feed", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(feed), "item", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(newsItem), True)>
 
