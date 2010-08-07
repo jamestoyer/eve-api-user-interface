@@ -114,4 +114,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ProgramShuttingDown" xml:space="preserve">
+    <value>Program shutting down</value>
+    <comment>ProgramShuttingDown description</comment>
+  </data>
+  <data name="ProgramStartingUp" xml:space="preserve">
+    <value>Program starting up</value>
+    <comment>ProgramStartingUp description</comment>
+  </data>
+  <data name="UnhandledExceptionMessage" xml:space="preserve">
+    <value>Oops an unhandled error has occured. It's ok though, the error has been logged</value>
+    <comment>UnhandledExceptionMessage description</comment>
+  </data>
+  <data name="UnhandledExceptionTitle" xml:space="preserve">
+    <value>Unhandled Exception</value>
+    <comment>UnhandledExceptionTitle description</comment>
+  </data>
+  <data name="LogErrorMessage" xml:space="preserve">
+    <value>Unable to write to log. Please check that the application has permission to access its directory folder</value>
+    <comment>LogErrorMessage description</comment>
+  </data>
+  <data name="LogErrorTitle" xml:space="preserve">
+    <value>Log Write Error</value>
+    <comment>LogErrorTitle description</comment>
+  </data>
 </root>

@@ -59,5 +59,59 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Unable to write to log. Please check that the application has permission to access its directory folder.
+        '''</summary>
+        Friend ReadOnly Property LogErrorMessage() As String
+            Get
+                Return ResourceManager.GetString("LogErrorMessage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Log Write Error.
+        '''</summary>
+        Friend ReadOnly Property LogErrorTitle() As String
+            Get
+                Return ResourceManager.GetString("LogErrorTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Program shutting down.
+        '''</summary>
+        Friend ReadOnly Property ProgramShuttingDown() As String
+            Get
+                Return ResourceManager.GetString("ProgramShuttingDown", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Program starting up.
+        '''</summary>
+        Friend ReadOnly Property ProgramStartingUp() As String
+            Get
+                Return ResourceManager.GetString("ProgramStartingUp", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Oops an unhandled error has occured. It&apos;s ok though, the error has been logged.
+        '''</summary>
+        Friend ReadOnly Property UnhandledExceptionMessage() As String
+            Get
+                Return ResourceManager.GetString("UnhandledExceptionMessage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Unhandled Exception.
+        '''</summary>
+        Friend ReadOnly Property UnhandledExceptionTitle() As String
+            Get
+                Return ResourceManager.GetString("UnhandledExceptionTitle", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace
