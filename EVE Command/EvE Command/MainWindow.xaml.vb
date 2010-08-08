@@ -44,4 +44,13 @@
             resizeWebBrowser(sender)
         End If
     End Sub
+
+    Private Sub RefreshMenuItem_Click(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs)
+        ' Refresh the rss feeds
+        rssReader.refreshFeeds()
+    End Sub
+
+    Private Sub ExitMenuItem_Click(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs)
+        My.Application.Shutdown()
+    End Sub
 End Class

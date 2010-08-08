@@ -1,8 +1,0 @@
-[07/08/2010 13:56:49] - 'Set property 'System.Windows.Forms.WebBrowserBase.Site' threw an exception.' Line number '45' and line position '10'.
-[07/08/2010 14:20:22] - Dispatcher processing has been suspended, but messages are still being processed.
-[07/08/2010 14:42:16] - Dispatcher processing has been suspended, but messages are still being processed.
-[07/08/2010 14:42:17] - Dispatcher processing has been suspended, but messages are still being processed.
-[07/08/2010 14:44:24] - Dispatcher processing has been suspended, but messages are still being processed.
-[07/08/2010 14:44:24] - Dispatcher processing has been suspended, but messages are still being processed.
-[07/08/2010 14:49:24] - Dispatcher processing has been suspended, but messages are still being processed.
-[07/08/2010 14:49:25] - Dispatcher processing has been suspended, but messages are still being processed.

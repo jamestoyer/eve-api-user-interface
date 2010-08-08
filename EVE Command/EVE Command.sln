@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EvE Command", "EvE Command\EvE Command.vbproj", "{02C6A2BC-1475-4258-AE85-F5E5A4E5B91C}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "Installer\Installer.vdproj", "{97AEC392-80AA-4958-8A34-1D20271A1256}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -26,6 +28,12 @@ Global
 		{02C6A2BC-1475-4258-AE85-F5E5A4E5B91C}.Release|x86.Build.0 = Release|x86
 		{02C6A2BC-1475-4258-AE85-F5E5A4E5B91C}.SingleImage|x86.ActiveCfg = Release|x86
 		{02C6A2BC-1475-4258-AE85-F5E5A4E5B91C}.SingleImage|x86.Build.0 = Release|x86
+		{97AEC392-80AA-4958-8A34-1D20271A1256}.CD_ROM|x86.ActiveCfg = Release
+		{97AEC392-80AA-4958-8A34-1D20271A1256}.Debug|x86.ActiveCfg = Debug
+		{97AEC392-80AA-4958-8A34-1D20271A1256}.DVD-5|x86.ActiveCfg = Debug
+		{97AEC392-80AA-4958-8A34-1D20271A1256}.Release|x86.ActiveCfg = Release
+		{97AEC392-80AA-4958-8A34-1D20271A1256}.Release|x86.Build.0 = Release
+		{97AEC392-80AA-4958-8A34-1D20271A1256}.SingleImage|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,7 +3,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     x:Class="MainWindow"
     Title="MainWindow" MinHeight="400" MinWidth="400">
-    <DockPanel>
+    <DockPanel >
+        <Menu DockPanel.Dock='Top'>
+            <MenuItem Header='File'>
+                <MenuItem Header='Exit' Click='ExitMenuItem_Click'/>
+            </MenuItem>
+            <MenuItem Header='Options'>
+                <MenuItem Header='Refresh Feed' Click='RefreshMenuItem_Click'/>
+            </MenuItem>
+            <!--<MenuItem Header='Help'/>-->
+        </Menu>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition MinWidth='80'/>

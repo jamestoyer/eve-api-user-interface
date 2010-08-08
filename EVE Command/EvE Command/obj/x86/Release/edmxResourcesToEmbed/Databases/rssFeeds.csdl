@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="rssFeedsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="rssFeedsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="feeds" EntityType="rssFeedsModel.feed" />
+    <EntitySet Name="newsItems" EntityType="rssFeedsModel.newsItem" />
+    <AssociationSet Name="fk_feed_item" Association="rssFeedsModel.fk_feed_item">
+      <End Role="feed" EntitySet="feeds" />
+      <End Role="item" EntitySet="newsItems" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="feed">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Guid" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="link" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="description" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="lastUpdated" Nullable="false" />
+    <NavigationProperty Name="items" Relationship="rssFeedsModel.fk_feed_item" FromRole="feed" ToRole="item" />
+  </EntityType>
+  <EntityType Name="newsItem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Guid" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="title" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="description" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="link" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="publishDate" />
+    <Property Type="String" Name="author" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="dateAcquired" Nullable="false" />
+    <Property Type="Guid" Name="feedId" Nullable="false" />
+    <NavigationProperty Name="feed" Relationship="rssFeedsModel.fk_feed_item" FromRole="item" ToRole="feed" />
+  </EntityType>
+  <Association Name="fk_feed_item">
+    <End Type="rssFeedsModel.feed" Role="feed" Multiplicity="1" />
+    <End Type="rssFeedsModel.newsItem" Role="item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="feed">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="item">
+        <PropertyRef Name="feedId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
