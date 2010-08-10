@@ -20,3 +20,36 @@ C:\Users\James\d\EvE Command\Trunk\EVE Command\EvE Command\obj\x86\Release\Gener
 C:\Users\James\d\EvE Command\Trunk\EVE Command\EvE Command\obj\x86\Release\EvE Command.exe
 C:\Users\James\d\EvE Command\Trunk\EVE Command\EvE Command\obj\x86\Release\EvE Command.xml
 C:\Users\James\d\EvE Command\Trunk\EVE Command\EvE Command\obj\x86\Release\EvE Command.pdb
+C:\Users\James\d\evec\EVE Command\EvE Command\bin\Release\EvE Command.exe.config
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Release\EvE Command.exe
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Release\EvE Command.xml
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Release\EvE Command.pdb
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\bin\Release\EvE Command.exe.config
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\EvE Command.exe
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\EvE Command.xml
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\bin\Release\Databases\rssFeeds.sdf
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\bin\Release\sqlceca35.dll
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\bin\Release\sqlcecompact35.dll
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\bin\Release\sqlceer35EN.dll
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\bin\Release\sqlceme35.dll
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\bin\Release\sqlceoledb35.dll
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\bin\Release\sqlceqp35.dll
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\bin\Release\sqlcese35.dll
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\bin\Release\System.Data.SqlServerCe.Entity.dll
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\bin\Release\EvE Command.exe
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\bin\Release\EvE Command.xml
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\bin\Release\Microsoft.Expression.Drawing.dll
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\bin\Release\System.Data.SqlServerCe.dll
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\bin\Release\Microsoft.Expression.Drawing.xml
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\MainWindow.baml
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\rssReader\rssStyles.baml
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\Application.baml
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\MainWindow.g.vb
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\Application.g.vb
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\EvE Command_Content.g.vb
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\EvE Command_MarkupCompile.cache
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\EvE Command.g.resources
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\eveC.Resources.resources
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\GenerateResource.write.1.tlog

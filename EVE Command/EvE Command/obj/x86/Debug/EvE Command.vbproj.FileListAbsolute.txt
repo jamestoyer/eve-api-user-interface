@@ -47,3 +47,25 @@ C:\Users\James\d\EvE Command\Trunk\EVE Command\EvE Command\obj\x86\Debug\Generat
 C:\Users\James\d\EvE Command\Trunk\EVE Command\EvE Command\obj\x86\Debug\EvE Command.exe
 C:\Users\James\d\EvE Command\Trunk\EVE Command\EvE Command\obj\x86\Debug\EvE Command.xml
 C:\Users\James\d\EvE Command\Trunk\EVE Command\EvE Command\obj\x86\Debug\EvE Command.pdb
+C:\Users\James\d\evec\EVE Command\EvE Command\bin\Debug\Databases\rssFeeds.sdf
+C:\Users\James\d\evec\EVE Command\EvE Command\bin\Debug\EvE Command.exe.config
+C:\Users\James\d\evec\EVE Command\EvE Command\bin\Debug\EvE Command.exe
+C:\Users\James\d\evec\EVE Command\EvE Command\bin\Debug\EvE Command.pdb
+C:\Users\James\d\evec\EVE Command\EvE Command\bin\Debug\EvE Command.xml
+C:\Users\James\d\evec\EVE Command\EvE Command\bin\Debug\Microsoft.Expression.Drawing.dll
+C:\Users\James\d\evec\EVE Command\EvE Command\bin\Debug\Microsoft.Expression.Drawing.xml
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\MainWindow.baml
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\rssReader\rssStyles.baml
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\Application.baml
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\MainWindow.g.vb
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\Application.g.vb
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\EvE Command_Content.g.vb
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\EvE Command_MarkupCompile.cache
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\EvE Command.g.resources
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\eveC.Resources.resources
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\EvE Command.exe
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\EvE Command.xml
+C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\EvE Command.pdb

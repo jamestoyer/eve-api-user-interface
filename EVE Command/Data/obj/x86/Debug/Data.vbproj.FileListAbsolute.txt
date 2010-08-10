@@ -1,0 +1,10 @@
+C:\Users\James\d\evec\EVE Command\Data\bin\Debug\Data.dll
+C:\Users\James\d\evec\EVE Command\Data\bin\Debug\Data.pdb
+C:\Users\James\d\evec\EVE Command\Data\bin\Debug\Data.xml
+C:\Users\James\d\evec\EVE Command\Data\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\James\d\evec\EVE Command\Data\obj\x86\Debug\evec.Data.Resources.resources
+C:\Users\James\d\evec\EVE Command\Data\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\James\d\evec\EVE Command\Data\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\James\d\evec\EVE Command\Data\obj\x86\Debug\Data.dll
+C:\Users\James\d\evec\EVE Command\Data\obj\x86\Debug\Data.xml
+C:\Users\James\d\evec\EVE Command\Data\obj\x86\Debug\Data.pdb

@@ -6,15 +6,7 @@ EvECommand
 </name>
 </assembly>
 <members>
-<member name="M:eveC.MainWindow.InitializeComponent">
-	<summary>
-InitializeComponent
-</summary>
-</member><member name="T:eveC.MainWindow">
-	<summary>
-MainWindow
-</summary>
-</member><member name="M:eveC.Application.InitializeComponent">
+<member name="M:eveC.Application.InitializeComponent">
 	<summary>
 InitializeComponent
 </summary>
@@ -25,6 +17,14 @@ Application Entry Point.
 </member><member name="T:eveC.Application">
 	<summary>
 Application
+</summary>
+</member><member name="M:eveC.MainWindow.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:eveC.MainWindow">
+	<summary>
+MainWindow
 </summary>
 </member><member name="M:eveC.rssReader.rssFeed.updateFeed(System.String,System.Guid)">
 	<summary>
@@ -49,19 +49,6 @@ Application
 </member><member name="T:eveC.rssReader.rssFeed">
 	<summary>
  This module contains methods to get and store RSS feeds
- </summary>
-	<remarks></remarks>
-</member><member name="M:eveC.rssReader.rss1.getItems(System.Xml.Linq.XDocument,System.Guid)">
-	<summary>
- Retrives the feed items and adds them to a more friendly list
- </summary>
-	<param name="rssDoc">The XDocument containing the feed</param>
-	<param name="feedId">The Guid of the feed</param>
-	<returns>A List(Of newsItem) containt all the items</returns>
-	<remarks></remarks>
-</member><member name="T:eveC.rssReader.rss1">
-	<summary>
- Module for processing and handling downloaded RSS v1 feeds
  </summary>
 	<remarks></remarks>
 </member><member name="P:eveC.My.MyWpfExtension.Application">
@@ -90,43 +77,6 @@ Application
  Module used to define the properties that are available in the My Namespace for WPF
  </summary>
 	<remarks></remarks>
-</member><member name="P:eveC.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.LogErrorMessage">
-	<summary>
-  Looks up a localized string similar to Unable to write to log. Please check that the application has permission to access its directory folder.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.LogErrorTitle">
-	<summary>
-  Looks up a localized string similar to Log Write Error.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.ProgramShuttingDown">
-	<summary>
-  Looks up a localized string similar to Program shutting down.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.ProgramStartingUp">
-	<summary>
-  Looks up a localized string similar to Program starting up.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.UnhandledExceptionMessage">
-	<summary>
-  Looks up a localized string similar to Oops an unhandled error has occured. It's ok though, the error has been logged.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.UnhandledExceptionTitle">
-	<summary>
-  Looks up a localized string similar to Unhandled Exception.
-</summary>
-</member><member name="T:eveC.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
 </member><member name="M:eveC.rssFeedsEntities.#ctor">
 	<summary>
  Initializes a new rssFeedsEntities object using the connection string found in the 'rssFeedsEntities' section of the application configuration file.
@@ -247,6 +197,56 @@ Application
 	<summary>
  No Metadata Documentation available.
  </summary>
+</member><member name="M:eveC.rssReader.rss1.getItems(System.Xml.Linq.XDocument,System.Guid)">
+	<summary>
+ Retrives the feed items and adds them to a more friendly list
+ </summary>
+	<param name="rssDoc">The XDocument containing the feed</param>
+	<param name="feedId">The Guid of the feed</param>
+	<returns>A List(Of newsItem) containt all the items</returns>
+	<remarks></remarks>
+</member><member name="T:eveC.rssReader.rss1">
+	<summary>
+ Module for processing and handling downloaded RSS v1 feeds
+ </summary>
+	<remarks></remarks>
+</member><member name="P:eveC.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.LogErrorMessage">
+	<summary>
+  Looks up a localized string similar to Unable to write to log. Please check that the application has permission to access its directory folder.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.LogErrorTitle">
+	<summary>
+  Looks up a localized string similar to Log Write Error.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.ProgramShuttingDown">
+	<summary>
+  Looks up a localized string similar to Program shutting down.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.ProgramStartingUp">
+	<summary>
+  Looks up a localized string similar to Program starting up.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.UnhandledExceptionMessage">
+	<summary>
+  Looks up a localized string similar to Oops an unhandled error has occured. It's ok though, the error has been logged.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.UnhandledExceptionTitle">
+	<summary>
+  Looks up a localized string similar to Unhandled Exception.
+</summary>
+</member><member name="T:eveC.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
 </member>
 </members>
 </doc>
