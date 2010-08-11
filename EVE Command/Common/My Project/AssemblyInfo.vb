@@ -11,11 +11,11 @@ Imports System.Windows
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Common")> 
+<Assembly: AssemblyTitle("evec.Common")> 
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("Microsoft")> 
-<Assembly: AssemblyProduct("Common")> 
-<Assembly: AssemblyCopyright("Copyright @ Microsoft 2010")> 
+<Assembly: AssemblyCompany("ToyerTechnologies.com")> 
+<Assembly: AssemblyProduct("EvE Command")> 
+<Assembly: AssemblyCopyright("Copyright @ ToyerTechnologies.com 2010")> 
 <Assembly: AssemblyTrademark("")> 
 <Assembly: ComVisible(false)>
 

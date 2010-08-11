@@ -1,0 +1,199 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Common
+</name>
+</assembly>
+<members>
+<member name="P:evec.Common.DataDirectory.path">
+	<summary>
+ The path to which the directory resides
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:evec.Common.DataDirectory.dataFiles">
+	<summary>
+ The data files that should be in the directory
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:evec.Common.DataFile.FileName">
+	<summary>
+ The file name of the data file without it's path
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:evec.Common.DataFile.Found">
+	<summary>
+ Indicates that the file has actually been found when checking for it
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:evec.Common.Settings.AppVersion">
+	<summary>
+ The application version associated with the settings file
+ </summary>
+</member><member name="M:evec.Common.Settings.CheckAppVersion">
+	<summary>
+ Checks the current application version against the version in the settings
+ </summary>
+	<remarks></remarks>
+</member><member name="M:evec.Common.Settings.BackupPrompt">
+	<summary>
+ Prompts the user to backup the settings file
+ </summary>
+	<remarks></remarks>
+</member><member name="P:evec.Common.Settings.dataDirectories">
+	<summary>
+ The List(of dataDirectories) which contain all the datafiles
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:evec.Common.Settings.initialiseDirectory(System.String)">
+	<summary>
+ Checks to see if the folder parsed in exists and creates where needs be 
+ </summary>
+	<remarks></remarks>
+</member><member name="M:evec.Common.Settings.initialiseDirectory(evec.Common.dirLocation)">
+	<summary>
+ Checks to see if the folder parsed in exists and creates where needs be 
+ </summary>
+	<remarks></remarks>
+</member><member name="M:evec.Common.Settings.CheckForDataFiles">
+	<summary>
+ Checks through the directories enum to see if the datafiles are present
+ </summary>
+	<remarks></remarks>
+</member><member name="M:evec.Common.Settings.getDataDir(evec.Common.dirLocation)">
+	<summary>
+ Get the data directory depending on the dirLocation Enum value parsed in
+ </summary>
+	<param name="location">The location marker</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="F:evec.Common.Settings.settingsInstance">
+	<summary>
+ Variable to hold the settings
+ </summary>
+</member><member name="P:evec.Common.Settings.backupSettings">
+	<summary>
+ The file name of the autosave settings backup
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:evec.Common.Settings.settingsFileName">
+	<summary>
+ The settings file name, with no directory information. The first time it's called it ensures it initialises the settings file name
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:evec.Common.Settings.NewInstance">
+	<summary>
+ Method to return the settings file
+ </summary>
+	<returns>The settings file</returns>
+</member><member name="M:evec.Common.Settings.Save">
+	<summary>
+ Saves settings 
+ </summary>
+</member><member name="M:evec.Common.Settings.Load">
+	<summary>
+ Loads the settings from the file
+ </summary>
+	<remarks>
+ If the settings file is 0 length or fails to load, then look for a backup
+ copy and ask if that is to be used. Once a settings file is loaded, a backup is taken as a 'last good settings file'
+ </remarks>
+	<returns>A Settings object loaded from file</returns>
+</member><member name="M:evec.Common.Settings.GetSettingsLocation(System.String)">
+	<summary>
+ Creates the location string for the settings file
+ </summary>
+	<param name="file"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:evec.Common.Settings.LoadSettingsFile(System.String)">
+	<summary>
+ Does the heavy lifting of getting the settings file from the location
+ </summary>
+	<param name="settingsLocation"></param>
+	<remarks></remarks>
+</member><member name="M:evec.Common.Settings.evaluateBackupResult(System.String,System.String,System.Windows.MessageBoxResult)">
+	<summary>
+ Evaluate the result of the restore message box and either creates a new settings file or loads the backup
+ </summary>
+	<param name="backupLocation">The location of the backup file</param>
+	<param name="settingsLocation">The location of where the settings file will end up</param>
+	<param name="restoreStatus">The status of the message box</param>
+	<remarks></remarks>
+</member><member name="M:evec.Common.Settings.GetNewSettings">
+	<summary>
+ Creates a new settings file
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:evec.Common.Settings.RestoreBackupFile(System.String,System.String)">
+	<summary>
+ Attempts to restore the autosaved backup file
+ </summary>
+	<param name="backupLocation"></param>
+	<param name="settingsLocation"></param>
+	<remarks></remarks>
+</member><member name="M:evec.Common.Settings.LoadSettings(System.String)">
+	<summary>
+ Loads the settings from a specified file path
+ </summary>
+	<param name="settingsLocation">The fully qualified filename for the settings file to be loaded</param>
+	<returns>The Settings object loaded</returns>
+</member><member name="T:evec.Common.Settings">
+	<summary>
+ Settings file for the whole project
+ </summary>
+</member><member name="P:evec.Common.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:evec.Common.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:evec.Common.My.Resources.Resources.EvECommandUpdated">
+	<summary>
+  Looks up a localized string similar to EvE Command Updated.
+</summary>
+</member><member name="P:evec.Common.My.Resources.Resources.EvECommandUpdatedMsg">
+	<summary>
+  Looks up a localized string similar to EvE Command has been updated. Would you like to backup the settings before proceeding? (Recommended).
+</summary>
+</member><member name="P:evec.Common.My.Resources.Resources.MissingDatabaseMsg">
+	<summary>
+  Looks up a localized string similar to Core Databases are missing from EvE Command. There is nothing for it but to reinstall EvE Command, Sorry. EvE Command will now shut down.
+</summary>
+</member><member name="P:evec.Common.My.Resources.Resources.MissingDatabases">
+	<summary>
+  Looks up a localized string similar to Missing Databases.
+</summary>
+</member><member name="P:evec.Common.My.Resources.Resources.SettingsCorruptTitle">
+	<summary>
+  Looks up a localized string similar to Settings Corrupt.
+</summary>
+</member><member name="P:evec.Common.My.Resources.Resources.SettingsFileCorrupt">
+	<summary>
+  Looks up a localized string similar to The settings file is either missing or corrupt. Would you like to load the last autosave of the settings file, made on {0}?.
+</summary>
+</member><member name="T:evec.Common.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

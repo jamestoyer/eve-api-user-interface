@@ -1,6 +1,5 @@
 ﻿Imports System.IO
 Imports System.Reflection
-Imports System.Windows.Forms
 Imports System.Xml.Serialization
 'TODO: Create methods to save and restore a settings file manually
 'TODO: Consider automating the backup process
@@ -8,7 +7,7 @@ Imports System.Xml.Serialization
 ''' Settings file for the whole project
 ''' </summary>
 Public Class Settings
-    Private Shared objThreadLock As Object = New Object
+    Private Shared threadLock As Object = New Object
 
     Public Sub New()
 
@@ -18,7 +17,18 @@ Public Class Settings
         AppVersion = Version
     End Sub
 
-#Region "App Version Information"
+#Region "Fields"
+    Private Shared _dataDirectories As List(Of DataDirectory)
+
+    ''' <summary>
+    ''' Variable to hold the settings
+    ''' </summary>
+    Private Shared settingsInstance As Settings = Nothing
+
+    Private Shared _settingsFileName As String
+#End Region
+
+#Region "Serialisable Properties"
     ''' <summary>
     ''' The application version associated with the settings file
     ''' </summary>
@@ -26,20 +36,36 @@ Public Class Settings
     Public Property AppVersion() As String
 
     ''' <summary>
+    ''' The List(of dataDirectories) which contain all the datafiles
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <XmlArray("DataDirectories")>
+    <XmlArrayItem("Directory")>
+    Public ReadOnly Property dataDirectories As List(Of DataDirectory)
+        Get
+            Return _dataDirectories
+        End Get
+    End Property
+#End Region
+
+#Region "App Version Information"
+    ''' <summary>
     ''' Checks the current application version against the version in the settings
     ''' </summary>
     ''' <remarks></remarks>
     Private Sub CheckAppVersion()
         ' Get the current version
-        Dim strCurrentVersion As String = Assembly.GetExecutingAssembly.GetName.Version.ToString
+        Dim currentVersion As String = Assembly.GetExecutingAssembly.GetName.Version.ToString
 
         ' Compare versions and inform the user to backup if different
-        If strCurrentVersion <> AppVersion Then
+        If Not IsNothing(AppVersion) AndAlso currentVersion <> AppVersion Then
             BackupPrompt()
         End If
 
         ' Update the app version in the settings
-        AppVersion = strCurrentVersion
+        AppVersion = currentVersion
     End Sub
 
     ''' <summary>
@@ -51,20 +77,19 @@ Public Class Settings
         Dim backupResult = New MessageBoxResult
 
         ' Tell the user to backup the settings file
-        backupResult = MessageBox.Show(My.Resources.Resources.EvECommandHasBeenUpdatedWouldYouLikeToBack, My.Resources.Resources.EvECommandUpdated, MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes)
+        backupResult = MessageBox.Show(My.Resources.Resources.EvECommandUpdatedMsg, My.Resources.Resources.EvECommandUpdated, MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes)
 
         ' Act according the result of the dialog
         If backupResult = MessageBoxResult.Yes Then
             With saveFileDialog
-                'TODO: Fix this so that the settings file backup ends up with the rest of the settings
                 .Title = "Backup"
                 .Filter = "Settings Backup Files (*.bak) | *.bak"
-                .FileName = String.Format("EVE_Command_Settings_{0}.xml.bak", AppVersion)
+                .FileName = String.Format("EvE_Command_Settings_{0}.xml.bak", AppVersion)
                 .InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
 
                 ' See if the user pressed save
                 If .ShowDialog() Then
-                    File.Copy(SettingsFileName, .FileName, True)
+                    File.Copy(GetSettingsLocation(settingsFileName), .FileName, True)
                 End If
             End With
         End If
@@ -72,123 +97,151 @@ Public Class Settings
 #End Region
 
 #Region "Data File Checking"
-    Private Shared strDataFileNames As New List(Of DataFile)
-
-    Public ReadOnly Property DataFileNames() As List(Of DataFile)
-        Get
-            Return strDataFileNames
-        End Get
-    End Property
-
-    Public Shared Function FindDatafile(ByVal dataFile As String) As DataFile
-        Dim strLocation As String
-
-        ' Create the locations to find
-        strLocation = String.Format("{0}{1}Databases{1}{2}", Settings.DataDir, Path.DirectorySeparatorChar, dataFile)
-
-        ' Check to see if the file is there
-        If File.Exists(strLocation) <> True Then
-            ' The file obviously isn't where it should be, or it's a new install
-            Dim strOriginal As String
-
-            ' Create the location of the original install directory
-            strOriginal = String.Format("{0}Resources{1}{2}", AppDomain.CurrentDomain.BaseDirectory, Path.DirectorySeparatorChar, dataFile)
-
-            ' Check to see if the file actually was installed originally. If not either myself or the installer fucked up
-            If File.Exists(strOriginal) <> True Then
-                ' Return a fail
-                Return New DataFile(dataFile, False)
-            End If
-
-            ' Try to copy the file
-            Try
-                File.Copy(strOriginal, strLocation)
-            Catch generatedExceptionName As Exception
-                ' Return a fail
-                Return New DataFile(dataFile, False)
-            End Try
+    ''' <summary>
+    ''' Checks to see if the folder parsed in exists and creates where needs be 
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Shared Sub initialiseDirectory(ByVal initDir As String)
+        If Not Directory.Exists(initDir) Then
+            Directory.CreateDirectory(initDir)
         End If
-        ' Return a success
-        Return New DataFile(dataFile, True)
+    End Sub
+
+    ''' <summary>
+    ''' Checks to see if the folder parsed in exists and creates where needs be 
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Shared Sub initialiseDirectory(ByVal location As dirLocation)
+        Dim initDir As String = getDataDir(location)
+
+        initialiseDirectory(initDir)
+    End Sub
+
+    ''' <summary>
+    ''' Checks through the directories enum to see if the datafiles are present
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub CheckForDataFiles()
+        ' Check each of the data directories in the dirLocation enum
+        Dim directories As List(Of DataDirectory) = New List(Of DataDirectory)
+        directories.Clear()
+        directories.Add(FindDirectory(dirLocation.globalDir))
+        'directories.Add(FindDirectory(dirLocation.userDir))
+
+        _dataDirectories = directories
+    End Sub
+
+    Private Function FindDataFiles(ByVal location As dirLocation, ByVal fileName As String) As DataFile
+        ' Create the file location string and check it exists
+        Dim fileLocation As String = Path.Combine(getDataDir(location), fileName)
+        initialiseDirectory(location)
+
+        ' See if the file exists
+        If Not File.Exists(fileLocation) Then
+            ' Ok so the file is missing, this is not a problem depending on the directory we are searching in
+            If location = dirLocation.userDir Then
+                ' TODO: Impliment this
+                Return New DataFile(fileName, False)
+            Else
+                ' If we are here, well its a fresh install I'm afraid. So I'll let the user know
+                MessageBox.Show(My.Resources.Resources.MissingDatabaseMsg, My.Resources.Resources.MissingDatabases, MessageBoxButton.OK, MessageBoxImage.Error)
+                Return Nothing
+            End If
+        Else
+            ' Return the datafile information
+            Return New DataFile(fileName, True)
+        End If
     End Function
 
-    Public Sub CheckForDataFiles()
-        strDataFileNames.Clear()
-        strDataFileNames.Add(FindDatafile("Userdata.sdf"))
-        strDataFileNames.Add(FindDatafile("EveData.sdf"))
-    End Sub
+    Private Function FindDirectory(ByVal location As dirLocation) As DataDirectory
+        FindDirectory = New DataDirectory
+        FindDirectory.dataFiles = New List(Of DataFile)
+
+        ' Get the directory to look for
+        FindDirectory.path = getDataDir(location)
+
+        ' Find out which directory to look for
+        Select Case location
+            Case dirLocation.globalDir
+                ' Create a list of the databases to check for
+                Dim dbList As New List(Of String)
+                dbList.Add("rssFeeds.sdf")
+
+                ' Now go through them all
+                For Each db In dbList
+                    Dim foundFile As DataFile = FindDataFiles(location, db)
+
+                    ' Ensure that it the file is there otherwise its the end of the road
+                    If IsNothing(foundFile) Then
+                        Application.Current.Shutdown()
+                    Else
+                        FindDirectory.dataFiles.Add(foundFile)
+                    End If
+                Next
+            Case dirLocation.userDir
+
+        End Select
+
+        ' Return the completed directory search
+        Return FindDirectory
+    End Function
+
+    ''' <summary>
+    ''' Get the data directory depending on the dirLocation Enum value parsed in
+    ''' </summary>
+    ''' <param name="location">The location marker</param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Private Shared Function getDataDir(ByVal location As dirLocation) As String
+        getDataDir = Nothing
+
+        ' Work out the directory of where data is stored by using the dirLocation Enum
+        Select Case location
+            Case dirLocation.userDir
+                getDataDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "ToyerTechnologies", "EvE Command")
+            Case dirLocation.globalDir
+                getDataDir = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly.Location), "Databases")
+        End Select
+
+        Return getDataDir
+    End Function
 #End Region
 
 #Region "Settings File Management"
-#Region "Properties and Fields"
+#Region "Non Serialisable Properties"
     ''' <summary>
-    ''' Field to hold data directory. Value is initialised by the first read of DataDir property
+    ''' The file name of the autosave settings backup
     ''' </summary>
-    Private Shared strDataDir As String
-
-    ''' <summary>
-    ''' Field to hold the name of the settings file in use. Value initialised by the first read of DataDir property.
-    ''' </summary>
-    Private Shared strSettingsFileName As String
-
-    ''' <summary>
-    ''' Variable to hold the settings
-    ''' </summary>
-    Private Shared objInstance As Settings = Nothing
-
-    ''' <summary>
-    ''' The directory for all user specific data
-    ''' </summary>
-    Public Shared ReadOnly Property DataDir() As String
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <XmlIgnore()>
+    Private Shared ReadOnly Property backupSettings() As String
         Get
-            SyncLock objThreadLock
-                If strDataDir = Nothing Then
-                    ' Create the settings file name
-                    strSettingsFileName = Path.DirectorySeparatorChar & "settings.xml"
-#If DEBUG Then
-                    strSettingsFileName = Path.DirectorySeparatorChar & "settings-debug.xml"
-#End If
-
-                    ' Get the data directory
-                    strDataDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EVE Command")
-
-                    ' Check to see if the directory exists and if not create it
-                    If Directory.Exists(strDataDir) <> True Then
-                        Directory.CreateDirectory(strDataDir)
-                    End If
-
-                    ' Create the cache sub directory path
-                    Dim strCachePath As String
-                    strCachePath = Path.Combine(strDataDir, "Cache")
-
-                    ' Check to see if the cache sub directories exist
-                    If Directory.Exists(strCachePath) <> True Then
-                        Directory.CreateDirectory(strCachePath)
-                    End If
-                    If Directory.Exists(Path.Combine(strCachePath, "Images")) <> True Then
-                        Directory.CreateDirectory(Path.Combine(strCachePath, "Images"))
-                    End If
-                    If Directory.Exists(Path.Combine(strCachePath, "Temp")) <> True Then
-                        Directory.CreateDirectory(Path.Combine(strCachePath, "Temp"))
-                    End If
-
-                    ' Check to see if the database sub directory exist
-                    If Directory.Exists(Path.Combine(strDataDir, "Databases")) <> True Then
-                        Directory.CreateDirectory(Path.Combine(strDataDir, "Databases"))
-                    End If
-                End If
-                Return strDataDir
-            End SyncLock
-            Return strDataDir
+            Return String.Format("{0}.backup", settingsFileName)
         End Get
     End Property
 
     ''' <summary>
-    ''' The file name of the settings file
+    ''' The settings file name, with no directory information. The first time it's called it ensures it initialises the settings file name
     ''' </summary>
-    Public Shared ReadOnly Property SettingsFileName() As String
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <XmlIgnore()>
+    Public Shared ReadOnly Property settingsFileName() As String
         Get
-            Return DataDir & strSettingsFileName
+            SyncLock threadLock
+                If IsNothing(_settingsFileName) Then
+                    ' Create the settings file name
+                    _settingsFileName = "settings.xml"
+#If DEBUG Then
+                    _settingsFileName = "debug-settings.xml"
+#End If
+                End If
+            End SyncLock
+
+            Return _settingsFileName
         End Get
     End Property
 #End Region
@@ -200,13 +253,13 @@ Public Class Settings
     ''' <returns>The settings file</returns>
     Public Shared Function NewInstance() As Settings
         ' Lock the code and get a new instance
-        SyncLock objThreadLock
-            If objInstance Is Nothing Then
-                objInstance = Load()
+        SyncLock threadLock
+            If settingsInstance Is Nothing Then
+                settingsInstance = Load()
             End If
 
             ' Return the settings
-            Return objInstance
+            Return settingsInstance
         End SyncLock
     End Function
 
@@ -215,28 +268,26 @@ Public Class Settings
     ''' </summary>
     Public Sub Save()
         ' Save the file
-        SyncLock objThreadLock
+        SyncLock threadLock
             ' Create a new file variable for the file stream
-            Dim objSaveSettings As FileStream
+            Dim settingsStream As FileStream
 
             ' Create an xml serialiser variable
-            Dim xmlSaveXML As XmlSerializer
+            Dim settingsAsXml As XmlSerializer = New XmlSerializer(GetType(Settings))
 
             ' Create a new filestream
-            objSaveSettings = New FileStream(SettingsFileName, FileMode.Create, FileAccess.Write)
+            settingsStream = New FileStream(GetSettingsLocation(settingsFileName), FileMode.Create, FileAccess.Write)
 
             ' Serialise and save the settings
-            xmlSaveXML = New XmlSerializer(GetType(Settings))
-            xmlSaveXML.Serialize(objSaveSettings, Settings.NewInstance)
+            settingsAsXml.Serialize(settingsStream, Settings.NewInstance)
 
             ' Dispose of the variables
-            objSaveSettings.Close()
+            settingsStream.Close()
         End SyncLock
     End Sub
 #End Region
 
 #Region "Private Methods"
-    'TODO: Fix this summary thing
     ''' <summary>
     ''' Loads the settings from the file
     ''' </summary>
@@ -246,99 +297,152 @@ Public Class Settings
     ''' </remarks>
     ''' <returns>A Settings object loaded from file</returns>
     Private Shared Function Load() As Settings
-        Dim objSettings As Settings = Nothing
-        Dim strBackupFileName As String
+        ' Construct a location for the settings actual and backup file
+        Dim backupLocation As String = GetSettingsLocation(backupSettings)
+        Dim settingsLocation As String = GetSettingsLocation(settingsFileName)
 
-        ' Construct the backup file name
-        strBackupFileName = SettingsFileName & ".bak"
+        ' Create a settings file object
+        Dim _settings As Settings = New Settings
 
-        ' Check to see if a settings or backup file exists
-        If File.Exists(SettingsFileName) = True Then
-            ' Try loading from the file
+        ' See if either the settings file exists
+        If File.Exists(settingsLocation) Then
+            _settings = LoadSettingsFile(settingsLocation)
+        End If
+
+        ' Ok either the settings loaded or not. Lets see if they did load, and either create an auto backup or try to restore for a previous back up 
+        If Not IsNothing(_settings) Then
+            ' Create an auto backup
             Try
-                objSettings = LoadFile(SettingsFileName)
+                File.Copy(settingsLocation, backupLocation, True)
             Catch ex As Exception
+                ' TODO: Log that the copy was unsuccessful, and let the user know. Tell them that they can always manually backup the settings
             End Try
+        ElseIf File.Exists(backupLocation) Then
+            ' Attempt to restore the backup settings
+            _settings = RestoreBackupFile(backupLocation, settingsLocation)
+        Else
+            ' Create a new settings file
+            _settings = GetNewSettings()
+        End If
 
-            ' Backup the settings
-            If objSettings IsNot Nothing Then
+        _settings.CheckAppVersion()
+        _settings.CheckForDataFiles()
+
+        Return _settings
+    End Function
+
+    ''' <summary>
+    ''' Creates the location string for the settings file
+    ''' </summary>
+    ''' <param name="file"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Private Shared Function GetSettingsLocation(ByVal file As String) As String
+        ' Ensure the directory exists
+        initialiseDirectory(dirLocation.userDir)
+        Return Path.Combine(getDataDir(dirLocation.userDir), file)
+    End Function
+
+    ''' <summary>
+    ''' Does the heavy lifting of getting the settings file from the location
+    ''' </summary>
+    ''' <param name="settingsLocation"></param>
+    ''' <remarks></remarks>
+    Private Shared Function LoadSettingsFile(ByVal settingsLocation As String) As Settings
+        Try
+            ' Try loading the settings
+            LoadSettingsFile = LoadSettings(settingsLocation)
+        Catch ex As Exception
+            ' TODO: Add a log event to record the lack of settings file loading, and let the user know that we will try to load the backup instead
+            Return Nothing
+        End Try
+    End Function
+
+    ''' <summary>
+    ''' Evaluate the result of the restore message box and either creates a new settings file or loads the backup
+    ''' </summary>
+    ''' <param name="backupLocation">The location of the backup file</param>
+    ''' <param name="settingsLocation">The location of where the settings file will end up</param>
+    ''' <param name="restoreStatus">The status of the message box</param>
+    ''' <remarks></remarks>
+    Private Shared Function evaluateBackupResult(ByVal backupLocation As String, ByVal settingsLocation As String, ByVal restoreStatus As System.Windows.MessageBoxResult) As Settings
+        If restoreStatus = MessageBoxResult.Yes Then
+            ' Get the settings file
+            evaluateBackupResult = LoadSettingsFile(backupLocation)
+
+            ' If the settings loaded OK, copy to the main settings file, then copy back to stamp date
+            If IsNothing(evaluateBackupResult) Then
+                ' TODO: Tell the user that restoring the backup settings failed and that a new settings file will be created
+            Else
                 Try
-                    File.Copy(SettingsFileName, strBackupFileName, True)
-                Catch ex As Exception
+                    File.Copy(backupLocation, settingsLocation, True)
+                    File.Copy(settingsLocation, backupLocation, True)
+                Catch
+                    ' TODO: Log the fact that there was an issue copying the settings file. Potentially let the user know that fact too
+                    evaluateBackupResult = GetNewSettings()
                 End Try
             End If
+        Else
+            ' Create a new settings file
+            evaluateBackupResult = GetNewSettings()
         End If
+    End Function
 
-        If File.Exists(strBackupFileName) = True AndAlso objSettings Is Nothing Then
-            Dim objBackupFileInfo As New FileInfo(strBackupFileName)
-            Dim strFileDate As String
-            Dim objRestoreResult As DialogResult
+    ''' <summary>
+    ''' Creates a new settings file
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Private Shared Function GetNewSettings() As Settings
+        Dim _settings As Settings
+        _settings = New Settings(Assembly.GetExecutingAssembly.GetName.Version.ToString())
+        Return _settings
+    End Function
 
-            ' Get the file info for the backup
-            strFileDate = (objBackupFileInfo.LastWriteTime.ToLocalTime().ToShortDateString() & " at ") + objBackupFileInfo.LastWriteTime.ToLocalTime().ToShortTimeString()
+    ''' <summary>
+    ''' Attempts to restore the autosaved backup file
+    ''' </summary>
+    ''' <param name="backupLocation"></param>
+    ''' <param name="settingsLocation"></param>
+    ''' <remarks></remarks>
+    Private Shared Function RestoreBackupFile(ByVal backupLocation As String, ByVal settingsLocation As String) As Settings
+        Try
+            ' Get the date and time the backup was made
+            Dim localWriteTime As Date = (New FileInfo(backupLocation)).LastWriteTime.ToLocalTime
+            Dim lastUsed As String = String.Format("{0} at {1}", localWriteTime.ToShortDateString, localWriteTime.ToShortTimeString)
 
-            ' Inform the user the settings are fucked
-            objRestoreResult = MessageBox.Show(String.Format("The settings file is either missing or corrupt. The last backup was made on {0}. Would you like to use this backup file?", strFileDate), "Settings Corrupt", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
-            If objRestoreResult = DialogResult.Yes Then
-                ' Try to load from backup file
-                Try
-                    objSettings = LoadFile(strBackupFileName)
-                Catch ex As Exception
-                End Try
+            ' Tell the user we are going to try the auto backup
+            Dim restoreStatus As System.Windows.MessageBoxResult
+            restoreStatus = MessageBox.Show(String.Format(My.Resources.Resources.SettingsFileCorrupt, lastUsed), My.Resources.Resources.SettingsCorruptTitle, MessageBoxButton.YesNo, MessageBoxImage.Exclamation)
 
-                ' If the settings loaded OK, copy to the main settings file, then copy back to stamp date
-                If objSettings IsNot Nothing Then
-                    Try
-                        File.Copy(strBackupFileName, SettingsFileName, True)
-                        File.Copy(SettingsFileName, strBackupFileName, True)
-                    Catch ex As Exception
-                    End Try
-                Else
-                    ' Notify user the restore failed
-                    MessageBox.Show("Unable to load the backup file. A new settings file will be created", "Settings Corrupt", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                End If
-            End If
-        End If
-
-        ' If no settings have been found, create a new file
-        If objSettings Is Nothing Then
-            ' Create new settings file
-            objSettings = New Settings(Assembly.GetExecutingAssembly.GetName.Version.ToString())
-        End If
-
-        ' Check the settings version and for datafiles
-        objSettings.CheckAppVersion()
-        objSettings.CheckForDataFiles()
-
-        Return objSettings
+            ' Evaluate the result and restore the backup
+            RestoreBackupFile = evaluateBackupResult(backupLocation, settingsLocation, restoreStatus)
+        Catch ex As Exception
+            ' TODO: Let the user know that the application is unable to load the backup info so is creating a new settings file
+            RestoreBackupFile = GetNewSettings()
+        End Try
     End Function
 
     ''' <summary>
     ''' Loads the settings from a specified file path
     ''' </summary>
-    ''' <param name="fileName">The fully qualified filename for the settings file to be loaded</param>
+    ''' <param name="settingsLocation">The fully qualified filename for the settings file to be loaded</param>
     ''' <returns>The Settings object loaded</returns>
-    Private Shared Function LoadFile(ByVal fileName As String) As Settings
+    Private Shared Function LoadSettings(ByVal settingsLocation As String) As Settings
         ' Create a new file variable for the file stream
-        Dim objOpenSettings As FileStream
+        Dim settingsStream As FileStream = New FileStream(settingsLocation, FileMode.Open, FileAccess.Read)
 
         ' Create an xml serialiser variable
-        Dim xmlLoadedXML As XmlSerializer
-
-        ' Istantiate the variables
-        objOpenSettings = New FileStream(fileName, FileMode.Open, FileAccess.Read)
-        xmlLoadedXML = New XmlSerializer(GetType(Settings))
+        Dim loadedSettings As XmlSerializer = New XmlSerializer(GetType(Settings))
 
         ' Get the settings
-        LoadFile = DirectCast(xmlLoadedXML.Deserialize(objOpenSettings), Settings)
+        LoadSettings = DirectCast(loadedSettings.Deserialize(settingsStream), Settings)
 
         ' Dispose of the variables
-        objOpenSettings.Close()
+        settingsStream.Close()
 
-        Return LoadFile
+        Return LoadSettings
     End Function
 #End Region
-
-
 #End Region
 End Class

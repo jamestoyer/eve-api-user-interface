@@ -61,20 +61,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to EvE Command has been updated. Would you like to backup the settings before proceeding? (Recommended).
-        '''</summary>
-        Friend ReadOnly Property EvECommandHasBeenUpdatedWouldYouLikeToBack() As String
-            Get
-                Return ResourceManager.GetString("EvECommandHasBeenUpdatedWouldYouLikeToBack", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Looks up a localized string similar to EvE Command Updated.
         '''</summary>
         Friend ReadOnly Property EvECommandUpdated() As String
             Get
                 Return ResourceManager.GetString("EvECommandUpdated", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to EvE Command has been updated. Would you like to backup the settings before proceeding? (Recommended).
+        '''</summary>
+        Friend ReadOnly Property EvECommandUpdatedMsg() As String
+            Get
+                Return ResourceManager.GetString("EvECommandUpdatedMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Core Databases are missing from EvE Command. There is nothing for it but to reinstall EvE Command, Sorry. EvE Command will now shut down.
+        '''</summary>
+        Friend ReadOnly Property MissingDatabaseMsg() As String
+            Get
+                Return ResourceManager.GetString("MissingDatabaseMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Missing Databases.
+        '''</summary>
+        Friend ReadOnly Property MissingDatabases() As String
+            Get
+                Return ResourceManager.GetString("MissingDatabases", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Settings Corrupt.
+        '''</summary>
+        Friend ReadOnly Property SettingsCorruptTitle() As String
+            Get
+                Return ResourceManager.GetString("SettingsCorruptTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The settings file is either missing or corrupt. Would you like to load the last autosave of the settings file, made on {0}?.
+        '''</summary>
+        Friend ReadOnly Property SettingsFileCorrupt() As String
+            Get
+                Return ResourceManager.GetString("SettingsFileCorrupt", resourceCulture)
             End Get
         End Property
     End Module

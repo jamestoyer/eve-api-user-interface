@@ -26,30 +26,79 @@ InitializeComponent
 	<summary>
 MainWindow
 </summary>
-</member><member name="P:eveC.My.MyWpfExtension.Application">
+</member><member name="M:eveC.rssReader.rss1.getItems(System.Xml.Linq.XDocument,System.Guid)">
 	<summary>
- Returns the application object for the running application
+ Retrives the feed items and adds them to a more friendly list
  </summary>
-</member><member name="P:eveC.My.MyWpfExtension.Computer">
+	<param name="rssDoc">The XDocument containing the feed</param>
+	<param name="feedId">The Guid of the feed</param>
+	<returns>A List(Of newsItem) containt all the items</returns>
+	<remarks></remarks>
+</member><member name="T:eveC.rssReader.rss1">
 	<summary>
- Returns information about the host computer.
+ Module for processing and handling downloaded RSS v1 feeds
  </summary>
-</member><member name="P:eveC.My.MyWpfExtension.User">
+	<remarks></remarks>
+</member><member name="P:eveC.My.Resources.Resources.ResourceManager">
 	<summary>
- Returns information for the current user.  If you wish to run the application with the current 
- Windows user credentials, call My.User.InitializeWithWindowsUser().
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.LogErrorMessage">
+	<summary>
+  Looks up a localized string similar to Unable to write to log. Please check that the application has permission to access its directory folder.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.LogErrorTitle">
+	<summary>
+  Looks up a localized string similar to Log Write Error.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.ProgramShuttingDown">
+	<summary>
+  Looks up a localized string similar to Program shutting down.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.ProgramStartingUp">
+	<summary>
+  Looks up a localized string similar to Program starting up.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.UnhandledExceptionMessage">
+	<summary>
+  Looks up a localized string similar to Oops an unhandled error has occured. It's ok though, the error has been logged.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.UnhandledExceptionTitle">
+	<summary>
+  Looks up a localized string similar to Unhandled Exception.
+</summary>
+</member><member name="T:eveC.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:eveC.rssReader.rssFeed.updateFeed(System.String,System.Guid)">
+	<summary>
+ Gets the latest version of an RSS feed from the feed source
  </summary>
-</member><member name="P:eveC.My.MyWpfExtension.Log">
+	<param name="feedUrl">The URL of the feed</param>
+	<param name="feedId">The Guid of the feed assigned in the database</param>
+	<returns>A list of all the current items on the feed</returns>
+	<remarks></remarks>
+</member><member name="M:eveC.rssReader.rssFeed.refreshFeeds">
 	<summary>
- Returns the application log. The listeners can be configured by the application's configuration file.
+ Refreshes all the RSS feeds contained in the database and updates them 
  </summary>
-</member><member name="P:eveC.My.MyWpfExtension.Windows">
+	<remarks></remarks>
+</member><member name="M:eveC.rssReader.rssFeed.feedWebRequest(System.String)">
 	<summary>
- Returns the collection of Windows defined in the project.
+ Gets the feed from the URL source
  </summary>
-</member><member name="T:eveC.My.MyWpfExtension">
+	<param name="feedUrl">The location of the feed</param>
+	<returns>The feed as a XDocument</returns>
+	<remarks></remarks>
+</member><member name="T:eveC.rssReader.rssFeed">
 	<summary>
- Module used to define the properties that are available in the My Namespace for WPF
+ This module contains methods to get and store RSS feeds
  </summary>
 	<remarks></remarks>
 </member><member name="M:eveC.rssFeedsEntities.#ctor">
@@ -172,81 +221,32 @@ MainWindow
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="M:eveC.rssReader.rssFeed.updateFeed(System.String,System.Guid)">
+</member><member name="P:eveC.My.MyWpfExtension.Application">
 	<summary>
- Gets the latest version of an RSS feed from the feed source
+ Returns the application object for the running application
  </summary>
-	<param name="feedUrl">The URL of the feed</param>
-	<param name="feedId">The Guid of the feed assigned in the database</param>
-	<returns>A list of all the current items on the feed</returns>
-	<remarks></remarks>
-</member><member name="M:eveC.rssReader.rssFeed.refreshFeeds">
+</member><member name="P:eveC.My.MyWpfExtension.Computer">
 	<summary>
- Refreshes all the RSS feeds contained in the database and updates them 
+ Returns information about the host computer.
  </summary>
-	<remarks></remarks>
-</member><member name="M:eveC.rssReader.rssFeed.feedWebRequest(System.String)">
+</member><member name="P:eveC.My.MyWpfExtension.User">
 	<summary>
- Gets the feed from the URL source
+ Returns information for the current user.  If you wish to run the application with the current 
+ Windows user credentials, call My.User.InitializeWithWindowsUser().
  </summary>
-	<param name="feedUrl">The location of the feed</param>
-	<returns>The feed as a XDocument</returns>
-	<remarks></remarks>
-</member><member name="T:eveC.rssReader.rssFeed">
+</member><member name="P:eveC.My.MyWpfExtension.Log">
 	<summary>
- This module contains methods to get and store RSS feeds
+ Returns the application log. The listeners can be configured by the application's configuration file.
  </summary>
-	<remarks></remarks>
-</member><member name="M:eveC.rssReader.rss1.getItems(System.Xml.Linq.XDocument,System.Guid)">
+</member><member name="P:eveC.My.MyWpfExtension.Windows">
 	<summary>
- Retrives the feed items and adds them to a more friendly list
+ Returns the collection of Windows defined in the project.
  </summary>
-	<param name="rssDoc">The XDocument containing the feed</param>
-	<param name="feedId">The Guid of the feed</param>
-	<returns>A List(Of newsItem) containt all the items</returns>
-	<remarks></remarks>
-</member><member name="T:eveC.rssReader.rss1">
+</member><member name="T:eveC.My.MyWpfExtension">
 	<summary>
- Module for processing and handling downloaded RSS v1 feeds
+ Module used to define the properties that are available in the My Namespace for WPF
  </summary>
 	<remarks></remarks>
-</member><member name="P:eveC.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.LogErrorMessage">
-	<summary>
-  Looks up a localized string similar to Unable to write to log. Please check that the application has permission to access its directory folder.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.LogErrorTitle">
-	<summary>
-  Looks up a localized string similar to Log Write Error.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.ProgramShuttingDown">
-	<summary>
-  Looks up a localized string similar to Program shutting down.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.ProgramStartingUp">
-	<summary>
-  Looks up a localized string similar to Program starting up.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.UnhandledExceptionMessage">
-	<summary>
-  Looks up a localized string similar to Oops an unhandled error has occured. It's ok though, the error has been logged.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.UnhandledExceptionTitle">
-	<summary>
-  Looks up a localized string similar to Unhandled Exception.
-</summary>
-</member><member name="T:eveC.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
 </member>
 </members>
 </doc>

@@ -23,7 +23,6 @@ D:\Desktop\Documents\Software Development\ToyerTechnologies\EvE Command\Trunk\EV
 D:\Desktop\Documents\Software Development\ToyerTechnologies\EvE Command\Trunk\EVE Command\EvE Command\bin\Debug\Microsoft.Expression.Drawing.xml
 D:\Desktop\Documents\Software Development\ToyerTechnologies\EvE Command\Trunk\EVE Command\EvE Command\obj\x86\Debug\rssReader\rssStyles.baml
 D:\Desktop\Documents\Software Development\ToyerTechnologies\EvE Command\Trunk\EVE Command\EvE Command\obj\x86\Debug\Application.baml
-D:\Desktop\Documents\Software Development\ToyerTechnologies\EvE Command\Trunk\EVE Command\EvE Command\obj\x86\Debug\EvE Command_MarkupCompile.lref
 D:\Desktop\Documents\Software Development\ToyerTechnologies\EvE Command\Trunk\EVE Command\EvE Command\obj\x86\Debug\eveC.Resources.resources
 C:\Users\James\d\EvE Command\Trunk\EVE Command\EvE Command\bin\Debug\Databases\rssFeeds.sdf
 C:\Users\James\d\EvE Command\Trunk\EVE Command\EvE Command\bin\Debug\EvE Command.exe.config
@@ -69,3 +68,6 @@ C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\GenerateResource.wri
 C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\EvE Command.exe
 C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\EvE Command.xml
 C:\Users\James\d\evec\EVE Command\EvE Command\obj\x86\Debug\EvE Command.pdb
+D:\Desktop\Documents\Software Development\ToyerTechnologies\EvE Command\Trunk\EVE Command\EvE Command\bin\Debug\Common.dll
+D:\Desktop\Documents\Software Development\ToyerTechnologies\EvE Command\Trunk\EVE Command\EvE Command\bin\Debug\Common.pdb
+D:\Desktop\Documents\Software Development\ToyerTechnologies\EvE Command\Trunk\EVE Command\EvE Command\bin\Debug\Common.xml

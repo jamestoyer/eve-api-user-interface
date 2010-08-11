@@ -39,6 +39,43 @@ MainWindow
  Module for processing and handling downloaded RSS v1 feeds
  </summary>
 	<remarks></remarks>
+</member><member name="P:eveC.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.LogErrorMessage">
+	<summary>
+  Looks up a localized string similar to Unable to write to log. Please check that the application has permission to access its directory folder.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.LogErrorTitle">
+	<summary>
+  Looks up a localized string similar to Log Write Error.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.ProgramShuttingDown">
+	<summary>
+  Looks up a localized string similar to Program shutting down.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.ProgramStartingUp">
+	<summary>
+  Looks up a localized string similar to Program starting up.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.UnhandledExceptionMessage">
+	<summary>
+  Looks up a localized string similar to Oops an unhandled error has occured. It's ok though, the error has been logged.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.UnhandledExceptionTitle">
+	<summary>
+  Looks up a localized string similar to Unhandled Exception.
+</summary>
+</member><member name="T:eveC.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
 </member><member name="M:eveC.rssReader.rssFeed.updateFeed(System.String,System.Guid)">
 	<summary>
  Gets the latest version of an RSS feed from the feed source
@@ -62,32 +99,6 @@ MainWindow
 </member><member name="T:eveC.rssReader.rssFeed">
 	<summary>
  This module contains methods to get and store RSS feeds
- </summary>
-	<remarks></remarks>
-</member><member name="P:eveC.My.MyWpfExtension.Application">
-	<summary>
- Returns the application object for the running application
- </summary>
-</member><member name="P:eveC.My.MyWpfExtension.Computer">
-	<summary>
- Returns information about the host computer.
- </summary>
-</member><member name="P:eveC.My.MyWpfExtension.User">
-	<summary>
- Returns information for the current user.  If you wish to run the application with the current 
- Windows user credentials, call My.User.InitializeWithWindowsUser().
- </summary>
-</member><member name="P:eveC.My.MyWpfExtension.Log">
-	<summary>
- Returns the application log. The listeners can be configured by the application's configuration file.
- </summary>
-</member><member name="P:eveC.My.MyWpfExtension.Windows">
-	<summary>
- Returns the collection of Windows defined in the project.
- </summary>
-</member><member name="T:eveC.My.MyWpfExtension">
-	<summary>
- Module used to define the properties that are available in the My Namespace for WPF
  </summary>
 	<remarks></remarks>
 </member><member name="M:eveC.rssFeedsEntities.#ctor">
@@ -210,43 +221,32 @@ MainWindow
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:eveC.My.Resources.Resources.ResourceManager">
+</member><member name="P:eveC.My.MyWpfExtension.Application">
 	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.Culture">
+ Returns the application object for the running application
+ </summary>
+</member><member name="P:eveC.My.MyWpfExtension.Computer">
 	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.LogErrorMessage">
+ Returns information about the host computer.
+ </summary>
+</member><member name="P:eveC.My.MyWpfExtension.User">
 	<summary>
-  Looks up a localized string similar to Unable to write to log. Please check that the application has permission to access its directory folder.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.LogErrorTitle">
+ Returns information for the current user.  If you wish to run the application with the current 
+ Windows user credentials, call My.User.InitializeWithWindowsUser().
+ </summary>
+</member><member name="P:eveC.My.MyWpfExtension.Log">
 	<summary>
-  Looks up a localized string similar to Log Write Error.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.ProgramShuttingDown">
+ Returns the application log. The listeners can be configured by the application's configuration file.
+ </summary>
+</member><member name="P:eveC.My.MyWpfExtension.Windows">
 	<summary>
-  Looks up a localized string similar to Program shutting down.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.ProgramStartingUp">
+ Returns the collection of Windows defined in the project.
+ </summary>
+</member><member name="T:eveC.My.MyWpfExtension">
 	<summary>
-  Looks up a localized string similar to Program starting up.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.UnhandledExceptionMessage">
-	<summary>
-  Looks up a localized string similar to Oops an unhandled error has occured. It's ok though, the error has been logged.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.UnhandledExceptionTitle">
-	<summary>
-  Looks up a localized string similar to Unhandled Exception.
-</summary>
-</member><member name="T:eveC.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
+ Module used to define the properties that are available in the My Namespace for WPF
+ </summary>
+	<remarks></remarks>
 </member>
 </members>
 </doc>
