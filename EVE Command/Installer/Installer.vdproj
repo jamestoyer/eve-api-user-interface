@@ -21,12 +21,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_9541CC60583876A2F6C3C5AEE9AC568A"
-        "OwnerKey" = "8:_03DBAA912D9B46E48127A43D50B473B7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_9AD6949FE7BDF6DBB714CF68E3333450"
         "OwnerKey" = "8:_03DBAA912D9B46E48127A43D50B473B7"
         "MsmSig" = "8:_UNDEFINED"
@@ -35,12 +29,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_03DBAA912D9B46E48127A43D50B473B7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9541CC60583876A2F6C3C5AEE9AC568A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -74,6 +62,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
         "Release"
@@ -98,6 +99,24 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.SQL.Server.Compact.3.5"
+                    {
+                    "Name" = "8:SQL Server Compact 3.5 SP2"
+                    "ProductCode" = "8:Microsoft.SQL.Server.Compact.3.5"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.4.5"
+                    {
+                    "Name" = "8:Windows Installer 4.5"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.4.5"
+                    }
+                }
             }
         }
     }
@@ -128,37 +147,6 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9541CC60583876A2F6C3C5AEE9AC568A"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_9541CC60583876A2F6C3C5AEE9AC568A"
-                    {
-                    "Name" = "8:System.Data.SqlServerCe.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Data.SqlServerCe.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_3D85D19951D94298A310BE09677BC02E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9AD6949FE7BDF6DBB714CF68E3333450"
             {
             "AssemblyRegister" = "3:1"
@@ -246,15 +234,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:EvE Command"
-        "ProductCode" = "8:{03967731-F34A-46EC-8FE0-D0EA295B091D}"
-        "PackageCode" = "8:{31A674F9-1F91-41BB-8514-6C2D2BC9E16A}"
+        "ProductCode" = "8:{0AA6FC33-C289-40B1-8089-A4E2C4C86C64}"
+        "PackageCode" = "8:{58822B4D-9119-4581-9699-0C8B85756CC2}"
         "UpgradeCode" = "8:{9254B1A2-C0F1-4BBF-B91C-147DBD4F90C2}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:0.01.1000"
+        "ProductVersion" = "8:0.01.2010"
         "Manufacturer" = "8:ToyerTechnologies"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -367,6 +355,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_67E8931F7407455DB8648AD18E8B8E3F"
+            {
+            "Name" = "8:Shortcut to Primary output from EvE Command (Active)"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_03DBAA912D9B46E48127A43D50B473B7"
+            "Folder" = "8:_7EFBDC584D4042B08ED938347C873E12"
+            "WorkingFolder" = "8:_3D85D19951D94298A310BE09677BC02E"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {

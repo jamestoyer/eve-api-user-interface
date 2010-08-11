@@ -53,3 +53,23 @@ C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\EvE Command.
 C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\eveC.Resources.resources
 C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\GenerateResource.read.1.tlog
 C:\Users\James\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\GenerateResource.write.1.tlog
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\bin\Release\EvE Command.exe.config
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\EvE Command.exe
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\EvE Command.xml
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\bin\Release\Databases\rssFeeds.sdf
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\bin\Release\EvE Command.exe
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\bin\Release\EvE Command.xml
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\bin\Release\Microsoft.Expression.Drawing.dll
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\bin\Release\Microsoft.Expression.Drawing.xml
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\ResolveAssemblyReference.cache
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\MainWindow.baml
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\rssReader\rssStyles.baml
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\Application.baml
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\MainWindow.g.vb
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\Application.g.vb
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\EvE Command_Content.g.vb
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\EvE Command_MarkupCompile.cache
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\EvE Command.g.resources
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\eveC.Resources.resources
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\GenerateResource.read.1.tlog
+D:\Desktop\Desktop\evec\EVE Command\EvE Command\obj\x86\Release\GenerateResource.write.1.tlog

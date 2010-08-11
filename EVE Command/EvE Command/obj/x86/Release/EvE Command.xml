@@ -26,6 +26,19 @@ InitializeComponent
 	<summary>
 MainWindow
 </summary>
+</member><member name="M:eveC.rssReader.rss1.getItems(System.Xml.Linq.XDocument,System.Guid)">
+	<summary>
+ Retrives the feed items and adds them to a more friendly list
+ </summary>
+	<param name="rssDoc">The XDocument containing the feed</param>
+	<param name="feedId">The Guid of the feed</param>
+	<returns>A List(Of newsItem) containt all the items</returns>
+	<remarks></remarks>
+</member><member name="T:eveC.rssReader.rss1">
+	<summary>
+ Module for processing and handling downloaded RSS v1 feeds
+ </summary>
+	<remarks></remarks>
 </member><member name="M:eveC.rssReader.rssFeed.updateFeed(System.String,System.Guid)">
 	<summary>
  Gets the latest version of an RSS feed from the feed source
@@ -197,19 +210,6 @@ MainWindow
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="M:eveC.rssReader.rss1.getItems(System.Xml.Linq.XDocument,System.Guid)">
-	<summary>
- Retrives the feed items and adds them to a more friendly list
- </summary>
-	<param name="rssDoc">The XDocument containing the feed</param>
-	<param name="feedId">The Guid of the feed</param>
-	<returns>A List(Of newsItem) containt all the items</returns>
-	<remarks></remarks>
-</member><member name="T:eveC.rssReader.rss1">
-	<summary>
- Module for processing and handling downloaded RSS v1 feeds
- </summary>
-	<remarks></remarks>
 </member><member name="P:eveC.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
