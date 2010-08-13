@@ -87,6 +87,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="logger.vb" />
     <Compile Include="Settings\DataDirectory.vb" />
     <Compile Include="Settings\DataFile.vb" />
     <Compile Include="Settings\dirLocation.vb" />

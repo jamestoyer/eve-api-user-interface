@@ -61,20 +61,11 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Unable to write to log. Please check that the application has permission to access its directory folder.
+        '''  Looks up a localized string similar to An error has occured when updating the RSS Feed database.
         '''</summary>
-        Friend ReadOnly Property LogErrorMessage() As String
+        Friend ReadOnly Property FeedUpdateErrorMessage() As String
             Get
-                Return ResourceManager.GetString("LogErrorMessage", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Log Write Error.
-        '''</summary>
-        Friend ReadOnly Property LogErrorTitle() As String
-            Get
-                Return ResourceManager.GetString("LogErrorTitle", resourceCulture)
+                Return ResourceManager.GetString("FeedUpdateErrorMessage", resourceCulture)
             End Get
         End Property
         
@@ -93,6 +84,24 @@ Namespace My.Resources
         Friend ReadOnly Property ProgramStartingUp() As String
             Get
                 Return ResourceManager.GetString("ProgramStartingUp", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to An error has occured while attempting to download the latest RSS Feed information.
+        '''</summary>
+        Friend ReadOnly Property RssFeedDownloadErrorMessage() As String
+            Get
+                Return ResourceManager.GetString("RssFeedDownloadErrorMessage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to RSS Feed Update Error.
+        '''</summary>
+        Friend ReadOnly Property RSSFeedUpdateError() As String
+            Get
+                Return ResourceManager.GetString("RSSFeedUpdateError", resourceCulture)
             End Get
         End Property
         

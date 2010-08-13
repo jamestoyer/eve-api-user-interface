@@ -315,7 +315,10 @@ Public Class Settings
             Try
                 File.Copy(settingsLocation, backupLocation, True)
             Catch ex As Exception
-                ' TODO: Log that the copy was unsuccessful, and let the user know. Tell them that they can always manually backup the settings
+                ' Log the error and inform the user of it
+                Dim errorLog As logger = New logger(logName.errorLog)
+                errorLog.writeToLog(ex.Message)
+                MessageBox.Show(My.Resources.Resources.AutoBackupErrorMessage, My.Resources.Resources.BackupError, MessageBoxButton.OK, MessageBoxImage.Error)
             End Try
         ElseIf File.Exists(backupLocation) Then
             ' Attempt to restore the backup settings
@@ -353,7 +356,10 @@ Public Class Settings
             ' Try loading the settings
             LoadSettingsFile = LoadSettings(settingsLocation)
         Catch ex As Exception
-            ' TODO: Add a log event to record the lack of settings file loading, and let the user know that we will try to load the backup instead
+            ' Log the error and let the user know
+            Dim errorLog As logger = New logger(logName.errorLog)
+            errorLog.writeToLog(ex.Message)
+            MessageBox.Show(My.Resources.Resources.SettingsLoadErrorMessage, My.Resources.Resources.SettingsLoadError, MessageBoxButton.OK, MessageBoxImage.Error)
             Return Nothing
         End Try
     End Function
@@ -373,12 +379,21 @@ Public Class Settings
             ' If the settings loaded OK, copy to the main settings file, then copy back to stamp date
             If IsNothing(evaluateBackupResult) Then
                 ' TODO: Tell the user that restoring the backup settings failed and that a new settings file will be created
+
+                ' Create a new settigns file
+                evaluateBackupResult = GetNewSettings()
             Else
                 Try
                     File.Copy(backupLocation, settingsLocation, True)
                     File.Copy(settingsLocation, backupLocation, True)
-                Catch
-                    ' TODO: Log the fact that there was an issue copying the settings file. Potentially let the user know that fact too
+                Catch ex As Exception
+                    ' TODO: Potentially let the user know that fact that the copying of the settings file failed
+
+                    ' Log the error
+                    Dim errorLog As logger = New logger(logName.errorLog)
+                    errorLog.writeToLog(ex.Message)
+
+                    ' Create a news settings object
                     evaluateBackupResult = GetNewSettings()
                 End Try
             End If
@@ -418,7 +433,12 @@ Public Class Settings
             ' Evaluate the result and restore the backup
             RestoreBackupFile = evaluateBackupResult(backupLocation, settingsLocation, restoreStatus)
         Catch ex As Exception
-            ' TODO: Let the user know that the application is unable to load the backup info so is creating a new settings file
+            ' Log the error and let the user know
+            Dim errorLog As logger = New logger(logName.errorLog)
+            errorLog.writeToLog(ex.Message)
+            MessageBox.Show("EvE Command has been unable to load the backup file information. A new settings file will be created", My.Resources.Resources.BackupError, MessageBoxButton.OK, MessageBoxImage.Error)
+
+            ' Create a new settings file
             RestoreBackupFile = GetNewSettings()
         End Try
     End Function

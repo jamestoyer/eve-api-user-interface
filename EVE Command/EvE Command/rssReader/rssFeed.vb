@@ -1,4 +1,5 @@
-﻿Imports System.Net
+﻿Imports eveC.Common
+Imports System.Net
 Namespace rssReader
     ''' <summary>
     ''' This module contains methods to get and store RSS feeds
@@ -22,8 +23,10 @@ Namespace rssReader
                 ' Get the news items
                 items = rss1.getItems(rssDoc, feedId)
             Catch ex As Exception
-                ' TODO: Make this an informative error
-                MessageBox.Show("oops an error")
+                ' Log the error and tell the user an error occured
+                Dim errorLog As logger = New logger(logName.errorLog)
+                errorLog.writeToLog(ex.Message)
+                MessageBox.Show(My.Resources.Resources.RssFeedDownloadErrorMessage, My.Resources.Resources.RSSFeedUpdateError, MessageBoxButton.OK, MessageBoxImage.Error)
             End Try
 
             ' Send back the list
@@ -74,9 +77,10 @@ Namespace rssReader
                 ' Save the changes
                 feeds.SaveChanges()
             Catch ex As Exception
-
-                ' TODO: Make this informative
-                MessageBox.Show("oops and error!")
+                ' Log the error and tell the user an error occured
+                Dim errorLog As logger = New logger(logName.errorLog)
+                errorLog.writeToLog(ex.Message)
+                MessageBox.Show(My.Resources.Resources.FeedUpdateErrorMessage, My.Resources.Resources.RSSFeedUpdateError, MessageBoxButton.OK, MessageBoxImage.Error)
             End Try
         End Sub
 

@@ -61,6 +61,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to EvE Command has been unable to auto-backup your settings. It is recommended that you make a manual backup.
+        '''</summary>
+        Friend ReadOnly Property AutoBackupErrorMessage() As String
+            Get
+                Return ResourceManager.GetString("AutoBackupErrorMessage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Backup Error.
+        '''</summary>
+        Friend ReadOnly Property BackupError() As String
+            Get
+                Return ResourceManager.GetString("BackupError", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to EvE Command Updated.
         '''</summary>
         Friend ReadOnly Property EvECommandUpdated() As String
@@ -75,6 +93,24 @@ Namespace My.Resources
         Friend ReadOnly Property EvECommandUpdatedMsg() As String
             Get
                 Return ResourceManager.GetString("EvECommandUpdatedMsg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Unable to write to log. Please check that the application has permission to access its directory folder.
+        '''</summary>
+        Friend ReadOnly Property LogErrorMessage() As String
+            Get
+                Return ResourceManager.GetString("LogErrorMessage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Log Write Error.
+        '''</summary>
+        Friend ReadOnly Property LogErrorTitle() As String
+            Get
+                Return ResourceManager.GetString("LogErrorTitle", resourceCulture)
             End Get
         End Property
         
@@ -111,6 +147,24 @@ Namespace My.Resources
         Friend ReadOnly Property SettingsFileCorrupt() As String
             Get
                 Return ResourceManager.GetString("SettingsFileCorrupt", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Settings Load Error.
+        '''</summary>
+        Friend ReadOnly Property SettingsLoadError() As String
+            Get
+                Return ResourceManager.GetString("SettingsLoadError", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to EvE Command has been unable to load the selected settings file. An attempt to load a backup will be made.
+        '''</summary>
+        Friend ReadOnly Property SettingsLoadErrorMessage() As String
+            Get
+                Return ResourceManager.GetString("SettingsLoadErrorMessage", resourceCulture)
             End Get
         End Property
     End Module

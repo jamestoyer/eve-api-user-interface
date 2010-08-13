@@ -141,4 +141,28 @@
     <value>Missing Databases</value>
     <comment>MissingDatabasesTitle description</comment>
   </data>
+  <data name="LogErrorMessage" xml:space="preserve">
+    <value>Unable to write to log. Please check that the application has permission to access its directory folder</value>
+    <comment>LogErrorMessage description</comment>
+  </data>
+  <data name="LogErrorTitle" xml:space="preserve">
+    <value>Log Write Error</value>
+    <comment>LogErrorTitle description</comment>
+  </data>
+  <data name="AutoBackupErrorMessage" xml:space="preserve">
+    <value>EvE Command has been unable to auto-backup your settings. It is recommended that you make a manual backup</value>
+    <comment>AutoBackupErrorMessage description</comment>
+  </data>
+  <data name="BackupError" xml:space="preserve">
+    <value>Backup Error</value>
+    <comment>BackupError description</comment>
+  </data>
+  <data name="SettingsLoadErrorMessage" xml:space="preserve">
+    <value>EvE Command has been unable to load the selected settings file. An attempt to load a backup will be made</value>
+    <comment>SettingsLoadErrorMessage description</comment>
+  </data>
+  <data name="SettingsLoadError" xml:space="preserve">
+    <value>Settings Load Error</value>
+    <comment>SettingsLoadError description</comment>
+  </data>
 </root>

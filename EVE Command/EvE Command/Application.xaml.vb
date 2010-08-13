@@ -1,4 +1,5 @@
-﻿Class Application
+﻿Imports evec.Common
+Class Application
 
     Private Sub Application_DispatcherUnhandledException(ByVal sender As Object, ByVal e As System.Windows.Threading.DispatcherUnhandledExceptionEventArgs) Handles Me.DispatcherUnhandledException
         Dim errorLog As logger = New logger(logName.errorLog)
