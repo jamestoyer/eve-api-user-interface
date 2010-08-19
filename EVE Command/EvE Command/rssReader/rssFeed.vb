@@ -1,4 +1,5 @@
 ﻿Imports eveC.Common
+Imports HTMLConverter
 Imports System.Net
 Namespace rssReader
     ''' <summary>
@@ -60,7 +61,7 @@ Namespace rssReader
                                     r.publishDate < item.publishDate Then
 
                                     ' Update the details of the item
-                                    r.description = item.description
+                                    r.description = HtmlToXamlConverter.ConvertHtmlToXaml(item.description, True)
                                     r.publishDate = item.publishDate
                                     r.author = item.author
                                     r.dateAcquired = Now

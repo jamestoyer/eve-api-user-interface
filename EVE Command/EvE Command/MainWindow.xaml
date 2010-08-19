@@ -30,9 +30,13 @@
                     </HierarchicalDataTemplate>
                 </TreeView.ItemTemplate>
             </TreeView>
-            <ScrollViewer Grid.Column='1' VerticalScrollBarVisibility='Auto'>
+            <!--<TextBlock Grid.Column='1' DataContext='{Binding ElementName=newsList, Path=SelectedItem}' Text='{Binding Path=description}' />-->
+            <FlowDocumentScrollViewer Grid.Column='1' VerticalScrollBarVisibility='Auto' DataContext='{Binding ElementName=newsList, Path=SelectedItem}' DataContextChanged='FlowDocumentScrollViewer_DataContextChanged' HorizontalScrollBarVisibility='Disabled' Hyperlink.Click='FlowDocumentScrollViewer_Click'>
+                <!--<FlowDocument DataContextChanged='FlowDocument_DataContextChanged' DataContext='{Binding ElementName=newsList, Path=SelectedItem}'/>-->
+            </FlowDocumentScrollViewer>
+            <!--<ScrollViewer Grid.Column='1' VerticalScrollBarVisibility='Auto' Visibility='Collapsed'>
                 <WebBrowser DataContext='{Binding ElementName=newsList, Path=SelectedItem}' DataContextChanged='WebBrowser_DataContextChanged' LoadCompleted='WebBrowser_LoadCompleted' SizeChanged='WebBrowser_SizeChanged' VerticalAlignment='Top' HorizontalAlignment='Left' />
-            </ScrollViewer>
+            </ScrollViewer>-->
         </Grid>
     </DockPanel>
 </Window>

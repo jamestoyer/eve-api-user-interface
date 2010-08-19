@@ -2,7 +2,7 @@
 Imports <xmlns:dc="http://purl.org/dc/elements/1.1/">
 Imports <xmlns:sy="http://purl.org/rss/1.0/modules/syndication/">
 Imports <xmlns="http://purl.org/rss/1.0/">
-
+Imports HTMLConverter
 Namespace rssReader
     ''' <summary>
     ''' Module for processing and handling downloaded RSS v1 feeds
@@ -21,11 +21,12 @@ Namespace rssReader
 
             ' Go through the xml document and pull out all the news items
             For Each item In rssDoc...<item>
+
                 Dim currentItem As New newsItem
                 currentItem.feedId = feedId
                 currentItem.title = item.<title>.Value
                 currentItem.description =
-                    CType(IIf(IsNothing(item.<description>.Value), DBNull.Value, item.<description>.Value), String)
+                    CType(IIf(IsNothing(item.<description>.Value), DBNull.Value, HtmlToXamlConverter.ConvertHtmlToXaml(item.<description>.Value, True)), String)
                 currentItem.link = item.<link>.Value
                 currentItem.publishDate =
                     CType(IIf(IsNothing(item.<dc:date>.Value), DBNull.Value, CType(item.<dc:date>.Value, DateTime)), DateTime)

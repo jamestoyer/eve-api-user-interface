@@ -48,13 +48,9 @@ MainWindow
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
-</member><member name="P:eveC.My.Resources.Resources.LogErrorMessage">
+</member><member name="P:eveC.My.Resources.Resources.FeedUpdateErrorMessage">
 	<summary>
-  Looks up a localized string similar to Unable to write to log. Please check that the application has permission to access its directory folder.
-</summary>
-</member><member name="P:eveC.My.Resources.Resources.LogErrorTitle">
-	<summary>
-  Looks up a localized string similar to Log Write Error.
+  Looks up a localized string similar to An error has occured when updating the RSS Feed database.
 </summary>
 </member><member name="P:eveC.My.Resources.Resources.ProgramShuttingDown">
 	<summary>
@@ -63,6 +59,14 @@ MainWindow
 </member><member name="P:eveC.My.Resources.Resources.ProgramStartingUp">
 	<summary>
   Looks up a localized string similar to Program starting up.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.RssFeedDownloadErrorMessage">
+	<summary>
+  Looks up a localized string similar to An error has occured while attempting to download the latest RSS Feed information.
+</summary>
+</member><member name="P:eveC.My.Resources.Resources.RSSFeedUpdateError">
+	<summary>
+  Looks up a localized string similar to RSS Feed Update Error.
 </summary>
 </member><member name="P:eveC.My.Resources.Resources.UnhandledExceptionMessage">
 	<summary>

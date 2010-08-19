@@ -6,38 +6,21 @@ Common
 </name>
 </assembly>
 <members>
-<member name="P:evec.Common.DataDirectory.path">
+<member name="F:evec.Common.Settings.settingsInstance">
 	<summary>
- The path to which the directory resides
+ Variable to hold the settings
  </summary>
-	<value></value>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="P:evec.Common.DataDirectory.dataFiles">
-	<summary>
- The data files that should be in the directory
- </summary>
-	<value></value>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="P:evec.Common.DataFile.FileName">
-	<summary>
- The file name of the data file without it's path
- </summary>
-	<value></value>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="P:evec.Common.DataFile.Found">
-	<summary>
- Indicates that the file has actually been found when checking for it
- </summary>
-	<value></value>
-	<returns></returns>
-	<remarks></remarks>
 </member><member name="P:evec.Common.Settings.AppVersion">
 	<summary>
  The application version associated with the settings file
  </summary>
+</member><member name="P:evec.Common.Settings.dataDirectories">
+	<summary>
+ The List(of dataDirectories) which contain all the datafiles
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
 </member><member name="M:evec.Common.Settings.CheckAppVersion">
 	<summary>
  Checks the current application version against the version in the settings
@@ -47,13 +30,6 @@ Common
 	<summary>
  Prompts the user to backup the settings file
  </summary>
-	<remarks></remarks>
-</member><member name="P:evec.Common.Settings.dataDirectories">
-	<summary>
- The List(of dataDirectories) which contain all the datafiles
- </summary>
-	<value></value>
-	<returns></returns>
 	<remarks></remarks>
 </member><member name="M:evec.Common.Settings.initialiseDirectory(System.String)">
 	<summary>
@@ -77,10 +53,6 @@ Common
 	<param name="location">The location marker</param>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="F:evec.Common.Settings.settingsInstance">
-	<summary>
- Variable to hold the settings
- </summary>
 </member><member name="P:evec.Common.Settings.backupSettings">
 	<summary>
  The file name of the autosave settings backup
@@ -166,6 +138,14 @@ Common
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
+</member><member name="P:evec.Common.My.Resources.Resources.AutoBackupErrorMessage">
+	<summary>
+  Looks up a localized string similar to EvE Command has been unable to auto-backup your settings. It is recommended that you make a manual backup.
+</summary>
+</member><member name="P:evec.Common.My.Resources.Resources.BackupError">
+	<summary>
+  Looks up a localized string similar to Backup Error.
+</summary>
 </member><member name="P:evec.Common.My.Resources.Resources.EvECommandUpdated">
 	<summary>
   Looks up a localized string similar to EvE Command Updated.
@@ -173,6 +153,14 @@ Common
 </member><member name="P:evec.Common.My.Resources.Resources.EvECommandUpdatedMsg">
 	<summary>
   Looks up a localized string similar to EvE Command has been updated. Would you like to backup the settings before proceeding? (Recommended).
+</summary>
+</member><member name="P:evec.Common.My.Resources.Resources.LogErrorMessage">
+	<summary>
+  Looks up a localized string similar to Unable to write to log. Please check that the application has permission to access its directory folder.
+</summary>
+</member><member name="P:evec.Common.My.Resources.Resources.LogErrorTitle">
+	<summary>
+  Looks up a localized string similar to Log Write Error.
 </summary>
 </member><member name="P:evec.Common.My.Resources.Resources.MissingDatabaseMsg">
 	<summary>
@@ -190,10 +178,46 @@ Common
 	<summary>
   Looks up a localized string similar to The settings file is either missing or corrupt. Would you like to load the last autosave of the settings file, made on {0}?.
 </summary>
+</member><member name="P:evec.Common.My.Resources.Resources.SettingsLoadError">
+	<summary>
+  Looks up a localized string similar to Settings Load Error.
+</summary>
+</member><member name="P:evec.Common.My.Resources.Resources.SettingsLoadErrorMessage">
+	<summary>
+  Looks up a localized string similar to EvE Command has been unable to load the selected settings file. An attempt to load a backup will be made.
+</summary>
 </member><member name="T:evec.Common.My.Resources.Resources">
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
+</member><member name="P:evec.Common.DataDirectory.path">
+	<summary>
+ The path to which the directory resides
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:evec.Common.DataDirectory.dataFiles">
+	<summary>
+ The data files that should be in the directory
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:evec.Common.DataFile.FileName">
+	<summary>
+ The file name of the data file without it's path
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:evec.Common.DataFile.Found">
+	<summary>
+ Indicates that the file has actually been found when checking for it
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
 </member>
 </members>
 </doc>

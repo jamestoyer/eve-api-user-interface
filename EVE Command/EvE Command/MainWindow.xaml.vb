@@ -2,7 +2,10 @@
     Private Sub MainWindow_Loaded(ByVal sender As Object, ByVal e As System.Windows.RoutedEventArgs) Handles Me.Loaded
         rssReader.rssFeed.refreshFeeds()
         Dim feedReader As rssFeedsEntities = New rssFeedsEntities
-        newsList.ItemsSource = feedReader.feeds
+        Dim asc = (From f In feedReader.feeds
+                   Order By f.name Ascending
+                  Select f)
+        newsList.ItemsSource = asc
     End Sub
 
     Private Sub WebBrowser_Initialized(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -51,5 +54,28 @@
 
     Private Sub ExitMenuItem_Click(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs)
         My.Application.Shutdown()
+    End Sub
+
+    Private Sub FlowDocumentScrollViewer_DataContextChanged(ByVal sender As System.Object, ByVal e As System.Windows.DependencyPropertyChangedEventArgs)
+        Dim viewer As FlowDocumentScrollViewer = CType(sender, FlowDocumentScrollViewer)
+
+        Dim tryCasting As newsItem = TryCast(viewer.DataContext, newsItem)
+        If Not IsNothing(tryCasting) Then
+            ' Encode the string into a byte array and add it to a memorystream
+            Dim stream As New System.IO.MemoryStream(Text.UTF8Encoding.UTF8.GetBytes(tryCasting.description))
+
+            ' Load the flow document
+            viewer.Document = TryCast(Markup.XamlReader.Load(stream), FlowDocument)
+        End If
+    End Sub
+
+    Private Sub FlowDocumentScrollViewer_Click(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs)
+        Dim linkClicked As Hyperlink = TryCast(e.OriginalSource, Hyperlink)
+
+        ' If the object is not a hyperlink then just exit here
+        If IsNothing(linkClicked) Then Return
+
+        ' Lets navigate to the correct page
+        System.Diagnostics.Process.Start(linkClicked.NavigateUri.ToString)
     End Sub
 End Class
